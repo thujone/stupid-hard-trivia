@@ -1,0 +1,53 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "season": 1,
+      "episode": 1,
+      "question": 1,
+      "image": "s1-e1-q1.png",
+      "text": "In the pilot episode, \u201CThe Seinfeld Chronicles,\u201D what is the name of the character played by Michael Richards?",
+      "options": [
+        "Kramer",
+        "Kessler",
+        "Kroner",
+        "Kislyak",
+        "Kremer",
+        "Knopfler"
+      ],
+      "answer": "Kessler"
+    }
+  ],
+  "episodes": [
+    {
+      "id": 1,
+      "season": 1,
+      "episode": 1,
+      "title": "The Seinfeld Chronicles"
+    },
+    {
+      "id": 2,
+      "season": 1,
+      "episode": 2,
+      "title": "The Stakeout"
+    },
+    {
+      "id": 3,
+      "season": 1,
+      "episode": 3,
+      "title": "The Robbery"
+    },
+    {
+      "id": 4,
+      "season": 1,
+      "episode": 4,
+      "title": "Male Unbonding"
+    },
+    {
+      "id": 5,
+      "season": 1,
+      "episode": 5,
+      "title": "The Stock Tip"
+    }
+  ]
+}

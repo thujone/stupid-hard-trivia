@@ -1,0 +1,36 @@
+{
+  "name": "stupid-hard-trivia",
+  "version": "1.0.0",
+  "description": "Stupid hard extreme Seinfeld trivia game",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "json-server": "^0.15.0",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thujone/stupid-hard-trivia.git"
+  },
+  "keywords": [
+    "trivia",
+    "game",
+    "Seinfeld"
+  ],
+  "author": "Rich Goldman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thujone/stupid-hard-trivia/issues"
+  },
+  "homepage": "https://github.com/thujone/stupid-hard-trivia#readme"
+}
