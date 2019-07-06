@@ -1,5 +1,5 @@
-# stupid-hard-trivia
-Stupid-hard Seinfeld trivia game, built using Next.js, json-server, React Hooks, Node, Mongo, and Apollo
+# Stupid-Hard Seinfeld Trivia
+A stupid-hard Seinfeld trivia game, with Easy, Intermediate, and Stupid-Hard modes; timer bonus; 6 options per question, and leaderboards. 400 questions in all. Save-able and resumable. Share scores on Facebook and Twitter. Built using Next.js, json-server, React Hooks, Node, Mongo, and Apollo.
 
 ## Mocks
 
