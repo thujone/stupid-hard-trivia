@@ -11,8 +11,8 @@ app
     const server = express()
 
     server.get('/q/:id', (req, res) => {
-      const actualPage = '/post'
-      const queryParams = { title: req.params.id }
+      const actualPage = '/question'
+      const queryParams = { qid: req.params.qid }
       app.render(req, res, actualPage, queryParams) 
     })
 
