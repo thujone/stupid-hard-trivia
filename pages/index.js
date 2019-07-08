@@ -1,11 +1,16 @@
 import Layout from '../components/layout'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import fetch from 'isomorphic-unfetch'
 
+const DynamicLayout = dynamic(() => import('../components/layout'), {
+  ssr: false
+})
+
 const Index = props => (
-  <Layout>
-    <h2>Stupid-Hard Trivia presents</h2>
-    <h1>The Ultimate Seinfeld Trivia Game</h1>
+  <DynamicLayout>
+    {/* <h2>Stupid-Hard Trivia presents</h2>
+    <h1>The Ultimate Seinfeld Trivia Game</h1> */}
     <ul>
       
       {props.questions.map(question => {
@@ -38,7 +43,7 @@ const Index = props => (
     {
       console.log('props.episodes', typeof(props.episodes), props.episodes)
     }
-  </Layout>
+  </DynamicLayout>
 
 )
 

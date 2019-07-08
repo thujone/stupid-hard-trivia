@@ -1,14 +1,17 @@
-import Header from '../components/header';
+import Header from '../components/header'
+import GlobalStyle from './global-style'
+import dynamic from 'next/dynamic'
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-}
+
+const DynamicHeader = dynamic(() => import('../components/header'), {
+  ssr: false
+})
+
 
 const Layout = props => (
-  <div style={layoutStyle}>
-    <Header />
+  <div>
+    <GlobalStyle />
+    <DynamicHeader />
     {props.children}
   </div>
 )
