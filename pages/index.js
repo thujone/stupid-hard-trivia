@@ -3,12 +3,12 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import fetch from 'isomorphic-unfetch'
 
-const DynamicLayout = dynamic(() => import('../components/layout'), {
-  ssr: false
-})
+// const DynamicLayout = dynamic(() => import('../components/layout'), {
+//   ssr: false
+// })
 
 const Index = props => (
-  <DynamicLayout>
+  <Layout>
     {/* <h2>Stupid-Hard Trivia presents</h2>
     <h1>The Ultimate Seinfeld Trivia Game</h1> */}
     <ul>
@@ -16,7 +16,7 @@ const Index = props => (
       {props.questions.map(question => {
         const episode = props.episodes.find(ep => ep.season === question.s && ep.episode === question.e);
         return (
-          <li key={question.id}>
+          {/* <li key={question.id}>
             In "{episode.title}," {question.text}
 
             <ul>
@@ -29,11 +29,11 @@ const Index = props => (
             </ul>
 
 
-            {/* <Link as={`/p/${question.id}`} href={`/post?id=${question.id}`}>
+            <Link as={`/p/${question.id}`} href={`/post?id=${question.id}`}>
               <a>{question.text}</a>
-            </Link> */}
+            </Link>
 
-          </li>
+          </li> */}
         )
       })}
     </ul>
@@ -43,7 +43,7 @@ const Index = props => (
     {
       console.log('props.episodes', typeof(props.episodes), props.episodes)
     }
-  </DynamicLayout>
+  </Layout>
 
 )
 

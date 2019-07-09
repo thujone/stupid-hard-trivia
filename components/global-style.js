@@ -79,22 +79,12 @@ const GlobalStyle = createGlobalStyle`
     background: #6189d9;
   }
 
-  h1 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: Bangers;
     font-weight: normal;
-    font-size: 4em;
-  }
-
-  h2 {
-    font-family: Bangers;
-    font-weight: normal;
-    font-size: 3em;
-  }
-
-  .content {
-    max-width: 980px;
-    margin: auto;
-    border: 1px dotted black;
   }
 `
 
