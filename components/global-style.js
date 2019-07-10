@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'Ropa Sans';
+    font-family: 'Ropa';
     src: url('/static/fonts/RopaSans-Italic.eot');
     src: local('Ropa Sans Italic'), local('RopaSans-Italic'),
         url('/static/fonts/RopaSans-Italic.eot?#iefix') format('embedded-opentype'),
@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'Ropa Sans';
+    font-family: 'Ropa';
     src: url('/static/fonts/RopaSans-Regular.eot');
     src: local('Ropa Sans Regular'), local('RopaSans-Regular'),
         url('/static/fonts/RopaSans-Regular.eot?#iefix') format('embedded-opentype'),
@@ -74,9 +74,10 @@ const GlobalStyle = createGlobalStyle`
    } 
 
   body {
-    font-family: 'Ropa Sans';
+    font-family: 'Ropa';
     color: black;
     background: #6189d9;
+    cursor: url(/static/graphics/bagel-cursor.png), auto;
   }
 
   h1,
@@ -85,6 +86,11 @@ const GlobalStyle = createGlobalStyle`
   h4 {
     font-family: Bangers;
     font-weight: normal;
+  }
+
+  .is-visible {
+    opacity: 1 !important;
+    transition: opacity .5s ease-in;
   }
 `
 
