@@ -6,20 +6,20 @@ const SelectorWrapper = styled.div`
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  border: .67em double #012999;
+  border: .67em double var(--dark-blue);
   border-radius: 1.3em;
   background: #7199df;
   padding: 1.1em 1.3em;
   min-height: 300px;
 
   @media (min-width: 600px) {
-    border: 1em double #012999;
+    border: 1em double var(--dark-blue);
     min-height: 300px;
   }
 
   h1 {
     font-family: Bangers;
-    color: #012999;
+    color: var(--dark-blue);
     text-align: left;
     margin-top: 0;
     line-height: 1em;
@@ -75,16 +75,15 @@ const LevelTypes = styled.div`
 `
 
 const LevelButton = styled.button`
-  flex: 0 1 33%;
   line-height: .8em;
   height: 235px;
   width: 202px;
-  border: 3px solid #1a1a1a;
+  border: 3px solid var(--dark-gray);
   border-radius: 10px;
   font-family: Lalezar;
   font-size: 2em;
-  text-shadow: 0px 1px 1px #666;
-  color: #1a1a1a;
+  text-shadow: 0px 1px 1px var(--very-light-gray);
+  color: var(--dark-gray);
   cursor: pointer;
   margin: 5px;
   padding: 25px;
@@ -94,28 +93,26 @@ const LevelButton = styled.button`
   }
 
   &:hover {
-    border-color: #e43530;
-    background-color: #fbd84a;
-    color: #e43530;
-    text-shadow: 0px 1px 1px #f95045;
-    transition: background-color .6s;
-    transition: border-color .6s;
-    transition: color .6s;
+    border-color: var(--medium-red);
+    background-color: var(--medium-yellow);
+    color: var(--medium-red);
+    text-shadow: 0px 1px 1px var(--light-red);
+    transition: all .4s;
   }
 `
 
 const StupidButton = styled(LevelButton)`
-  background: #777 url(/static/graphics/silhouette-kramer.png) 20px -10px no-repeat;
+  background: var(--medium-gray) url(/static/graphics/silhouette-kramer.png) 20px -10px no-repeat;
   padding-top: 195px;
 `
 
 const HardButton = styled(LevelButton)`
-  background: #777 url(/static/graphics/silhouette-elaine.png) 25px 0 no-repeat;
+  background: var(--medium-gray) url(/static/graphics/silhouette-elaine.png) 25px 0 no-repeat;
   padding-top: 195px;
 `
 
 const StupidHardButton = styled(LevelButton)`
-  background: #777 url(/static/graphics/silhouette-george.png) 15px -10px no-repeat;
+  background: var(--medium-gray) url(/static/graphics/silhouette-george.png) 15px -10px no-repeat;
   padding-top: 170px;
 `
 
@@ -131,11 +128,19 @@ class LevelSelector extends Component {
     }
   }
 
+  activateParticleButton = level => {
+    // const buttons = document.getElementsByTagName('button')
+    // for (const item of buttons) {
+    //   item.disabled = true;
+    // }
+    this.setState({ [`${level}ButtonHidden`]: true })
+  }
+
   showLevelMessage = level => {
     document.getElementById(`${level}-level-message`).style.display = 'block'
     setTimeout( () => {
       document.getElementById(`${level}-level-message`).classList.add('is-visible')
-    }, 1);
+    }, 15);
   }
 
   hideLevelMessage = level => {
@@ -165,54 +170,54 @@ class LevelSelector extends Component {
             Channel your inner Frogger champion by answering twenty random questions from our extensive database.
           </LevelMessage>
           <LevelMessage id="stupid-hard-level-message">
-            Are you the master of this domain? Try twenty sets of twenty questions... 400 questions in all!
+            Are you the master of this domain? Twenty sets of twenty questions... 400 questions in all!
           </LevelMessage>
         </LevelMessageWrapper>   
         <LevelTypes>
           <ParticleEffectButton
-              color='#fbd84a'
+              color='#d42520'
               hidden={this.state.stupidButtonHidden}
               type='rectangle'
               direction='top'
-              duration={1000}
+              duration={700}
               onComplete={(e) => this.setLevel('stupid')}
           >
             <StupidButton
               onMouseOver={(e) => this.showLevelMessage('stupid')}
               onMouseOut={(e) => this.hideLevelMessage('stupid')}
-              onClick={() => this.setState({stupidButtonHidden: true})}
+              onClick={(e) => this.activateParticleButton('stupid')}
             >
               Easy
             </StupidButton>
           </ParticleEffectButton>
           <ParticleEffectButton
-              color='#fbd84a'
+              color='#d42520'
               hidden={this.state.hardButtonHidden}
-              type='triangle'
+              type='rectangle'
               direction='top'
-              duration={1000}
+              duration={700}
               onComplete={(e) => this.setLevel('hard')}
           >
             <HardButton
               onMouseOver={(e) => this.showLevelMessage('hard')}
               onMouseOut={(e) => this.hideLevelMessage('hard')}
-              onClick={() => this.setState({hardButtonHidden: true})}
+              onClick={(e) => this.activateParticleButton('hard')}
             >
               Hard
             </HardButton>
           </ParticleEffectButton>
           <ParticleEffectButton
-              color='#fbd84a'
+              color='#d42520'
               hidden={this.state.stupidHardButtonHidden}
-              type='triangle'
+              type='rectangle'
               direction='top'
-              duration={1000}
+              duration={700}
               onComplete={(e) => this.setLevel('stupid-hard')}
           >
             <StupidHardButton
               onMouseOver={(e) => this.showLevelMessage('stupid-hard')}
               onMouseOut={(e) => this.hideLevelMessage('stupid-hard')}
-              onClick={() => this.setState({stupidHardButtonHidden: true})}
+              onClick={(e) => this.activateParticleButton('stupidHard')}
             >
               Stupid-Hard
             </StupidHardButton>

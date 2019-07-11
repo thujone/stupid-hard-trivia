@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const Nav = styled.div`
   grid-area: nav;
+  display: none;
 `
 
 const NavArea = () => (

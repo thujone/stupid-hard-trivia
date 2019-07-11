@@ -15,16 +15,13 @@ const Grid = styled.div`
     "nav"
     "footer"
     "ad";
-  
-  @media (min-width: 600px) {
-  }
 `
 
 const Layout = props => (
   <Grid id='grid'>
     <GlobalStyle />
     <HeaderArea />
-    <MainArea view='home' />
+    <MainArea avatars={props.avatars} questions={props.questions} episodes={props.episodes} />
     <NavArea />
     <FooterArea />
     <AdArea />

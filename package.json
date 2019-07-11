@@ -4,6 +4,7 @@
   "description": "Stupid hard extreme Seinfeld trivia game",
   "main": "index.js",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
     "json-server": "^0.15.0",
@@ -12,8 +13,7 @@
     "react-dom": "^16.8.6",
     "react-particle-effect-button": "^1.0.1",
     "styled-components": "^4.3.2",
-    "styled-normalize": "^8.0.6",
-    "vivus": "^0.4.4"
+    "styled-normalize": "^8.0.6"
   },
   "devDependencies": {
     "eslint": "^6.0.1"
@@ -26,6 +26,34 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thujone/stupid-hard-trivia.git"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": ["next/babel"],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": ["next/babel"],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": false
+            }
+          ]
+        ]
+      }
+    }
   },
   "keywords": [
     "trivia",

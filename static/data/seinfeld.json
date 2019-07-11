@@ -1,4 +1,48 @@
 {
+  "avatars": [
+    {
+      "id": "jackie",
+      "name": "Jackie Chiles"
+    },
+    {
+      "id": "pagliacci",
+      "name": "\"Crazy\" Joe Davola",
+      "isPng": true
+    },
+    {
+      "id": "marisa",
+      "name": "Marisa Tomei"
+    },
+    {
+      "id": "puddy",
+      "name": "David Puddy"
+    },
+    {
+      "id": "estelle",
+      "name": "Estelle Costanza"
+    },
+    {
+      "id": "soup-nazi",
+      "name": "Yev \"The Soup Nazi\" Kassem",
+      "isPng": true
+    },
+    {
+      "id": "mickey",
+      "name": "Mickey Abbott"
+    },
+    {
+      "id": "emily",
+      "name": "Emily"
+    },
+    {
+      "id": "frank",
+      "name": "Frank Costanza"
+    },
+    {
+      "id": "newman",
+      "name": "Newman"
+    }
+  ],
   "questions": [
     {
       "id": 1,

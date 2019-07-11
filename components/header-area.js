@@ -97,6 +97,11 @@ const SeinfeldLogo = styled.div`
   justify-content: center;
 `
 
+const LogoObject = styled.object`
+  height: 190px;
+  width: 430px;
+`
+
 const MastRight = styled.div`
   flex: 0 1 auto;
   text-align: left;
@@ -114,8 +119,8 @@ const HeaderArea = () => (
       </MastHeaderLeft>
     </MastLeft>
     <SeinfeldLogo>
-      <object type="image/svg+xml" data="/static/graphics/seinfeld-logo.svg" height="190" width="430">
-      </object>
+      <LogoObject type="image/svg+xml" data="/static/graphics/seinfeld-logo.svg">
+      </LogoObject>
     </SeinfeldLogo>
     <MastRight>
       <MastHeaderRight>

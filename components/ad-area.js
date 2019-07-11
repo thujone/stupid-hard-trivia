@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const Ad = styled.section`
   grid-area: ad;
+  display: none;
 `
 
 const AdArea = () => (

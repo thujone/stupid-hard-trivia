@@ -69,6 +69,35 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Erbos';
+    src: url('/static/fonts/Erbos-Draco-1st-NBP.eot');
+    src: local('Erbos Draco 1st NBP Regular'), local('Erbos-Draco-1st-NBP'),
+        url('/static/fonts/Erbos-Draco-1st-NBP.eot?#iefix') format('embedded-opentype'),
+        url('/static/fonts/Erbos-Draco-1st-NBP.woff2') format('woff2'),
+        url('/static/fonts/Erbos-Draco-1st-NBP.woff') format('woff'),
+        url('/static/fonts/Erbos-Draco-1st-NBP.ttf') format('truetype'),
+        url('/static/fonts/Erbos-Draco-1st-NBP.svg#Erbos-Draco-1st-NBP') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+  :root {
+    --dark-blue: #012999;
+    --medium-blue: #6189d9;
+    --light-blue: #7199df;
+    --light-red: #f44540;
+    --light-red: #f9b0a5;
+    --medium-red: #d42520;
+    --dark-red: #940500;
+    --very-light-gray: #aaa;
+    --light-gray: #808080;
+    --medium-gray: #6c6c6c;
+    --dark-gray: #1a1a1a;
+    --medium-yellow: #fbd84a;
+  }
+
   * {
     box-sizing: border-box;
    } 
@@ -76,8 +105,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Ropa';
     color: black;
-    background: #6189d9;
-    cursor: url(/static/graphics/bagel-cursor.png), auto;
+    background: var(--medium-blue);
   }
 
   h1,
@@ -90,7 +118,7 @@ const GlobalStyle = createGlobalStyle`
 
   .is-visible {
     opacity: 1 !important;
-    transition: opacity .5s ease-in;
+    transition: opacity .4s ease-in;
   }
 `
 
