@@ -10,11 +10,11 @@ app
   .then(() => {
     const server = express()
 
-    server.get('/q/:id', (req, res) => {
-      const actualPage = '/question'
-      const queryParams = { qid: req.params.qid }
-      app.render(req, res, actualPage, queryParams) 
-    })
+    // server.get('/question', (req, res) => {
+    //   const actualPage = '/question'
+    //   const queryParams = { qid: req.params.qid }
+    //   app.render(req, res, actualPage, queryParams) 
+    // })
 
     server.get('*', (req, res) => {
       return handle(req, res)

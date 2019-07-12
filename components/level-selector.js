@@ -101,7 +101,7 @@ const LevelButton = styled.button`
   }
 `
 
-const StupidButton = styled(LevelButton)`
+const EasyButton = styled(LevelButton)`
   background: var(--medium-gray) url(/static/graphics/silhouette-kramer.png) 20px -10px no-repeat;
   padding-top: 195px;
 `
@@ -121,7 +121,7 @@ class LevelSelector extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stupidButtonHidden: false,
+      easyButtonHidden: false,
       hardButtonHidden: false,
       stupidHardButtonHidden: false,
       level: null
@@ -163,7 +163,7 @@ class LevelSelector extends Component {
       <SelectorWrapper>
         <SelectorHeader>Choose a level:</SelectorHeader>
         <LevelMessageWrapper>
-          <LevelMessage id="stupid-level-message">
+          <LevelMessage id="easy-level-message">
             Experiencing shrinkage? Measure the adequacy of your knowledge with twenty of our easiest questions.
           </LevelMessage>
           <LevelMessage id="hard-level-message">
@@ -176,19 +176,19 @@ class LevelSelector extends Component {
         <LevelTypes>
           <ParticleEffectButton
               color='#d42520'
-              hidden={this.state.stupidButtonHidden}
+              hidden={this.state.easyButtonHidden}
               type='rectangle'
               direction='top'
               duration={700}
-              onComplete={(e) => this.setLevel('stupid')}
+              onComplete={(e) => this.setLevel('easy')}
           >
-            <StupidButton
-              onMouseOver={(e) => this.showLevelMessage('stupid')}
-              onMouseOut={(e) => this.hideLevelMessage('stupid')}
-              onClick={(e) => this.activateParticleButton('stupid')}
+            <EasyButton
+              onMouseOver={(e) => this.showLevelMessage('easy')}
+              onMouseOut={(e) => this.hideLevelMessage('easy')}
+              onClick={(e) => this.activateParticleButton('easy')}
             >
               Easy
-            </StupidButton>
+            </EasyButton>
           </ParticleEffectButton>
           <ParticleEffectButton
               color='#d42520'

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React, { Component } from 'react'
 import ParticleEffectButton from 'react-particle-effect-button'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const SelectorWrapper = styled.div`
   width: 100%;
@@ -85,7 +86,7 @@ class FirstNameForm extends Component {
     this.state = {
       level: props.level,
       avatar: props.avatar,
-      firstName: null,
+      firstNameField: '',
       buttonHidden: false
     }
   }
@@ -96,6 +97,10 @@ class FirstNameForm extends Component {
 
   activateParticleButton = () => {
     this.setState({ buttonHidden: true })
+  }
+
+  onFirstNameFieldChange = (event) => {
+    this.setState({ firstNameField: event.target.value })
   }
 
   render() {
@@ -109,6 +114,7 @@ class FirstNameForm extends Component {
             ref={(input) => { this.firstNameInput = input }}
             maxlength='16'
             type='text'
+            onChange={this.onFirstNameFieldChange.bind(this)}
           />
           <ParticleEffectButton
               color='#fbd84a'
@@ -118,15 +124,17 @@ class FirstNameForm extends Component {
               duration={700}
           >
             <Link
-              questions={this.props.questions}
-              episodes={this.props.episodes}
-              level={this.props.level}
-              avatar={this.props.avatar}
-              questionNumber={1}
-              firstName={'Ricky'}
-              href='/question'
+              href={{
+                pathname: '/quiz',
+                query: {
+                  q: 1,
+                  level: this.props.level,
+                  avatar: this.props.avatar,
+                  name: this.state.firstNameField
+                }
+              }}
             >
-              <Button onClick={(e) => this.activateParticleButton()}>
+              <Button> {/*onClick={(e) => this.activateParticleButton()}> */}
                 Serenity Now!!!
               </Button>
             </Link>
