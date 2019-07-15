@@ -127,7 +127,6 @@ class FirstNameForm extends Component {
               href={{
                 pathname: '/quiz',
                 query: {
-                  q: 1,
                   level: this.props.level,
                   avatar: this.props.avatar,
                   name: this.state.firstNameField

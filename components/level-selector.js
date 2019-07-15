@@ -87,6 +87,7 @@ const LevelButton = styled.button`
   cursor: pointer;
   margin: 5px;
   padding: 25px;
+  transition: all .5s;
 
   @media (min-width: 600px) {
     border: 6px solid #1a1a1a;
@@ -97,7 +98,6 @@ const LevelButton = styled.button`
     background-color: var(--medium-yellow);
     color: var(--medium-red);
     text-shadow: 0px 1px 1px var(--light-red);
-    transition: all .4s;
   }
 `
 
@@ -164,13 +164,13 @@ class LevelSelector extends Component {
         <SelectorHeader>Choose a level:</SelectorHeader>
         <LevelMessageWrapper>
           <LevelMessage id="easy-level-message">
-            Experiencing shrinkage? Measure the adequacy of your knowledge with twenty of our easiest questions.
+            Experiencing shrinkage? Measure the inadequacy of your knowledge with twenty of our easiest questions.
           </LevelMessage>
           <LevelMessage id="hard-level-message">
-            Channel your inner Frogger champion by answering twenty random questions from our extensive database.
+            Channel your inner Frogger champion... Answer twenty random questions from our extensive database.
           </LevelMessage>
           <LevelMessage id="stupid-hard-level-message">
-            Are you the master of this domain? Twenty sets of twenty questions... 400 questions in all!
+            Master of this domain? <i>Get out!</i> Twenty sets of twenty questions... 400 questions in all!
           </LevelMessage>
         </LevelMessageWrapper>   
         <LevelTypes>

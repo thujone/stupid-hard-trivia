@@ -78,6 +78,7 @@ const AvatarButton = styled.button`
   cursor: pointer;
   padding: 0;
   margin-bottom: .7em;
+  transition: all .4s;
 
   @media (min-width: 600px) {
     border: 6px solid var(--dark-gray);
@@ -86,7 +87,6 @@ const AvatarButton = styled.button`
   &:hover {
     border-color: var(--medium-red);
     color: var(--dark-red);
-    transition: all .4s;
   }
 `
 
@@ -96,10 +96,11 @@ const AvatarGraphic = styled.img`
   border-radius: 4px;
   opacity: .8;
   font-size: 1em;
+  z-index: 1;
+  transition: all .4s;
 
   &:hover {
     opacity: 1;
-    transition: all .4s;
   }
 `
 

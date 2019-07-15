@@ -6,7 +6,8 @@ const QuizScoreboard = styled.div`
   justify-content: space-between;
   background: var(--light-blue);
   margin: auto;
-  padding: .5em;
+  margin-top: 5px;
+  padding: .2em;
   max-width: 960px;
   width: 100%;
   border: 4px double var(--dark-blue);
@@ -15,10 +16,17 @@ const QuizScoreboard = styled.div`
 
 const Avatar = styled.img`
   flex: 1 1 10em;
-  max-width: 90px;
-  max-height: 90px;
-  border: 3px solid var(--dark-blue);
+  max-width: 80px;
+  max-height: 80px;
+  border: 1px solid var(--dark-blue);
+  border-radius: 10px;
   margin-right: 15px;
+  transition: all 1s;
+  cursor: progress;
+
+  &:hover {
+    transform: scale(2.5);
+  }
 `
 
 const UserTable = styled.table`
@@ -30,8 +38,8 @@ const TableHeader = styled.th`
   font-weight: bold;
   font-size: 1.3em;
   text-align: left;
-  padding: 0 .5em 0 0;
-  line-height: 1.4em;
+  padding: 0 .2em 0 0;
+  line-height: 1.3=2em;
 `
 
 const TableHeaderName = styled(TableHeader)`
@@ -39,22 +47,27 @@ const TableHeaderName = styled(TableHeader)`
 `
 
 const TableHeaderScore = styled(TableHeader)`
-  padding-left: 10vw;
+  padding-left: 2vw;
   text-align: right;
-`
+  position: relative;
+  top: 17px;
 
+  @media (min-width: 900px) {
+    padding-left: 20vw;
+  }
+`
 
 const TableCell = styled.td`
   color: var(--dark-gray);
   font-size: 1.3em;
   padding: 0;
   margin: 0;
-  line-height: 1.4em;
+  line-height: 1.2em;
 `
 
 const TableCellMultiRow = styled(TableCell)`
   position: relative;
-  top: 30px;
+  top: 20px;
 `
 
 const Score = styled.span`
@@ -63,16 +76,25 @@ const Score = styled.span`
 `
 
 const BigScore = styled(Score)`
-  font-size: 5em;
+  position: relative;
+  top: 7px;
+  font-size: 4em;
 `
 
 const GroupShotWrapper = styled.div`
-  flex: 1 1 10em;
+  flex: 1 1 6em;
   text-align: right;
 `
 
 const GroupShot = styled.img`
-  max-height: 86px;
+  position: relative;
+  max-height: 76px;
+  transition: all 1s;
+  cursor: progress;
+
+  &:hover {
+    transform: scale(3);
+  }
 `
 
 const QuizScoreboardArea = (props) => {
@@ -89,7 +111,7 @@ const QuizScoreboardArea = (props) => {
           </tr>
           <tr>
             <TableHeader>Level:</TableHeader>
-            <TableCell>{props.level}</TableCell>
+            <TableCell>{props.level.split('').map((char, i) => (i === 0 || char === 'h') ? char.toUpperCase() : char)}</TableCell>
           </tr>
         </tbody>
       </UserTable>
@@ -97,6 +119,7 @@ const QuizScoreboardArea = (props) => {
         <GroupShot src='/static/graphics/group-seated.png' alt="Group Seated" />
       </GroupShotWrapper>
     </QuizScoreboard>
+
   )
 }
 

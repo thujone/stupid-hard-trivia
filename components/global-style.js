@@ -91,6 +91,11 @@ const GlobalStyle = createGlobalStyle`
     --light-red: #f9b0a5;
     --medium-red: #d42520;
     --dark-red: #940500;
+    --bright-red: #f95e5e;
+    --light-green: #bbffa6;
+    --medium-green: #8be876;
+    --dark-green: #489a33;
+    --super-light-gray: #eee;
     --very-light-gray: #aaa;
     --light-gray: #808080;
     --medium-gray: #6c6c6c;
@@ -119,6 +124,38 @@ const GlobalStyle = createGlobalStyle`
   .is-visible {
     opacity: 1 !important;
     transition: opacity .4s ease-in;
+  }
+
+  .is-zoomed {
+    transform: scale(2);
+  }
+
+  .is-correct {
+    border-color: var(--dark-green) !important;
+    background: var(--super-light-gray) !important;
+
+    div:nth-of-type(1) {
+      background-color: var(--dark-green) !important;
+      color: var(--super-light-gray) !important;
+    }
+
+    div:nth-of-type(2) {
+      color: var(--dark-green) !important;
+    }
+  }
+
+  .is-incorrect {
+    border-color: var(--medium-red) !important;
+    background: var(--super-light-gray) !important;
+    
+    div:nth-of-type(1) {
+      background-color: var(--medium-red) !important;
+      color: var(--super-light-gray) !important;
+    }
+
+    div:nth-of-type(2) {
+      color: var(--medium-red) !important;
+    }
   }
 `
 

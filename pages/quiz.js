@@ -1,17 +1,20 @@
+import React, { Component } from 'react'
+import { useRouter } from 'next/router'
 import fetch from 'isomorphic-unfetch'
 import styled from 'styled-components'
-import React, { Component } from 'react'
-
 import QuizLayout from '../components/quiz-layout'
 import ParticleEffectButton from 'react-particle-effect-button'
 import Link from 'next/link'
 
-
 const Quiz = (props) => {
+  const router = useRouter()
   return (
     <QuizLayout
       questions={props.questions}
       episodes={props.episodes}
+      level={router.query.level}
+      avatar={router.query.avatar}
+      name={router.query.name}
     >
     </QuizLayout>
   )
