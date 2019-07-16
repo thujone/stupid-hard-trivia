@@ -142,7 +142,10 @@ class QuizMainArea extends Component {
       options: props.options,
       backgroundUrl: props.backgroundUrl,
       episode: props.episode,
-      correctAnswers: 0
+      correctAnswers: 0,
+      score: props.score,
+      stopTimer: false,
+      secs: 15
     }
   }
 
@@ -165,14 +168,10 @@ class QuizMainArea extends Component {
       question,
       quiz,
       episode: this.state.episodes.find(item => item.episode === question.e)
-
     })
   }
 
   componentDidUpdate() {
-    console.log('****************************************')
-    console.log('DidUpdate', this.state.results)
-
     const background = `url('${this.props.backgroundUrl}')`
     this.questionImage.style.background = background
   }
@@ -218,31 +217,42 @@ class QuizMainArea extends Component {
     document.getElementById('screenshot').classList.remove('is-zoomed')
   }
 
+  stopTimer = () => {
+
+  }
+
   checkResponse = (response, nthOption) => {
     if (this.state.result)
       return
+
+    const isCorrect = response !== null && response === this.state.question.answer
     const result = {
       q: this.state.q,
       qid: this.state.question.id,
       response,
-      isCorrect: response === this.state.question.answer
+      isCorrect
     }
     const results = this.state.results
     results.push(result)
+    const bonusPoints = Math.ceil(parseInt(document.getElementById('seconds').innerText) * 1.67)
     this.setState({
       result: result,
-      results,
-      correctAnswers: this.state.correctAnswers++
+      results: results,
+      correctAnswers: isCorrect ? this.state.correctAnswers + 1 : this.state.correctAnswers,
+      score: isCorrect ? this.state.score + 25 + bonusPoints : this.state.score,
+      stopTimer: true
     })
     this.props.setStateHandler({
       result: result,
       results,
-      correctAnswers: this.state.correctAnswers++
+      correctAnswers: this.state.correctAnswers + 1,
+      score: isCorrect ? this.state.score + 25 + bonusPoints: this.state.score
     })
     if (response === this.state.question.answer) {
       document.querySelector(`#answers a:nth-of-type(${nthOption})`).classList.add('is-correct')
     } else {
-      document.querySelector(`#answers a:nth-of-type(${nthOption})`).classList.add('is-incorrect')
+      if (nthOption != null)
+        document.querySelector(`#answers a:nth-of-type(${nthOption})`).classList.add('is-incorrect')
       const options = document.querySelectorAll('#answers div:nth-of-type(2)')
       options.forEach((item, i) => {
         if (item.innerText === this.state.question.answer) {
@@ -250,6 +260,7 @@ class QuizMainArea extends Component {
         }
       })
     }
+    this.setState({ results })
     this.nextQuestionLink.style.display = 'block'
   }
 
@@ -258,12 +269,12 @@ class QuizMainArea extends Component {
     const question = this.state.quiz[q - 1]
     const options = this.shuffle([question.option1, question.option2, question.option3, question.option4, question.option5, question.answer])
     const backgroundUrl = `/static/screenshots/large/s${question.s}e${question.e}q${question.q}.png`
-    const oldAnswers = document.querySelectorAll('.is-correct, .is-incorrect', '#answers')
+    const oldOptions = document.querySelectorAll('.is-correct, .is-incorrect', '#answers')
 
-    oldAnswers.forEach(oldAnswer => {
-      if (oldAnswer && oldAnswer.classList) {
-        oldAnswer.classList.remove('is-correct')
-        oldAnswer.classList.remove('is-incorrect')
+    oldOptions.forEach(oldOptions => {
+      if (oldOptions && oldOptions.classList) {
+        oldOptions.classList.remove('is-correct')
+        oldOptions.classList.remove('is-incorrect')
       }
     })
 
@@ -283,11 +294,18 @@ class QuizMainArea extends Component {
       options,
       backgroundUrl,
       episode: this.state.episodes.find(item => item.episode === question.e),
-      result: null
+      result: null,
+      stopTimer: false
     })
   }
 
   smartQuote = (quote) => `\u201C${quote}\u201D`
+
+  setStateHandler = (data) => {
+    this.setState({
+      data
+    })
+  }
 
   render() {
     return (
@@ -295,6 +313,9 @@ class QuizMainArea extends Component {
         <TrackerTimer
           q={this.state.q}
           results={this.state.results}
+          stopTimer={this.state.stopTimer}
+          setStateHandler={this.setStateHandler}
+          checkResponse={this.checkResponse}
         />
         {this.state.episode && this.state.question && (
           <QuestionText>

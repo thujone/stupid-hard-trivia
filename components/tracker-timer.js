@@ -81,53 +81,137 @@ const TimerBar = styled.div`
   width: 100%;
   margin-top: 0;
   padding-top: 0;
-  z-index: -2;
 `
 
 const TimerFiller = styled.div`
   width: 100%;
   height: 10px;
   background-color: var(--medium-green);
-  transition: 20s width;
+  transition: width 15s;
+  transition-timing-function: linear;
 
   &.is-running {
-    width: 1px;
+    width: 1px !important;
+    transition: width 15s;
+    transition-timing-function: linear;
   }
 `
 
+const Seconds = styled.span`
+  display: none;
+`
 
-const TrackerTimer = (props) => {
-  const trackerUnits = [];
-  for (let i = 0; i < 20; i++) {
-    if (props.results && props.results[i]) {
-      if (props.results[i].isCorrect) {
-        trackerUnits[i] = (<CorrectTrackerUnit>{i}</CorrectTrackerUnit>)
-      } else {
-        trackerUnits[i] = (<IncorrectTrackerUnit>{i}</IncorrectTrackerUnit>)
-      }
-    } else if (i === props.q - 1) {
-      trackerUnits[i] = (<ActiveTrackerUnit>{i}</ActiveTrackerUnit>)
-    } else {
-      trackerUnits[i] = (<TrackerUnit>{i}</TrackerUnit>)
+
+class TrackerTimer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      q: this.props.q,
+      results: this.props.results,
+      stopTimer: this.props.stopTimer
+    }
+
+    this.secondsLeft = 15
+    this.intervalHandle
+    this.startCountdown = this.startCountdown.bind(this)
+    this.tick = this.tick.bind(this)
+  }
+
+  startCountdown() {
+    //this.intervalHandle = setInterval(tick, 1000)
+    this.intervalHandle = setInterval(this.tick, 1000)
+
+    setTimeout( () => {
+      this.timerFiller.classList.add('is-running')
+    }, 50)
+  }
+
+  tick() {
+    this.secondsLeft--;
+    this.seconds.innerText = this.secondsLeft
+    console.log('seconds left', this.secondsLeft, this.seconds.innerText)
+    if (this.secondsLeft <= 0) {
+      clearInterval(this.intervalHandle)
+      // this.props.setStateHandler({
+      //   secs: this.secondsLeft
+      // })
+      this.props.checkResponse(null, null, this.secondsLeft)
+      //debugger
+      this.secondsLeft = 15
     }
   }
 
-  return (
-    <TrackerTimerWrapper>
-      <Tracker>
-        <TrackerLabel>Question:</TrackerLabel>
-        <TrackerBar>
-          {trackerUnits}
-        </TrackerBar>
-      </Tracker>
-      <Timer>
-        <TimerLabel>Timer:</TimerLabel>
-        <TimerBar>
-          <TimerFiller id='timer-filler'></TimerFiller>
-        </TimerBar>
-      </Timer>
-    </TrackerTimerWrapper>
-  )
+  componentDidMount() {
+    console.log('did mount')
+    
+  }
+
+  componentDidUpdate() {
+    clearInterval(this.intervalHandle)
+
+
+    if (this.props.stopTimer) {
+      //this.props.setStateHandler({ secs: this.secondsLeft })
+      clearInterval(this.intervalHandle)
+      let computedStyle = window.getComputedStyle(this.timerFiller)
+      let timerFillerWidth = computedStyle.getPropertyValue('width')
+      this.timerFiller.classList.remove('is-running')
+      this.timerFiller.style.width = timerFillerWidth;
+
+      console.log('did update')
+      //alert(this.secondsLeft)
+      //this.trackerBar.setAttribute('data-seconds', this.secondsLeft)
+    
+      //this.timerFiller.style.display = 'none'
+    } else {
+      this.timerFiller.style.display = 'none'
+      setTimeout(() => {
+        
+        this.timerFiller.style.display = 'block'
+        this.timerFiller.style.width = '100%'
+        this.startCountdown()
+      }, 50);
+    }
+    this.secondsLeft = 15
+  }
+
+  createTrackerUnits() {
+    let trackerUnits = []
+    for (let i = 0; i < 20; i++) {
+      if (this.props.results && this.props.results[i]) {
+        if (this.props.results[i].isCorrect) {
+            trackerUnits[i] = (<CorrectTrackerUnit key={`tracker-unit-${i}`}>{i + 1}</CorrectTrackerUnit>)
+        } else {
+            trackerUnits[i] = (<IncorrectTrackerUnit key={`tracker-unit-${i}`}>{i + 1}</IncorrectTrackerUnit>)
+        }
+      } else if (i === this.props.q - 1) {
+        trackerUnits[i] = (<ActiveTrackerUnit key={`tracker-unit-${i}`}>{i + 1}</ActiveTrackerUnit>)
+      } else {
+        trackerUnits[i] = (<TrackerUnit key={`tracker-unit-${i}`}>{i + 1}</TrackerUnit>)
+      }
+    }
+    return trackerUnits
+  }
+
+  render() {
+    return (
+      <TrackerTimerWrapper>
+        <Tracker>
+          <TrackerLabel>Question:</TrackerLabel>
+          <TrackerBar>
+            {this.createTrackerUnits()}
+          </TrackerBar>
+        </Tracker>
+        <Timer>
+          <TimerLabel>Timer:</TimerLabel>
+          <TimerBar>
+            <TimerFiller id='timer-filler' ref={(filler) => this.timerFiller = filler}></TimerFiller>
+          </TimerBar>
+        </Timer>
+        <Seconds id='seconds' ref={(seconds) => { this.seconds = seconds }}></Seconds>
+      </TrackerTimerWrapper>
+    )
+  }
 }
 
 export default TrackerTimer

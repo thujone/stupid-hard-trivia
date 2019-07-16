@@ -97,7 +97,20 @@ const GroupShot = styled.img`
   }
 `
 
+const stringifyScore = (score) => {
+  if (score === 0) {
+    return '000'
+  } else if (score < 100) {
+    return '0' + score
+  } else if (score >= 100) {
+    return '' + score
+  } else {
+    return '1000'
+  }
+}
+
 const QuizScoreboardArea = (props) => {
+  console.log('========================', 'props.score', props.score)
   return (
     <QuizScoreboard>
       <Avatar src={`/static/avatars/${props.avatar}.jpg`} alt={props.avatar} />
@@ -107,7 +120,7 @@ const QuizScoreboardArea = (props) => {
             <TableHeaderName>Name:</TableHeaderName>
             <TableCell>{props.name}</TableCell>
             <TableHeaderScore>Score:</TableHeaderScore>
-            <TableCellMultiRow rowspan="3"><BigScore>875</BigScore></TableCellMultiRow>
+            <TableCellMultiRow rowspan="3"><BigScore>{stringifyScore(props.score)}</BigScore></TableCellMultiRow>
           </tr>
           <tr>
             <TableHeader>Level:</TableHeader>

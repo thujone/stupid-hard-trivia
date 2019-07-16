@@ -29,13 +29,14 @@ class QuizLayout extends Component {
       quiz: [],
       question: [],
       episodes: [],
-      episode: []
+      episode: [],
+      score: 0
 
     }
   }
 
   componentDidUpdate() {
-    console.log('QuizLayout::state', this.state)
+    // console.log('QuizLayout::state', this.state)
   }
 
   setStateHandler = (data) => {
@@ -56,6 +57,7 @@ class QuizLayout extends Component {
           name={this.props.name}
           q={this.state.q}
           results={this.state.results}
+          score={this.state.score}
         />
         <QuizMainArea
           questions={this.props.questions}
@@ -71,6 +73,7 @@ class QuizLayout extends Component {
           results={this.state.results}
           options={this.state.options}
           quiz={this.state.quiz}
+          score={this.state.score}
         />
       </Grid>
     )
