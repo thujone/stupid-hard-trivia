@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import LevelSelector from './level-selector'
-import AvatarSelector from './avatar-selector'
-import FirstNameForm from './first-name-form'
+import Link from 'next/link'
 import TrackerTimer from './tracker-timer'
+import { toast } from 'react-toastify'
+import ParticleEffectButton from 'react-particle-effect-button'
 
 const Main = styled.main`
   padding: 0 1em;
@@ -31,11 +31,12 @@ const NextQuestionLink = styled.button`
   clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
   background-color: var(--medium-green);
   cursor: pointer;
-  opacity: .5;
-  transition: .5s;
+  opacity: .8;
+  transition: all .25s;
 
   &:hover {
     opacity: 1;
+    transform: scale(1.15);
   }
 `
 
@@ -125,6 +126,96 @@ const Text = styled.div`
   transition: .4s all;
 `
 
+const FinalResults = styled.div`
+  width: 50%;
+  max-width: 960px;
+  margin: 2em auto;
+  border-radius: 1.3em;
+  background: #7199df;
+  padding: 1.1em 1.3em;
+  min-height: 300px;
+  text-align: center;
+
+  @media (min-width: 600px) {
+    min-height: 300px;
+  }
+
+  h2 {
+    font-family: Bangers;
+    color: var(--dark-blue);
+    font-size: 2em;
+    text-align: left;
+    margin-top: 0;
+    line-height: 1em;
+  }
+`
+const FinalTable = styled.table`
+  width: 65%;
+`
+
+const FinalRow = styled.tr`
+`
+
+const FinalValue = styled.td`
+  font-size: 1.8em;
+  text-align: left;
+  line-height: 1.8em;
+  margin: 0;
+  padding: 3px;
+`
+
+const FinalLabel = styled(FinalValue)`
+  font-family: Lalezar !important;
+`
+
+const Button = styled.button`
+  flex: 0 1 auto;
+  height: 70px;
+  width: 250px;
+  border: 3px solid var(--dark-gray);
+  border-radius: 15px;
+  margin-top: 20px;
+  font-family: Lalezar;
+  font-size: 2em;
+  text-shadow: 0px 1px 1px var(--very-light-gray);
+  color: var(--dark-gray);
+  cursor: pointer;
+  padding: 6px 0 0;
+  background: var(--medium-gray);
+
+  @media (min-width: 600px) {
+    border: 6px solid var(--dark-gray);
+  }
+
+  &:hover {
+    border-color: var(--medium-red);
+    background-color: var(--medium-yellow);
+    color: var(--medium-red);
+    text-shadow: 0px 1px 1px var(--light-red);
+    transition: all .4s;
+  }
+`
+
+const CorrectToast = ({ CorrectToast }) => (
+  <div>
+    <h1>Correct!</h1>
+    +25 points
+    <br />
+    +{Math.ceil(parseInt(document.getElementById('seconds').innerText) * 1.67) + ''} timer bonus
+    <br />
+    <br />
+  </div>
+)
+
+const IncorrectToast = ({ IncorrectToast }) => (
+  <div>
+    <h1>Wrong!</h1>
+    No points for you!
+    <br />
+    <br />
+  </div>
+)
+
 class QuizMainArea extends Component {
   constructor(props) {
     super(props)
@@ -133,6 +224,7 @@ class QuizMainArea extends Component {
       avatar: props.avatar,
       name: props.name,
       q: props.q,
+      //q: 20,
       quiz: props.quiz,
       results: props.results,
       result: null,
@@ -145,7 +237,10 @@ class QuizMainArea extends Component {
       correctAnswers: 0,
       score: props.score,
       stopTimer: false,
-      secs: 15
+      secs: 15,
+      allDone: false,
+      buttonHidden: false,
+      correctAnswers: 0
     }
   }
 
@@ -172,8 +267,10 @@ class QuizMainArea extends Component {
   }
 
   componentDidUpdate() {
-    const background = `url('${this.props.backgroundUrl}')`
-    this.questionImage.style.background = background
+    if (this.state.q <= 20) {
+      const background = `url('${this.props.backgroundUrl}')`
+      this.questionImage.style.background = background
+    }
   }
 
   getRandomizedQuizArray = () => {
@@ -235,6 +332,13 @@ class QuizMainArea extends Component {
     const results = this.state.results
     results.push(result)
     const bonusPoints = Math.ceil(parseInt(document.getElementById('seconds').innerText) * 1.67)
+
+    if (isCorrect) {
+      toast.success(<CorrectToast />)
+    } else {
+      toast.error(<IncorrectToast />)
+    }
+
     this.setState({
       result: result,
       results: results,
@@ -248,6 +352,11 @@ class QuizMainArea extends Component {
       correctAnswers: this.state.correctAnswers + 1,
       score: isCorrect ? this.state.score + 25 + bonusPoints: this.state.score
     })
+
+    setTimeout(() => {
+      this.nextQuestionLink.style.display = 'block'
+    }, 2700);
+
     if (response === this.state.question.answer) {
       document.querySelector(`#answers a:nth-of-type(${nthOption})`).classList.add('is-correct')
     } else {
@@ -261,11 +370,16 @@ class QuizMainArea extends Component {
       })
     }
     this.setState({ results })
-    this.nextQuestionLink.style.display = 'block'
   }
 
   moveForward = () => {
     const q = this.state.q + 1
+
+    if (q > 20) {
+      this.setState({ allDone: true, q: 21 })
+      return
+    }
+
     const question = this.state.quiz[q - 1]
     const options = this.shuffle([question.option1, question.option2, question.option3, question.option4, question.option5, question.answer])
     const backgroundUrl = `/static/screenshots/large/s${question.s}e${question.e}q${question.q}.png`
@@ -301,6 +415,34 @@ class QuizMainArea extends Component {
 
   smartQuote = (quote) => `\u201C${quote}\u201D`
 
+  activateParticleButton = () => {
+    this.setState({ buttonHidden: true })
+  }
+
+  printFinalMessage = (score) => {
+    if (score < 100) {
+      return 'That was worse than a handsome cab ride with Kramer!'
+    } else if (score < 200) {
+      return 'You could really use a shtickle of flouoride!'
+    } else if (score < 300) {
+      return 'Pretty mediocre... yada yada yada.'
+    } else if (score < 400) {
+      return 'Your shirt could use more puff!'
+    } else if (score < 500) {
+      return 'Not bad! You deserve a Junior Mint!'
+    } else if (score < 600) {
+      return 'Great job, shmoopy! I know, shmoopy!'
+    } else if (score < 700) {
+      return 'You just earned yourself a big salad!'
+    } else if (score < 800) {
+      return 'Your score is as beautiful as an unadorned Festivus pole!'
+    } else if (score < 900) {
+      return 'You should be CEO of Kramerica Industries!'
+    } else {
+      return 'Better than a dozen muffin tops!'
+    }
+  }
+
   setStateHandler = (data) => {
     this.setState({
       data
@@ -308,6 +450,7 @@ class QuizMainArea extends Component {
   }
 
   render() {
+    console.log('state', this.state)
     return (
       <Main>
         <TrackerTimer
@@ -317,7 +460,8 @@ class QuizMainArea extends Component {
           setStateHandler={this.setStateHandler}
           checkResponse={this.checkResponse}
         />
-        {this.state.episode && this.state.question && (
+
+        {this.state.episode && this.state.question && this.state.q <= 20 && (
           <QuestionText>
             In {this.smartQuote(`${this.state.episode.title},`)}
             &nbsp;
@@ -329,39 +473,78 @@ class QuizMainArea extends Component {
           </QuestionText>
         )}
 
-        <QuestionImage
-            id='screenshot'
-            ref={(input) => { this.questionImage = input }}
-            onClick={ (e) => this.zoomScreenshot() }
-            onMouseOut={ (e) => this.unzoomScreenshot() }
-        >
-        </QuestionImage>
-        <Answers id="answers">
-          <Answer onClick={ (e) => this.checkResponse(this.state.options[0], 1) }>
-            <Letter>A</Letter>
-            <Text>{this.state.options[0]}</Text>
-          </Answer>
-          <Answer onClick={ (e) => this.checkResponse(this.state.options[1], 2) }>
-            <Letter>B</Letter>
-            <Text>{this.state.options[1]}</Text>
-          </Answer>
-          <Answer onClick={ (e) => this.checkResponse(this.state.options[2], 3) }>
-            <Letter>C</Letter>
-            <Text>{this.state.options[2]}</Text>
-          </Answer>
-          <Answer onClick={ (e) => this.checkResponse(this.state.options[3], 4) }>
-            <Letter>D</Letter>
-            <Text>{this.state.options[3]}</Text>
-          </Answer>
-          <Answer onClick={ (e) => this.checkResponse(this.state.options[4], 5) }>
-            <Letter>E</Letter>
-            <Text>{this.state.options[4]}</Text>
-          </Answer>
-          <Answer onClick={ (e) => this.checkResponse(this.state.options[5], 6) }>
-            <Letter>F</Letter>
-            <Text>{this.state.options[5]}</Text>
-          </Answer>
-        </Answers>
+        {this.state.q <= 20 &&
+          <div>
+            <QuestionImage
+                id='screenshot'
+                ref={(input) => { this.questionImage = input }}
+                onClick={ (e) => this.zoomScreenshot() }
+                onMouseOut={ (e) => this.unzoomScreenshot() }
+            >
+            </QuestionImage>
+            <Answers id="answers">
+              <Answer onClick={ (e) => this.checkResponse(this.state.options[0], 1) }>
+                <Letter>A</Letter>
+                <Text>{this.state.options[0]}</Text>
+              </Answer>
+              <Answer onClick={ (e) => this.checkResponse(this.state.options[1], 2) }>
+                <Letter>B</Letter>
+                <Text>{this.state.options[1]}</Text>
+              </Answer>
+              <Answer onClick={ (e) => this.checkResponse(this.state.options[2], 3) }>
+                <Letter>C</Letter>
+                <Text>{this.state.options[2]}</Text>
+              </Answer>
+              <Answer onClick={ (e) => this.checkResponse(this.state.options[3], 4) }>
+                <Letter>D</Letter>
+                <Text>{this.state.options[3]}</Text>
+              </Answer>
+              <Answer onClick={ (e) => this.checkResponse(this.state.options[4], 5) }>
+                <Letter>E</Letter>
+                <Text>{this.state.options[4]}</Text>
+              </Answer>
+              <Answer onClick={ (e) => this.checkResponse(this.state.options[5], 6) }>
+                <Letter>F</Letter>
+                <Text>{this.state.options[5]}</Text>
+              </Answer>
+            </Answers>
+          </div>
+        }
+
+        {this.state.allDone &&
+          <FinalResults>
+            <h2>{this.printFinalMessage(this.state.score)}</h2>
+            <FinalTable>
+              <FinalRow>
+                <FinalLabel>Final Score:</FinalLabel>
+                <FinalValue>{this.state.score}</FinalValue>
+              </FinalRow>
+              <FinalRow>
+                <FinalLabel>Correct Answers:</FinalLabel>
+                <FinalValue>{this.state.correctAnswers}/20</FinalValue>
+              </FinalRow>
+            </FinalTable>
+            <div>
+              <ParticleEffectButton
+                color='#fbd84a'
+                hidden={this.state.buttonHidden}
+                type='rectangle'
+                direction='top'
+                duration={700}
+              >
+                <Link
+                  href={{
+                    pathname: '/index'
+                  }}
+                >
+                <Button onClick={(e) => this.activateParticleButton()}>
+                  Play Again
+                </Button>
+              </Link>
+            </ParticleEffectButton>
+            </div>
+          </FinalResults>
+        }
       
       </Main>
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import GlobalStyle from './global-style'
+import { ToastContainer, toast } from 'react-toastify'
 import QuizHeaderArea from './quiz-header-area'
 import QuizScoreboardArea from './quiz-scoreboard-area'
 import QuizMainArea from '../components/quiz-main-area'
@@ -31,7 +32,6 @@ class QuizLayout extends Component {
       episodes: [],
       episode: [],
       score: 0
-
     }
   }
 
@@ -45,6 +45,7 @@ class QuizLayout extends Component {
 
 
   render() {
+    console.log('QuizLayout::state', this.state)
     return (
       <Grid id='grid'>
         <GlobalStyle />
@@ -74,6 +75,13 @@ class QuizLayout extends Component {
           options={this.state.options}
           quiz={this.state.quiz}
           score={this.state.score}
+        />
+        <ToastContainer 
+          position="top-center"
+          autoClose={1900}
+          newestOnTop={false}
+          rtl={false}
+          hideProgressBar
         />
       </Grid>
     )

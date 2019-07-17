@@ -4,14 +4,18 @@
   "description": "Stupid hard extreme Seinfeld trivia game",
   "main": "index.js",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "babel-plugin-styled-components": "^1.10.6",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
     "json-server": "^0.15.0",
     "next": "^8.1.0",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-particle-effect-button": "^1.0.1",
+    "react-toastify": "^5.3.2",
     "styled-components": "^4.3.2",
     "styled-normalize": "^8.0.6"
   },
@@ -30,7 +34,9 @@
   "babel": {
     "env": {
       "development": {
-        "presets": ["next/babel"],
+        "presets": [
+          "next/babel"
+        ],
         "plugins": [
           [
             "styled-components",
@@ -42,7 +48,9 @@
         ]
       },
       "production": {
-        "presets": ["next/babel"],
+        "presets": [
+          "next/babel"
+        ],
         "plugins": [
           [
             "styled-components",
