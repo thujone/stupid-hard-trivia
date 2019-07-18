@@ -14,11 +14,15 @@ const Title = styled.h2`
     0 0 10px #ddd,
     0 0 15px #ccc,
     0 0 20px #bbb;
-  font-size: 18px;
+    font-size: 16px;
 
-  @media (min-width: 900px) {
-    font-size: 2vw;
-  }
+    @media (min-width: 600px) {
+      font-size: 24px
+    }
+  
+    @media (min-width: 900px) {
+      font-size: 2.2vw;
+    }
 `
 
 const SeinfeldLogo = styled.img`

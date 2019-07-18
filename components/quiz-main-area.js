@@ -11,32 +11,46 @@ const Main = styled.main`
 
 const QuestionText = styled.div`
   position: relative;
-  font-size: 16px;
+  font-size: 18px;
   width: 100%;
   max-width: 960px;
-  margin: 25px auto;
+  margin: 15px auto;
   
   @media (min-width: 900px) {
-    font-size: 2vw;
+    font-size: 24px;
   }
 `
 
 const NextQuestionLink = styled.button`
   display: none;
   position: absolute;
-  top: 100px;
+  top: 83px;
   right: 0;
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
   background-color: var(--medium-green);
   cursor: pointer;
   opacity: .8;
   transition: all .25s;
+  border: none;
 
   &:hover {
     opacity: 1;
     transform: scale(1.15);
+  }
+
+  @media (min-width: 600px) {
+    width: 90px;
+    height: 90px;
+    top: 93px;
+  }
+
+
+  @media (min-width: 900px) {
+    width: 150px;
+    height: 150px;
+    top: 92px;
   }
 `
 
@@ -47,13 +61,23 @@ const QuestionImage = styled.div`
   background-repeat: no-repeat !important;
   background-position: 0 -1.5em !important;
   background-size: cover !important;
-  width: 30em;
-  height: 15em;
+  width: 20em;
+  height: 10em;
   border: 3px solid var(--dark-gray);
   border-radius: 3px;
   transition: all .5s;
   cursor: pointer;
   z-index: 5;
+
+  @media (min-width: 600px) {
+    width: 25em;
+    height: 12.5em;
+  }
+
+  @media (min-width: 900px) {
+    width: 30em;
+    height: 15em;
+  }
 `
 
 const Answers = styled.div`
@@ -78,11 +102,15 @@ const Answer = styled.a`
   flex-direction: flex-row;
   padding: 2px;
   border: 2px solid var(--dark-gray);
-  border-radius: 25px;
+  border-radius: 20px;
   display: flex;
   background-color: var(--medium-gray);
   transition: .1s all;
   cursor: pointer;
+
+  @media (min-width: 750px) {
+    border-radius: 25px;
+  }
 
   &:hover {
     background-color: var(--light-blue);
@@ -107,7 +135,7 @@ const Letter = styled.div`
   height: 100%;
   background: var(--dark-gray);
   color: var(--light-gray);
-  border-radius: 20px;
+  border-radius: 24px;
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
   text-align: center;
   line-height: 55px;
@@ -116,18 +144,27 @@ const Letter = styled.div`
 
 const Text = styled.div`
   text-align: center;
-  width: 18vw;
+  width: 24vw;
+  max-width: 215px;
   line-height: 1.1em;
   padding: 5px 10px;
-  font-size: 18px;
+  font-size: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: .4s all;
+
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 900px) {
+    font-size: 18px;
+  }
 `
 
 const FinalResults = styled.div`
-  width: 50%;
+  width: 100%;
   max-width: 960px;
   margin: 2em auto;
   border-radius: 1.3em;
@@ -138,15 +175,20 @@ const FinalResults = styled.div`
 
   @media (min-width: 600px) {
     min-height: 300px;
+    width: 70%;
   }
 
   h2 {
     font-family: Bangers;
     color: var(--dark-blue);
-    font-size: 2em;
+    font-size: 1.6em;
     text-align: left;
     margin-top: 0;
     line-height: 1em;
+
+    @media (min-width: 900px) {
+      font-size: 2em;
+    }
   }
 `
 const FinalTable = styled.table`
@@ -166,6 +208,15 @@ const FinalValue = styled.td`
 
 const FinalLabel = styled(FinalValue)`
   font-family: Lalezar !important;
+  font-size: 1.5em;
+
+  @media (min-width: 750px) {
+    font-size: 1.7em;
+  }
+
+  @media (min-width: 900px) {
+    font-size: 1.9em;
+  }
 `
 
 const Button = styled.button`
@@ -421,13 +472,13 @@ class QuizMainArea extends Component {
 
   printFinalMessage = (score) => {
     if (score < 100) {
-      return 'That was worse than a handsome cab ride with Kramer!'
+      return 'Terrible job, shmoopy! I know, shmoopy!'
     } else if (score < 200) {
-      return 'You could really use a shtickle of flouoride!'
+      return 'Terrible job, shmoopy! I know, shmoopy!'
     } else if (score < 300) {
-      return 'Pretty mediocre... yada yada yada.'
+      return 'You need a schtickle of flouoride!'
     } else if (score < 400) {
-      return 'Your shirt could use more puff!'
+      return 'Your shirt needs more puff.'
     } else if (score < 500) {
       return 'Not bad! You deserve a Junior Mint!'
     } else if (score < 600) {
@@ -435,11 +486,11 @@ class QuizMainArea extends Component {
     } else if (score < 700) {
       return 'You just earned yourself a big salad!'
     } else if (score < 800) {
-      return 'Your score is as beautiful as an unadorned Festivus pole!'
+      return 'Beautiful as an unadorned Festivus pole!'
     } else if (score < 900) {
       return 'You should be CEO of Kramerica Industries!'
     } else {
-      return 'Better than a dozen muffin tops!'
+      return 'Amazing job! Yada yada yada.'
     }
   }
 
@@ -459,6 +510,7 @@ class QuizMainArea extends Component {
           stopTimer={this.state.stopTimer}
           setStateHandler={this.setStateHandler}
           checkResponse={this.checkResponse}
+          allDone={this.state.allDone}
         />
 
         {this.state.episode && this.state.question && this.state.q <= 20 && (

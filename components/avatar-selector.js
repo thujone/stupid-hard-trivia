@@ -38,6 +38,11 @@ const AvatarMessageWrapper = styled.div`
   height: 40px;
   width: 300px;
   float: left;
+  display: none;
+
+  @media (min-width: 730px) {
+    display: none;
+  }
 `
 
 const AvatarMessage = styled.div`

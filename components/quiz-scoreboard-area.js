@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 import React, { Component } from 'react'
 
+const QuizScoreboardWrapper = styled.div`
+  padding: 0 10px;
+  width: 100%;
+`
+
 const QuizScoreboard = styled.div`
   display: flex;
   justify-content: space-between;
@@ -8,10 +13,10 @@ const QuizScoreboard = styled.div`
   margin: auto;
   margin-top: 5px;
   padding: .2em;
-  max-width: 960px;
   width: 100%;
   border: 4px double var(--dark-blue);
   border-radius: 10px;
+  max-width: 960px;
 `
 
 const Avatar = styled.img`
@@ -39,7 +44,7 @@ const TableHeader = styled.th`
   font-size: 1.3em;
   text-align: left;
   padding: 0 .2em 0 0;
-  line-height: 1.3=2em;
+  line-height: 1;
 `
 
 const TableHeaderName = styled(TableHeader)`
@@ -47,13 +52,21 @@ const TableHeaderName = styled(TableHeader)`
 `
 
 const TableHeaderScore = styled(TableHeader)`
-  padding-left: 2vw;
+  padding-left: 5vw;
   text-align: right;
   position: relative;
   top: 17px;
 
+  @media (min-width: 750px) {
+    padding-left: 19vw;
+  }
+
   @media (min-width: 900px) {
-    padding-left: 20vw;
+    padding-left: 17vw;
+  }
+
+  @media (min-width: 2000px) {
+    padding-left: 15vw;
   }
 `
 
@@ -110,28 +123,29 @@ const stringifyScore = (score) => {
 }
 
 const QuizScoreboardArea = (props) => {
-  console.log('========================', 'props.score', props.score)
   return (
-    <QuizScoreboard>
-      <Avatar src={`/static/avatars/${props.avatar}.jpg`} alt={props.avatar} />
-      <UserTable>
-        <tbody>
-          <tr>
-            <TableHeaderName>Name:</TableHeaderName>
-            <TableCell>{props.name}</TableCell>
-            <TableHeaderScore>Score:</TableHeaderScore>
-            <TableCellMultiRow rowspan="3"><BigScore>{stringifyScore(props.score)}</BigScore></TableCellMultiRow>
-          </tr>
-          <tr>
-            <TableHeader>Level:</TableHeader>
-            <TableCell>{props.level.split('').map((char, i) => (i === 0 || char === 'h') ? char.toUpperCase() : char)}</TableCell>
-          </tr>
-        </tbody>
-      </UserTable>
-      <GroupShotWrapper>
-        <GroupShot src='/static/graphics/group-seated.png' alt="Group Seated" />
-      </GroupShotWrapper>
-    </QuizScoreboard>
+    <QuizScoreboardWrapper>
+      <QuizScoreboard>
+        <Avatar src={`/static/avatars/${props.avatar}.jpg`} alt={props.avatar} />
+        <UserTable>
+          <tbody>
+            <tr>
+              <TableHeaderName>Name:</TableHeaderName>
+              <TableCell>{props.name}</TableCell>
+              <TableHeaderScore>Score:</TableHeaderScore>
+              <TableCellMultiRow rowspan="3"><BigScore>{stringifyScore(props.score)}</BigScore></TableCellMultiRow>
+            </tr>
+            <tr>
+              <TableHeader>Level:</TableHeader>
+              <TableCell>{props.level.split('').map((char, i) => (i === 0 || char === 'h') ? char.toUpperCase() : char)}</TableCell>
+            </tr>
+          </tbody>
+        </UserTable>
+        <GroupShotWrapper>
+          <GroupShot src='/static/graphics/group-seated.png' alt="Group Seated" />
+        </GroupShotWrapper>
+      </QuizScoreboard>
+    </QuizScoreboardWrapper>
 
   )
 }

@@ -535,13 +535,29 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
   }
 
+  h1 {
+    font-size: 1.6em;
+
+    @media (min-width: 600px) {
+      font-size: 2em;
+    }
+  }
+
   .is-visible {
     opacity: 1 !important;
     transition: opacity .4s ease-in;
   }
 
   .is-zoomed {
-    transform: scale(2);
+    transform: scale(1.2);
+
+    @media (min-width: 600px) {
+      transform: scale(1.4);
+    }
+  
+    @media (min-width: 900px) {
+      transform: scale(2);
+    }
   }
 
   .is-correct {

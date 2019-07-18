@@ -10,11 +10,9 @@ const SelectorWrapper = styled.div`
   border-radius: 1.3em;
   background: #7199df;
   padding: 1.1em 1.3em;
-  min-height: 300px;
 
-  @media (min-width: 600px) {
+  @media (min-width: 730px) {
     border: 1em double var(--dark-blue);
-    min-height: 300px;
   }
 
   h1 {
@@ -23,6 +21,16 @@ const SelectorWrapper = styled.div`
     text-align: left;
     margin-top: 0;
     line-height: 1em;
+  }
+`
+
+const IntroMessage = styled.div`
+  display: block;
+  margin-bottom: 15px;
+
+  @media (min-width: 730px) {
+    display: none;
+    margin-bottom: 0;
   }
 `
 
@@ -39,6 +47,11 @@ const LevelMessageWrapper = styled.div`
   width: 55%;
   max-width: 580px;
   margin-right: 5%;
+  display: none;
+
+  @media (min-width: 730px) {
+    display: block;
+  }
 
   @media (min-width: 900px) {
     height: 90px;
@@ -64,33 +77,32 @@ const LevelMessage = styled.div`
 
 const LevelTypes = styled.div`
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: space-around;
   width: 100%;
-
-  @media (min-width: 600px) {
-    flex-direction: row;
-  }
+  flex-direction: row;
 `
 
 const LevelButton = styled.button`
   line-height: .8em;
-  height: 235px;
-  width: 202px;
+  height: 50px;
+  width: auto;
   border: 3px solid var(--dark-gray);
   border-radius: 10px;
   font-family: Lalezar;
-  font-size: 2em;
+  font-size: 1em;
   text-shadow: 0px 1px 1px var(--very-light-gray);
   color: var(--dark-gray);
   cursor: pointer;
   margin: 5px;
-  padding: 25px;
+  padding: 5px 10px;
   transition: all .5s;
 
-  @media (min-width: 600px) {
+  @media (min-width: 730px) {
     border: 6px solid #1a1a1a;
+    height: 235px;
+    width: 202px;
+    padding: 25px;
+    font-size: 2em;
   }
 
   &:hover {
@@ -102,18 +114,30 @@ const LevelButton = styled.button`
 `
 
 const EasyButton = styled(LevelButton)`
-  background: var(--medium-gray) url(/static/graphics/silhouette-kramer.png) 20px -10px no-repeat;
-  padding-top: 195px;
+  background: none;
+
+  @media (min-width: 730px) {
+    background: var(--medium-gray) url(/static/graphics/silhouette-kramer.png) 20px -10px no-repeat;
+    padding-top: 195px;
+  }
 `
 
 const HardButton = styled(LevelButton)`
-  background: var(--medium-gray) url(/static/graphics/silhouette-elaine.png) 25px 0 no-repeat;
-  padding-top: 195px;
+  background: none;
+
+  @media (min-width: 730px) {
+    background: var(--medium-gray) url(/static/graphics/silhouette-elaine.png) 25px 0 no-repeat;
+    padding-top: 195px;
+  }
 `
 
 const StupidHardButton = styled(LevelButton)`
-  background: var(--medium-gray) url(/static/graphics/silhouette-george.png) 15px -10px no-repeat;
-  padding-top: 170px;
+  background: none;
+
+  @media (min-width: 730px) {
+    background: var(--medium-gray) url(/static/graphics/silhouette-george.png) 15px -10px no-repeat;
+    padding-top: 170px;
+  }
 `
 
 
@@ -161,6 +185,9 @@ class LevelSelector extends Component {
   render() {
     return (
       <SelectorWrapper>
+        <IntroMessage>
+          <b>Note:</b> For the best experience, we strongly recommend using a desktop browser. If you're on a smartphone or tablet, tilt your phone to use landscape mode.
+        </IntroMessage>
         <SelectorHeader>Choose a level:</SelectorHeader>
         <LevelMessageWrapper>
           <LevelMessage id="easy-level-message">

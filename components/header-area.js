@@ -1,15 +1,19 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const Header = styled.header`
+const HeaderWrapper = styled.header`
+`
+
+const Header = styled.div`
   grid-area: header;
-  display: flex;
   justify-content: center;
   width: 100%;
   flex-direction: column;
+  display: none;
 
-  @media (min-width: 600px) {
+  @media (min-width: 730px) {
     flex-direction: row;
+    display: flex;
   }
 `
 
@@ -110,25 +114,73 @@ const MastRight = styled.div`
   min-width: 15vw;
 `
 
+const TinyHeader = styled.header`
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 730px) {
+    display: none;
+  }
+`
+
+const TinyTitle = styled.h2`
+  line-height: 1em;
+  margin: 0 20px;
+  text-shadow:
+    0 0 5px #eee,
+    0 0 10px #ddd,
+    0 0 15px #ccc,
+    0 0 20px #bbb;
+  font-size: 15px;
+
+  @media (min-width: 600px) {
+    font-size: 24px;
+  }
+
+  @media (min-width: 900px) {
+    font-size: 2.2vw;
+  }
+`
+
+const TinySeinfeldLogo = styled.img`
+  position: relative;
+  top: 13px;
+  height: 6vw;
+  max-height: 65px;
+  min-height: 30px;
+  line-height: 1em;
+  margin: 0 10px 0 7px;
+`
+
+
 const HeaderArea = () => (
-  <Header>
-    <MastLeft>
-      <MastHeaderLeft>
-        <div>The</div>
-        <div>Stupid-Hard</div>
-      </MastHeaderLeft>
-    </MastLeft>
-    <SeinfeldLogo>
-      <LogoObject type="image/svg+xml" data="/static/graphics/seinfeld-logo.svg">
-      </LogoObject>
-    </SeinfeldLogo>
-    <MastRight>
-      <MastHeaderRight>
-        <div>Trivia</div>
-        <div>Challenge!!!</div>
-      </MastHeaderRight>
-    </MastRight>
-  </Header>
+  <HeaderWrapper>
+    <Header>
+      <MastLeft>
+        <MastHeaderLeft>
+          <div>The</div>
+          <div>Stupid-Hard</div>
+        </MastHeaderLeft>
+      </MastLeft>
+      <SeinfeldLogo>
+        <LogoObject type="image/svg+xml" data="/static/graphics/seinfeld-logo.svg">
+        </LogoObject>
+      </SeinfeldLogo>
+      <MastRight>
+        <MastHeaderRight>
+          <div>Trivia</div>
+          <div>Challenge<sup>&trade;</sup></div>
+        </MastHeaderRight>
+      </MastRight>
+    </Header>
+    <TinyHeader>
+      <TinyTitle>
+        The Stupid-Hard
+        <TinySeinfeldLogo src='/static/graphics/seinfeld-logo-sizable.svg' alt='Seinfeld logo' />
+        Trivia Challenge<sup>&trade;</sup>
+      </TinyTitle>
+    </TinyHeader>
+  </HeaderWrapper>
 )
 
 export default HeaderArea

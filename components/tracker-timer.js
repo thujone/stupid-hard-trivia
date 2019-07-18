@@ -26,19 +26,31 @@ const TrackerBar = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: -3px;
-  padding-top: 0;
+  margin-top: 1px;
+  padding-top: 3px;
+
+  @media (min-width: 600px) {
+    margin-top: -1px;
+  }
+
+  @media (min-width: 750px) {
+    margin-top: -3px;
+  }
+
+  @media (min-width: 900px) {
+    margin-top: -6px;
+  }
 `
 
 const TrackerUnit = styled.div`
   flex: 0 1 auto;
-  font-size: 16px;
-  width: 2.75vw;
-  height: 2vw;
+  font-size: 12px;
+  width: 1.6em; 
+  height: 1.6em;
   background: var(--light-gray);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   text-align: center;
-  line-height: 2vw;
+  line-height: 1.6em;
   margin: 0 .075em 0 0;
   padding: 0;
   z-index: -1;
@@ -46,6 +58,28 @@ const TrackerUnit = styled.div`
   &::first-of-kind {
     margin-left: 0;
   }
+
+  @media (min-width: 600px) {
+    width: 1.7em;
+    height: 1.7em;
+    line-height: 1.7em;
+    font-size: 14px;
+  }
+
+  @media (min-width: 750px) {
+    width: 1.85em;
+    height: 1.85em;
+    line-height: 1.85em;
+    font-size: 16px;
+  }
+
+  @media (min-width: 900px) {
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    font-size: 16px;
+  }
+  
 `
 
 const ActiveTrackerUnit = styled(TrackerUnit)`
@@ -108,7 +142,8 @@ class TrackerTimer extends Component {
     this.state = {
       q: this.props.q,
       results: this.props.results,
-      stopTimer: this.props.stopTimer
+      stopTimer: this.props.stopTimer,
+      allDone: this.props.allDone
     }
 
     this.secondsLeft = 15
@@ -118,7 +153,6 @@ class TrackerTimer extends Component {
   }
 
   startCountdown() {
-    //this.intervalHandle = setInterval(tick, 1000)
     this.intervalHandle = setInterval(this.tick, 1000)
 
     setTimeout( () => {
@@ -127,16 +161,12 @@ class TrackerTimer extends Component {
   }
 
   tick() {
-    this.secondsLeft--;
+    this.secondsLeft--
     this.seconds.innerText = this.secondsLeft
     console.log('seconds left', this.secondsLeft, this.seconds.innerText)
     if (this.secondsLeft <= 0) {
       clearInterval(this.intervalHandle)
-      // this.props.setStateHandler({
-      //   secs: this.secondsLeft
-      // })
       this.props.checkResponse(null, null, this.secondsLeft)
-      //debugger
       this.secondsLeft = 15
     }
   }
@@ -149,30 +179,25 @@ class TrackerTimer extends Component {
   componentDidUpdate() {
     clearInterval(this.intervalHandle)
 
+    if (this.props.q <= 20) {
+      if (this.props.stopTimer) {
+        clearInterval(this.intervalHandle)
+        let computedStyle = window.getComputedStyle(this.timerFiller)
+        let timerFillerWidth = computedStyle.getPropertyValue('width')
+        this.timerFiller.classList.remove('is-running')
+        this.timerFiller.style.width = timerFillerWidth;
 
-    if (this.props.stopTimer) {
-      //this.props.setStateHandler({ secs: this.secondsLeft })
-      clearInterval(this.intervalHandle)
-      let computedStyle = window.getComputedStyle(this.timerFiller)
-      let timerFillerWidth = computedStyle.getPropertyValue('width')
-      this.timerFiller.classList.remove('is-running')
-      this.timerFiller.style.width = timerFillerWidth;
-
-      console.log('did update')
-      //alert(this.secondsLeft)
-      //this.trackerBar.setAttribute('data-seconds', this.secondsLeft)
-    
-      //this.timerFiller.style.display = 'none'
-    } else {
-      this.timerFiller.style.display = 'none'
-      setTimeout(() => {
-        
-        this.timerFiller.style.display = 'block'
-        this.timerFiller.style.width = '100%'
-        this.startCountdown()
-      }, 50);
+      } else {
+        this.timerFiller.style.display = 'none'
+        setTimeout(() => {
+          
+          this.timerFiller.style.display = 'block'
+          this.timerFiller.style.width = '100%'
+          this.startCountdown()
+        }, 50);
+      }
+      this.secondsLeft = 15
     }
-    this.secondsLeft = 15
   }
 
   createTrackerUnits() {
@@ -202,12 +227,14 @@ class TrackerTimer extends Component {
             {this.createTrackerUnits()}
           </TrackerBar>
         </Tracker>
-        <Timer>
-          <TimerLabel>Timer:</TimerLabel>
-          <TimerBar>
-            <TimerFiller id='timer-filler' ref={(filler) => this.timerFiller = filler}></TimerFiller>
-          </TimerBar>
-        </Timer>
+        {this.props.q <= 20 &&
+          <Timer>
+            <TimerLabel>Timer:</TimerLabel>
+            <TimerBar>
+              <TimerFiller id='timer-filler' ref={(filler) => this.timerFiller = filler}></TimerFiller>
+            </TimerBar>
+          </Timer>
+        }
         <Seconds id='seconds' ref={(seconds) => { this.seconds = seconds }}></Seconds>
       </TrackerTimerWrapper>
     )
