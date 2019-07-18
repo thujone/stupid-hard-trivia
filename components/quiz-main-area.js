@@ -86,23 +86,27 @@ const Answers = styled.div`
   padding: 0;
   width: 100%;
   max-width: 960px;
-  height: 150px;
+  height: 112px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: stretch;
   z-index: 1;
+
+  @media (min-width: 900px) {
+    height: 150px;
+  }
 `
 
 const Answer = styled.a`
   margin: 5px;
-  height: 60px;
+  height: 45px;
   flex: 0 1 auto;
   flex-direction: flex-row;
   padding: 2px;
   border: 2px solid var(--dark-gray);
-  border-radius: 20px;
+  border-radius: 14px;
   display: flex;
   background-color: var(--medium-gray);
   transition: .1s all;
@@ -111,6 +115,11 @@ const Answer = styled.a`
   @media (min-width: 750px) {
     border-radius: 25px;
   }
+
+  @media (min-width: 900px) {
+    height: 60px;
+  }
+
 
   &:hover {
     background-color: var(--light-blue);
@@ -138,8 +147,12 @@ const Letter = styled.div`
   border-radius: 24px;
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
   text-align: center;
-  line-height: 55px;
+  line-height: 41px;
   transition: .4s all;
+
+  @media (min-width: 900px) {
+    line-height: 55px;
+  }
 `
 
 const Text = styled.div`
