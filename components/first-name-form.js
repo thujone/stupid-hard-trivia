@@ -8,7 +8,7 @@ const SelectorWrapper = styled.div`
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  border: .67em double var(--dark-blue);
+  border: .5em double var(--dark-blue);
   border-radius: 1.3em;
   background: var(--light-blue);
   padding: 1.1em 1.3em;
@@ -32,13 +32,13 @@ const SelectorHeader = styled.h1`
   float: left;
   display: block;
   height: 50px;
-  width: 50%;
+  width: 90%;
 `
 
 const Button = styled.button`
   flex: 0 1 auto;
   height: 70px;
-  width: 250px;
+  width: 220px;
   border: 3px solid var(--dark-gray);
   border-radius: 15px;
   margin-top: 20px;
@@ -72,7 +72,7 @@ const Form = styled.div`
 
 const FirstNameField = styled.input`
   font-size: 2em;
-  width: 250px;
+  width: 220px;
   background-color: var(--very-light-gray);
   padding: 10px;
   border: 2px dotted var(--dark-blue);
@@ -134,7 +134,7 @@ class FirstNameForm extends Component {
               }}
             >
               <Button> {/*onClick={(e) => this.activateParticleButton()}> */}
-                Serenity Now!!!
+                Serenity Now!
               </Button>
             </Link>
           </ParticleEffectButton>

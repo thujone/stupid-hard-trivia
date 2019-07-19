@@ -21,13 +21,19 @@ const QuizScoreboard = styled.div`
 
 const Avatar = styled.img`
   flex: 1 1 10em;
-  max-width: 80px;
-  max-height: 80px;
+  max-width: 60px;
+  max-height: 60px;
   border: 1px solid var(--dark-blue);
   border-radius: 10px;
   margin-right: 15px;
   transition: all 1s;
   cursor: progress;
+
+  @media (min-width: 600px) {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
 
   &:hover {
     transform: scale(2.5);
@@ -35,52 +41,79 @@ const Avatar = styled.img`
 `
 
 const UserTable = styled.table`
-  flex: 1 1 50em;
+  flex: 1 1 9em;
+
+  @media (min-width: 600px) {
+    flex: 1 1 50em;
+  }
 `
 
 const TableHeader = styled.th`
   color: var(--dark-blue);
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1em;
   text-align: left;
   padding: 0 .2em 0 0;
   line-height: 1;
+
+  @media (min-width: 600px) {
+    font-size: 1.3em;
+  }
 `
 
 const TableHeaderName = styled(TableHeader)`
-  width: 50px;
+  width: 40px !important;
+
+  @media (min-width: 600px) {
+    width: 50px !important;
+  }
 `
 
 const TableHeaderScore = styled(TableHeader)`
-  padding-left: 5vw;
+  padding-left: 25px;
   text-align: right;
   position: relative;
-  top: 17px;
+  top: 14px;
+  width: 40px;
+
+  @media (min-width: 600px) {
+    padding-left: 25vw;
+  }
 
   @media (min-width: 750px) {
-    padding-left: 19vw;
+    padding-left: 35vw;
   }
 
   @media (min-width: 900px) {
-    padding-left: 17vw;
+    padding-left: 42vw;
   }
 
-  @media (min-width: 2000px) {
-    padding-left: 15vw;
+  @media (min-width: 1200px) {
+    padding-left: 28vw;
   }
 `
 
 const TableCell = styled.td`
   color: var(--dark-gray);
-  font-size: 1.3em;
+  font-size: 1em;
   padding: 0;
   margin: 0;
   line-height: 1.2em;
+  width: 75px;
+
+  @media (min-width: 600px) {
+    font-size: 1.3em;
+    width: auto;
+  }
 `
 
 const TableCellMultiRow = styled(TableCell)`
   position: relative;
-  top: 20px;
+  top: 13px;
+
+  @media (min-width: 600px) {
+    top: 20px;
+  }
 `
 
 const Score = styled.span`
@@ -104,6 +137,11 @@ const GroupShot = styled.img`
   max-height: 76px;
   transition: all 1s;
   cursor: progress;
+  display: none;
+  
+  @media (min-width: 600px) {
+    display: block;
+  }
 
   &:hover {
     transform: scale(3);

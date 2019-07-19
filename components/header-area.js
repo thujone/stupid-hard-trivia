@@ -131,9 +131,9 @@ const TinyTitle = styled.h2`
     0 0 10px #ddd,
     0 0 15px #ccc,
     0 0 20px #bbb;
-  font-size: 15px;
+  font-size: 16px;
 
-  @media (min-width: 600px) {
+  @media (min-width: 600px) { 
     font-size: 24px;
   }
 
@@ -144,12 +144,16 @@ const TinyTitle = styled.h2`
 
 const TinySeinfeldLogo = styled.img`
   position: relative;
-  top: 13px;
+  top: 6px;
   height: 6vw;
-  max-height: 65px;
-  min-height: 30px;
+  max-height: 70px;
+  min-height: 35px;
   line-height: 1em;
   margin: 0 10px 0 7px;
+
+  @media (min-width: 600px) {
+    top: 13px;
+  }
 `
 
 

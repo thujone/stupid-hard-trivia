@@ -6,7 +6,7 @@ const SelectorWrapper = styled.div`
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  border: .67em double var(--dark-blue);
+  border: .5em double var(--dark-blue);
   border-radius: 1.3em;
   background: #7199df;
   padding: 1.1em 1.3em;
@@ -39,6 +39,7 @@ const SelectorHeader = styled.h1`
   display: block;
   height: 50px;
   width: 200px;
+  margin: .2em 0;
 `
 
 const LevelMessageWrapper = styled.div`
@@ -93,7 +94,7 @@ const LevelButton = styled.button`
   text-shadow: 0px 1px 1px var(--very-light-gray);
   color: var(--dark-gray);
   cursor: pointer;
-  margin: 5px;
+  margin: 15px 5px 5px;
   padding: 5px 10px;
   transition: all .5s;
 
@@ -114,7 +115,7 @@ const LevelButton = styled.button`
 `
 
 const EasyButton = styled(LevelButton)`
-  background: none;
+  background: var(--medium-gray);
 
   @media (min-width: 730px) {
     background: var(--medium-gray) url(/static/graphics/silhouette-kramer.png) 20px -10px no-repeat;
@@ -123,7 +124,7 @@ const EasyButton = styled(LevelButton)`
 `
 
 const HardButton = styled(LevelButton)`
-  background: none;
+  background: var(--medium-gray);
 
   @media (min-width: 730px) {
     background: var(--medium-gray) url(/static/graphics/silhouette-elaine.png) 25px 0 no-repeat;
@@ -132,11 +133,35 @@ const HardButton = styled(LevelButton)`
 `
 
 const StupidHardButton = styled(LevelButton)`
-  background: none;
+  background: var(--medium-gray);
 
   @media (min-width: 730px) {
     background: var(--medium-gray) url(/static/graphics/silhouette-george.png) 15px -10px no-repeat;
     padding-top: 170px;
+  }
+`
+
+const SmallMessageTable = styled.table`
+  background: var(--light-blue);
+  display: block;
+  clear: both;
+
+  @media (min-width: 730px) {
+    display: none;
+  }
+
+  th {
+    font-family: Bangers;
+    color: var(--dark-blue);
+    vertical-align: top;
+    font-size: 16px;
+    width: 80px;
+    padding: 4px;
+  }
+
+  td {
+    font-size: 16px;
+    padding: 4px;
   }
 `
 
@@ -186,7 +211,7 @@ class LevelSelector extends Component {
     return (
       <SelectorWrapper>
         <IntroMessage>
-          <b>Note:</b> For the best experience, we strongly recommend using a desktop browser. If you're on a smartphone or tablet, tilt your phone to use landscape mode.
+          <b>Note:</b> For the best experience, we recommend using a desktop browser or tablet.
         </IntroMessage>
         <SelectorHeader>Choose a level:</SelectorHeader>
         <LevelMessageWrapper>
@@ -199,7 +224,26 @@ class LevelSelector extends Component {
           <LevelMessage id="stupid-hard-level-message">
             Master of this domain? <i>Get out!</i> Twenty sets of twenty questions... 400 questions in all!
           </LevelMessage>
-        </LevelMessageWrapper>   
+        </LevelMessageWrapper>
+        
+        <SmallMessageTable>
+          <thead></thead>
+          <tbody>
+            <tr>
+              <th>Easy</th>
+              <td>Experiencing shrinkage? Measure the inadequacy of your knowledge with twenty of our easiest questions.</td>
+            </tr>
+            <tr>
+              <th>Hard</th>
+              <td>Channel your inner Frogger champion... Answer twenty random questions from our extensive database.</td>
+            </tr>
+            <tr>
+              <th>Stupid-Hard</th>
+              <td>Master of this domain? <i>Get out!</i> Twenty sets of twenty questions... 400 questions in all!</td>
+            </tr>
+          </tbody>
+        </SmallMessageTable>
+
         <LevelTypes>
           <ParticleEffectButton
               color='#d42520'

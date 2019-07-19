@@ -27,12 +27,16 @@ const Title = styled.h2`
 
 const SeinfeldLogo = styled.img`
   position: relative;
-  top: 13px;
+  top: 6px;
   height: 6vw;
   max-height: 65px;
   min-height: 40px;
   line-height: 1em;
   margin: 0 10px 0 7px;
+  
+  @media (min-width: 600px) {
+    top: 13px;
+  }
 `
 
 const QuizHeaderArea = (props) => {

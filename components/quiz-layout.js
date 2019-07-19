@@ -30,7 +30,7 @@ class QuizLayout extends Component {
       quiz: [],
       question: [],
       episodes: [],
-      episode: [],
+      episode: {},
       score: 0
     }
   }
@@ -64,7 +64,6 @@ class QuizLayout extends Component {
           questions={this.props.questions}
           question={this.props.question}
           episodes={this.props.episodes}
-          episode={this.props.episode}
           level={this.props.level}
           avatar={this.props.avatar}
           name={this.props.name}
@@ -75,6 +74,7 @@ class QuizLayout extends Component {
           options={this.state.options}
           quiz={this.state.quiz}
           score={this.state.score}
+          episode={this.state.episode}
         />
         <ToastContainer 
           position="top-center"

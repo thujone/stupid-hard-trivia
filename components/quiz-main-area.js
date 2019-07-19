@@ -11,11 +11,15 @@ const Main = styled.main`
 
 const QuestionText = styled.div`
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
   max-width: 960px;
   margin: 15px auto;
   
+  @media (min-width: 600px) {
+    font-size: 18px;
+  }
+
   @media (min-width: 900px) {
     font-size: 24px;
   }
@@ -24,10 +28,10 @@ const QuestionText = styled.div`
 const NextQuestionLink = styled.button`
   display: none;
   position: absolute;
-  top: 83px;
-  right: 0;
-  width: 75px;
-  height: 75px;
+  top: 80px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
   clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
   background-color: var(--medium-green);
   cursor: pointer;
@@ -59,10 +63,10 @@ const QuestionImage = styled.div`
   margin: 15px auto;
   background: url();
   background-repeat: no-repeat !important;
-  background-position: 0 -1.5em !important;
+  background-position: 0 -1em !important;
   background-size: cover !important;
-  width: 20em;
-  height: 10em;
+  width: 15em;
+  height: 7.5em;
   border: 3px solid var(--dark-gray);
   border-radius: 3px;
   transition: all .5s;
@@ -86,13 +90,17 @@ const Answers = styled.div`
   padding: 0;
   width: 100%;
   max-width: 960px;
-  height: 112px;
+  height: 175px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: stretch;
   z-index: 1;
+
+  @media (min-width: 600px) {
+    height: 112px;
+  }
 
   @media (min-width: 900px) {
     height: 150px;
@@ -140,7 +148,6 @@ const Answer = styled.a`
 const Letter = styled.div`
   font-size: 20px;
   font-family: Lalezar;
-  width: 15%;
   height: 100%;
   background: var(--dark-gray);
   color: var(--light-gray);
@@ -149,6 +156,7 @@ const Letter = styled.div`
   text-align: center;
   line-height: 41px;
   transition: .4s all;
+  width: 15%;
 
   @media (min-width: 900px) {
     line-height: 55px;
@@ -157,22 +165,23 @@ const Letter = styled.div`
 
 const Text = styled.div`
   text-align: center;
-  width: 24vw;
-  max-width: 215px;
   line-height: 1.1em;
   padding: 5px 10px;
-  font-size: 14px;
+  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: .4s all;
+  width: 35vw;
 
   @media (min-width: 600px) {
     font-size: 16px;
+    width: 25vw;
   }
 
   @media (min-width: 900px) {
     font-size: 18px;
+    width: 250px;
   }
 `
 
@@ -214,7 +223,7 @@ const FinalRow = styled.tr`
 const FinalValue = styled.td`
   font-size: 1.8em;
   text-align: left;
-  line-height: 1.8em;
+  line-height: 1em;
   margin: 0;
   padding: 3px;
 `
@@ -222,6 +231,7 @@ const FinalValue = styled.td`
 const FinalLabel = styled(FinalValue)`
   font-family: Lalezar !important;
   font-size: 1.5em;
+  line-height: 1em;
 
   @media (min-width: 750px) {
     font-size: 1.7em;
@@ -235,7 +245,6 @@ const FinalLabel = styled(FinalValue)`
 const Button = styled.button`
   flex: 0 1 auto;
   height: 70px;
-  width: 250px;
   border: 3px solid var(--dark-gray);
   border-radius: 15px;
   margin-top: 20px;
@@ -313,20 +322,20 @@ class QuizMainArea extends Component {
     const quiz = this.assembleQuiz(quizArray)
     const question = quiz[this.state.q - 1]
     const options = this.shuffle([question.option1, question.option2, question.option3, question.option4, question.option5, question.answer])
-    
+
     this.props.setStateHandler({
       backgroundUrl: `/static/screenshots/large/s${question.s}e${question.e}q${question.q}.png`,
       options,
       question,
       quiz,
-      episode: this.state.episodes.find(item => item.episode === question.e)
+      episode: this.state.episodes.find(item => item.episode === question.e && item.season === question.s)
     })
     this.setState({
       backgroundUrl: `/static/screenshots/large/s${question.s}e${question.e}q${question.q}.png`,
       options,
       question,
       quiz,
-      episode: this.state.episodes.find(item => item.episode === question.e)
+      episode: this.state.episodes.find(item => item.episode === question.e && item.season === question.s)
     })
   }
 

@@ -16,10 +16,18 @@ const Tracker = styled.div`
 `
 
 const TrackerLabel = styled.h3`
+  font-size: 14px;
   color: var(--dark-blue);
-  width: 85px;
+  width: 60px;
   padding: 0;
   margin: 0;
+  line-height: 1.6em;
+
+  @media (min-width: 600px) {
+    font-size: 18px;
+    width: 85px;
+    line-height: 1.2em;
+  }
 `
 
 const TrackerBar = styled.div`
@@ -44,8 +52,8 @@ const TrackerBar = styled.div`
 
 const TrackerUnit = styled.div`
   flex: 0 1 auto;
-  font-size: 12px;
-  width: 1.6em; 
+  font-size: 11px;
+  width: 1.1em; 
   height: 1.6em;
   background: var(--light-gray);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -103,10 +111,18 @@ const Timer = styled.div`
 `
 
 const TimerLabel = styled.h3`
+  font-size: 14px;
   color: var(--dark-blue);
-  width: 85px;
+  width: 60px;
   padding: 0;
   margin: 0;
+  line-height: 1.6em;
+
+  @media (min-width: 600px) {
+    font-size: 18px;
+    width: 85px;
+    line-height: 1.2em;
+  }
 `
 
 const TimerBar = styled.div`

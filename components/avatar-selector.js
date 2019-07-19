@@ -6,7 +6,7 @@ const SelectorWrapper = styled.div`
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  border: .67em double var(--dark-blue);
+  border: .5em double var(--dark-blue);
   border-radius: 1.3em;
   background: var(--light-blue);
   padding: 1.1em 1.3em .3em;
@@ -31,7 +31,11 @@ const SelectorHeader = styled.h1`
   display: block;
   height: 50px;
   width: auto;
-  margin-right: 5em;
+  margin-right: 0;
+
+  @media (min-width: 730px) {
+    margin-right: 5em;
+  }
 `
 
 const AvatarMessageWrapper = styled.div`
@@ -72,8 +76,8 @@ const AvatarTypes = styled.div`
 
 const AvatarButton = styled.button`
   flex: 0 1 33%;
-  height: 150px;
-  width: 150px;
+  height: 2.5em;
+  width: 2.5em;
   border: 3px solid var(--dark-gray);
   border-radius: 10px;
   font-family: Lalezar;
@@ -87,6 +91,18 @@ const AvatarButton = styled.button`
 
   @media (min-width: 600px) {
     border: 6px solid var(--dark-gray);
+    width: 3em;
+    height: 3em;
+  }
+  
+  @media (min-width: 730px) {
+    width: 4em;
+    height: 4em;
+  }
+
+  @media (min-width: 900px) {
+    width: 4.8em;
+    height: 4.8em;
   }
 
   &:hover {
@@ -99,14 +115,9 @@ const AvatarGraphic = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 4px;
-  opacity: .8;
   font-size: 1em;
   z-index: 1;
   transition: all .4s;
-
-  &:hover {
-    opacity: 1;
-  }
 `
 
 
