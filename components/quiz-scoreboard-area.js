@@ -70,11 +70,12 @@ const TableHeaderName = styled(TableHeader)`
 `
 
 const TableHeaderScore = styled(TableHeader)`
-  padding-left: 25px;
+
   text-align: right;
   position: relative;
   top: 14px;
   width: 40px;
+  padding-left: 0 !important;
 
   @media (min-width: 600px) {
     padding-left: 25vw;

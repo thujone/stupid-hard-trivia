@@ -7,11 +7,14 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "babel-plugin-styled-components": "^1.10.6",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
     "json-server": "^0.15.0",
+    "mongoose": "^5.6.5",
     "next": "^8.1.0",
     "node-sass": "^4.12.0",
+    "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-particle-effect-button": "^1.0.1",
@@ -23,7 +26,7 @@
     "eslint": "^6.0.1"
   },
   "scripts": {
-    "dev": "node server.js",
+    "dev": "node server/index.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js"
   },
