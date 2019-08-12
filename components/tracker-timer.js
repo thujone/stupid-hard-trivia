@@ -53,7 +53,7 @@ const TrackerBar = styled.div`
 const TrackerUnit = styled.div`
   flex: 0 1 auto;
   font-size: 11px;
-  width: 1.1em; 
+  width: 1em; 
   height: 1.6em;
   background: var(--light-gray);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -65,6 +65,14 @@ const TrackerUnit = styled.div`
 
   &::first-of-kind {
     margin-left: 0;
+  }
+
+  @media (min-width: 360px) {
+    width: 1.2em;
+  }
+
+  @media (min-width: 450px) {
+    width: 1.5em;
   }
 
   @media (min-width: 600px) {

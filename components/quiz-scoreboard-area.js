@@ -172,11 +172,11 @@ const QuizScoreboardArea = (props) => {
               <TableHeaderName>Name:</TableHeaderName>
               <TableCell>{props.name}</TableCell>
               <TableHeaderScore>Score:</TableHeaderScore>
-              <TableCellMultiRow rowspan="3"><BigScore>{stringifyScore(props.score)}</BigScore></TableCellMultiRow>
+              <TableCellMultiRow rowspan="3"><BigScore>{(props.score || props.score === 0)  && stringifyScore(props.score)}</BigScore></TableCellMultiRow>
             </tr>
             <tr>
               <TableHeader>Level:</TableHeader>
-              <TableCell>{props.level.split('').map((char, i) => (i === 0 || char === 'h') ? char.toUpperCase() : char)}</TableCell>
+              <TableCell>{props.level && props.level.split('').map((char, i) => (i === 0 || char === 'h') ? char.toUpperCase() : char)}</TableCell>
             </tr>
           </tbody>
         </UserTable>

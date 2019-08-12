@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { Beforeunload, useBeforeunload } from 'react-beforeunload'
 import styled from 'styled-components'
 import Link from 'next/link'
+import axios from 'axios'
 import TrackerTimer from './tracker-timer'
 import { toast } from 'react-toastify'
 import ParticleEffectButton from 'react-particle-effect-button'
@@ -215,6 +217,7 @@ const FinalResults = styled.div`
 `
 const FinalTable = styled.table`
   width: 65%;
+  margin-bottom: 20px;
 `
 
 const FinalRow = styled.tr`
@@ -242,6 +245,86 @@ const FinalLabel = styled(FinalValue)`
   }
 `
 
+const LeaderboardContainer = styled.div`
+  height: 150px;
+  overflow-y: scroll;
+  margin: 20px 0 0;
+  
+  &::-webkit-scrollbar {
+    width: .25em;
+  }
+  
+  &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--dark-blue);
+    outline: 1px solid var(--dark-gray);
+  }
+`
+
+const Leaderboard = styled.table`
+  width: 100%;
+  font-size: 14px;
+`
+
+const LeaderboardHeader = styled.th`
+  font-size: 16px;
+  font-weight: heavy;
+  color: var(--dark-blue);
+  text-decoration: underline;
+  vertical-align: bottom;
+`
+
+const LeaderboardPlayerHeader = styled(LeaderboardHeader)`
+  text-align: left;
+`
+
+const LeaderboardLevelHeader = styled(LeaderboardHeader)`
+`
+
+const LeaderboardDateHeader = styled(LeaderboardHeader)`
+`
+
+const LeaderboardCorrectAnswersHeader = styled(LeaderboardHeader)`
+`
+
+const LeaderboardScoreHeader = styled(LeaderboardHeader)`
+`
+
+const LeaderboardField = styled.td`
+  vertical-align: bottom;
+`
+
+const LeaderboardRank = styled(LeaderboardField)`
+  text-align: left;
+`
+
+const LeaderboardPlayer = styled(LeaderboardField)`
+  text-align: left;
+`
+
+const TinyAvatar = styled.img`
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 7px;
+`
+
+const LeaderboardLevel = styled(LeaderboardField)`
+`
+
+const LeaderboardDate = styled(LeaderboardField)`
+`
+
+const LeaderboardCorrectAnswers = styled(LeaderboardField)`
+`
+
+const LeaderboardScore = styled(LeaderboardField)`
+`
+
+
 const Button = styled.button`
   flex: 0 1 auto;
   height: 70px;
@@ -255,6 +338,7 @@ const Button = styled.button`
   cursor: pointer;
   padding: 6px 0 0;
   background: var(--medium-gray);
+  padding: 15px;
 
   @media (min-width: 600px) {
     border: 6px solid var(--dark-gray);
@@ -297,8 +381,8 @@ class QuizMainArea extends Component {
       avatar: props.avatar,
       name: props.name,
       q: props.q,
-      //q: 20,
-      quiz: props.quiz,
+      //q: 19,
+      quiz: props.quiz, 
       results: props.results,
       result: null,
       question: props.question,
@@ -308,12 +392,15 @@ class QuizMainArea extends Component {
       backgroundUrl: props.backgroundUrl,
       episode: props.episode,
       correctAnswers: 0,
+      highScores: [],
       score: props.score,
       stopTimer: false,
       secs: 15,
       allDone: false,
       buttonHidden: false,
-      correctAnswers: 0
+      correctAnswers: 0,
+      leaderboard: [],
+      quizResultsId: null
     }
   }
 
@@ -367,16 +454,16 @@ class QuizMainArea extends Component {
   shuffle = (arr) => {
     let currentIndex = arr.length
     let temporaryValue
-    let randomIndex;
+    let randomIndex
   
     while (0 !== currentIndex) {  
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      --currentIndex;
-      temporaryValue = arr[currentIndex];
-      arr[currentIndex] = arr[randomIndex];
-      arr[randomIndex] = temporaryValue;
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      --currentIndex
+      temporaryValue = arr[currentIndex]
+      arr[currentIndex] = arr[randomIndex]
+      arr[randomIndex] = temporaryValue
     }
-    return arr;
+    return arr
   }
 
   zoomScreenshot = () => {
@@ -445,11 +532,43 @@ class QuizMainArea extends Component {
     this.setState({ results })
   }
 
+  postQuizResults = async () => {
+    try {
+      const response = await axios.post('/api/quiz-results', {
+        name: this.state.name,
+        level: this.state.level,
+        avatar: this.state.avatar,
+        score: this.state.score,
+        correctAnswers: this.state.correctAnswers,
+        incorrectAnswers: this.state.results.length - this.state.correctAnswers,
+        wasCompleted: this.state.allDone,
+        answers: this.state.results
+      })
+      console.log('score posted successfully', response)
+      this.setState({quizResultsId: response.data._id})
+    } catch (error) {
+      console.error('error', error)
+    }
+  }
+
+  getLeaderboard = async () => {
+    try {
+      const response = await axios.get('/api/leaderboard')
+      console.log('got leaderboard successfully', response.data)
+      this.setState({highScores: response.data})
+      console.log('this.state.highScores', this.state.highScores)
+    } catch (error) {
+      console.error('error', error)
+    }
+  }
+
   moveForward = () => {
     const q = this.state.q + 1
 
     if (q > 20) {
       this.setState({ allDone: true, q: 21 })
+      this.postQuizResults()
+      this.getLeaderboard()
       return
     }
 
@@ -496,24 +615,29 @@ class QuizMainArea extends Component {
     if (score < 100) {
       return 'Terrible job, shmoopy! I know, shmoopy!'
     } else if (score < 200) {
-      return 'Terrible job, shmoopy! I know, shmoopy!'
+      return 'You finished the quiz... yada yada yada'
     } else if (score < 300) {
-      return 'You need a schtickle of flouoride!'
+      return 'Give yourself a schtickle of flouoride!'
     } else if (score < 400) {
       return 'Your shirt needs more puff.'
     } else if (score < 500) {
-      return 'Not bad! You deserve a Junior Mint!'
+      return 'You deserve a Junior Mint!'
     } else if (score < 600) {
-      return 'Great job, shmoopy! I know, shmoopy!'
+      return 'Great job, shmoopy! I know, shmoopy!' 
     } else if (score < 700) {
       return 'You just earned yourself a big salad!'
     } else if (score < 800) {
-      return 'Beautiful as an unadorned Festivus pole!'
+      return 'As beautiful as an unadorned Festivus pole!'
     } else if (score < 900) {
-      return 'You should be CEO of Kramerica Industries!'
+      return "You could be the new CEO of Kramerica Industries!"
     } else {
       return 'Amazing job! Yada yada yada.'
     }
+  }
+
+  formatIsoDate = (isoDate) => {
+    const date = new Date(isoDate)
+    return `${date.getMonth()}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
   }
 
   setStateHandler = (data) => {
@@ -523,105 +647,135 @@ class QuizMainArea extends Component {
   }
 
   render() {
-    console.log('state', this.state)
     return (
-      <Main>
-        <TrackerTimer
-          q={this.state.q}
-          results={this.state.results}
-          stopTimer={this.state.stopTimer}
-          setStateHandler={this.setStateHandler}
-          checkResponse={this.checkResponse}
-          allDone={this.state.allDone}
-        />
+      <Beforeunload onBeforeunload={() => this.postQuizResults()}>
+        <Main>
+          <TrackerTimer
+            q={this.state.q}
+            results={this.state.results}
+            stopTimer={this.state.stopTimer}
+            setStateHandler={this.setStateHandler}
+            checkResponse={this.checkResponse}
+            allDone={this.state.allDone}
+          />
 
-        {this.state.episode && this.state.question && this.state.q <= 20 && (
-          <QuestionText>
-            In {this.smartQuote(`${this.state.episode.title},`)}
-            &nbsp;
-            {this.state.question.text}
-            <NextQuestionLink
-              ref={(input) => { this.nextQuestionLink = input }}
-              onClick={ (e) => this.moveForward() }
-            />
-          </QuestionText>
-        )}
+          {this.state.episode && this.state.question && this.state.q <= 20 && (
+            <QuestionText>
+              In {this.smartQuote(`${this.state.episode.title},`)}
+              &nbsp;
+              {this.state.question.text}
+              <NextQuestionLink
+                ref={(input) => { this.nextQuestionLink = input }}
+                onClick={ (e) => this.moveForward() }
+              />
+            </QuestionText>
+          )}
 
-        {this.state.q <= 20 &&
-          <div>
-            <QuestionImage
-                id='screenshot'
-                ref={(input) => { this.questionImage = input }}
-                onClick={ (e) => this.zoomScreenshot() }
-                onMouseOut={ (e) => this.unzoomScreenshot() }
-            >
-            </QuestionImage>
-            <Answers id="answers">
-              <Answer onClick={ (e) => this.checkResponse(this.state.options[0], 1) }>
-                <Letter>A</Letter>
-                <Text>{this.state.options[0]}</Text>
-              </Answer>
-              <Answer onClick={ (e) => this.checkResponse(this.state.options[1], 2) }>
-                <Letter>B</Letter>
-                <Text>{this.state.options[1]}</Text>
-              </Answer>
-              <Answer onClick={ (e) => this.checkResponse(this.state.options[2], 3) }>
-                <Letter>C</Letter>
-                <Text>{this.state.options[2]}</Text>
-              </Answer>
-              <Answer onClick={ (e) => this.checkResponse(this.state.options[3], 4) }>
-                <Letter>D</Letter>
-                <Text>{this.state.options[3]}</Text>
-              </Answer>
-              <Answer onClick={ (e) => this.checkResponse(this.state.options[4], 5) }>
-                <Letter>E</Letter>
-                <Text>{this.state.options[4]}</Text>
-              </Answer>
-              <Answer onClick={ (e) => this.checkResponse(this.state.options[5], 6) }>
-                <Letter>F</Letter>
-                <Text>{this.state.options[5]}</Text>
-              </Answer>
-            </Answers>
-          </div>
-        }
-
-        {this.state.allDone &&
-          <FinalResults>
-            <h2>{this.printFinalMessage(this.state.score)}</h2>
-            <FinalTable>
-              <FinalRow>
-                <FinalLabel>Final Score:</FinalLabel>
-                <FinalValue>{this.state.score}</FinalValue>
-              </FinalRow>
-              <FinalRow>
-                <FinalLabel>Correct Answers:</FinalLabel>
-                <FinalValue>{this.state.correctAnswers}/20</FinalValue>
-              </FinalRow>
-            </FinalTable>
+          {this.state.q <= 20 &&
             <div>
-              <ParticleEffectButton
-                color='#fbd84a'
-                hidden={this.state.buttonHidden}
-                type='rectangle'
-                direction='top'
-                duration={700}
+              <QuestionImage
+                  id='screenshot'
+                  ref={(input) => { this.questionImage = input }}
+                  onClick={ (e) => this.zoomScreenshot() }
+                  onMouseOut={ (e) => this.unzoomScreenshot() }
               >
-                <Link
-                  href={{
-                    pathname: '/index'
-                  }}
-                >
-                <Button onClick={(e) => this.activateParticleButton()}>
-                  Play Again
-                </Button>
-              </Link>
-            </ParticleEffectButton>
+              </QuestionImage>
+              <Answers id="answers">
+                <Answer onClick={ (e) => this.checkResponse(this.state.options[0], 1) }>
+                  <Letter>A</Letter>
+                  <Text>{this.state.options[0]}</Text>
+                </Answer>
+                <Answer onClick={ (e) => this.checkResponse(this.state.options[1], 2) }>
+                  <Letter>B</Letter>
+                  <Text>{this.state.options[1]}</Text>
+                </Answer>
+                <Answer onClick={ (e) => this.checkResponse(this.state.options[2], 3) }>
+                  <Letter>C</Letter>
+                  <Text>{this.state.options[2]}</Text>
+                </Answer>
+                <Answer onClick={ (e) => this.checkResponse(this.state.options[3], 4) }>
+                  <Letter>D</Letter>
+                  <Text>{this.state.options[3]}</Text>
+                </Answer>
+                <Answer onClick={ (e) => this.checkResponse(this.state.options[4], 5) }>
+                  <Letter>E</Letter>
+                  <Text>{this.state.options[4]}</Text>
+                </Answer>
+                <Answer onClick={ (e) => this.checkResponse(this.state.options[5], 6) }>
+                  <Letter>F</Letter>
+                  <Text>{this.state.options[5]}</Text>
+                </Answer>
+              </Answers>
             </div>
-          </FinalResults>
-        }
-      
-      </Main>
+          }
 
+          {this.state.allDone &&
+            <FinalResults>
+              <h2>{this.printFinalMessage(this.state.score)}</h2>
+              <FinalTable>
+                <tbody>
+                  <FinalRow>
+                    <FinalLabel>Final Score:</FinalLabel>
+                    <FinalValue>{this.state.score}<sub>/1000</sub></FinalValue>
+                  </FinalRow>
+                  <FinalRow>
+                    <FinalLabel>Correct Answers:</FinalLabel>
+                    <FinalValue>{this.state.correctAnswers}<sub>/20</sub></FinalValue>
+                  </FinalRow>
+                </tbody>
+              </FinalTable>
+              <h2>Leaderboard (Top 100)</h2>
+              <LeaderboardContainer>
+                <Leaderboard>
+                  <thead>
+                    <tr>
+                      <td></td>
+                      <LeaderboardPlayerHeader>Player</LeaderboardPlayerHeader>
+                      <LeaderboardLevelHeader>Level</LeaderboardLevelHeader>
+                      <LeaderboardDateHeader>Date</LeaderboardDateHeader>
+                      <LeaderboardCorrectAnswersHeader># Correct</LeaderboardCorrectAnswersHeader>
+                      <LeaderboardScoreHeader>Score</LeaderboardScoreHeader>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.highScores.map((highScore, i) => (
+                      <tr className={this.state.quizResultsId === highScore._id ? 'highlight' : ''}>
+                        <LeaderboardRank>{i + 1}</LeaderboardRank>
+                        <LeaderboardPlayer>
+                          <TinyAvatar
+                            src={`/static/avatars/${highScore.avatar}.jpg`}
+                            alt={`${highScore.name}`}
+                          />
+                          {highScore.name}
+                        </LeaderboardPlayer>
+                        <LeaderboardLevel>{highScore.level}</LeaderboardLevel>
+                        <LeaderboardDate>{this.formatIsoDate(highScore.createdAt)}</LeaderboardDate>
+                        <LeaderboardCorrectAnswers>{highScore.correctAnswers}</LeaderboardCorrectAnswers>
+                        <LeaderboardScore>{highScore.score}</LeaderboardScore>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Leaderboard>
+              </LeaderboardContainer>
+              <div>
+                <ParticleEffectButton
+                  color='#fbd84a'
+                  hidden={this.state.buttonHidden}
+                  type='rectangle'
+                  direction='top'
+                  duration={700}
+                >
+                  <Link href={{ pathname: '/index' }}>
+                    <Button onClick={(e) => this.activateParticleButton()}>
+                      Play Again
+                    </Button>
+                  </Link>
+                </ParticleEffectButton>
+              </div>
+            </FinalResults>
+          }
+        </Main>
+      </Beforeunload>
     )
   }
 }

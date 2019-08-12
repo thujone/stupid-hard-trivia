@@ -587,6 +587,31 @@ const GlobalStyle = createGlobalStyle`
       color: var(--medium-red) !important;
     }
   }
+
+  sub {
+    bottom: .15em;
+    margin-left: 5px;
+    color: var(--dark-blue);
+  }
+
+  .highlight > td {
+    color: var(--dark-red);
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  body::-webkit-scrollbar {
+    width: .5em;
+  }
+  
+  body::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--dark-blue);
+    outline: 1px solid var(--dark-gray);
+  }
 `
 
 export default GlobalStyle
