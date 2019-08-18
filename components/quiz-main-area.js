@@ -400,7 +400,8 @@ class QuizMainArea extends Component {
       buttonHidden: false,
       correctAnswers: 0,
       leaderboard: [],
-      quizResultsId: null
+      quizResultsId: null,
+      areResultsPosted: false
     }
   }
 
@@ -545,21 +546,23 @@ class QuizMainArea extends Component {
         answers: this.state.results
       })
       console.log('score posted successfully', response)
-      this.setState({quizResultsId: response.data._id})
+      this.setState({ quizResultsId: response.data._id, areResultsPosted: true })
+      this.getLeaderboard()
     } catch (error) {
       console.error('error', error)
+      this.setState({ areResultsPosted: true })
     }
   }
 
   getLeaderboard = async () => {
-    try {
-      const response = await axios.get('http://seinfeldtrivia.net/api/leaderboard')
-      console.log('got leaderboard successfully', response.data)
-      this.setState({highScores: response.data})
-      console.log('this.state.highScores', this.state.highScores)
-    } catch (error) {
-      console.error('error', error)
-    }
+        try {
+          const response = await axios.get('http://seinfeldtrivia.net/api/leaderboard')
+          console.log('got leaderboard successfully', response.data)
+          this.setState({highScores: response.data})
+          console.log('this.state.highScores', this.state.highScores)
+        } catch (error) {
+          console.error('error', error)
+        }
   }
 
   moveForward = () => {
@@ -568,7 +571,6 @@ class QuizMainArea extends Component {
     if (q > 20) {
       this.setState({ allDone: true, q: 21 })
       this.postQuizResults()
-      this.getLeaderboard()
       return
     }
 
@@ -648,7 +650,7 @@ class QuizMainArea extends Component {
 
   render() {
     return (
-      <Beforeunload onBeforeunload={() => this.postQuizResults()}>
+      <Beforeunload onBeforeunload={() => { if (!this.state.areResultsPosted) {this.postQuizResults()}}}>
         <Main>
           <TrackerTimer
             q={this.state.q}
@@ -739,7 +741,7 @@ class QuizMainArea extends Component {
                   </thead>
                   <tbody>
                     {this.state.highScores.map((highScore, i) => (
-                      <tr className={this.state.quizResultsId === highScore._id ? 'highlight' : ''}>
+                      <tr key={i} className={this.state.quizResultsId === highScore._id ? 'highlight' : ''}>
                         <LeaderboardRank>{i + 1}</LeaderboardRank>
                         <LeaderboardPlayer>
                           <TinyAvatar

@@ -8,6 +8,7 @@ const handle = nextApp.getRequestHandler()
 const router = express.Router()
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
+const HOST = process.env.HOST;
 
 mongoose.connect('mongodb://localhost:27017/Seinfeld', { useNewUrlParser: true })
 mongoose.set('debug', true)
@@ -75,7 +76,7 @@ nextApp.prepare().then(() => {
 
   app.listen(PORT, HOST, err => {
     if (err) throw err;
-    console.log(`ready at ${HOST}:${PORT}`)
+    console.log(`ready at ${PORT}`)
   })
 
   app.get('*', (req, res) => {

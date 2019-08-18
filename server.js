@@ -13,6 +13,7 @@ app
     server.get('*', (req, res) => {
       return handle(req, res)
     })
+    server.use('/', require('./server/index.js'))
 
     server.listen(80, err => {
       if (err) throw err
