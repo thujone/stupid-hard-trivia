@@ -8,7 +8,7 @@ const Index = props => (
 )
 
 Index.getInitialProps = async function() {
-  const avatarsResult = await fetch('http://localhost:3010/avatars')
+  const avatarsResult = await fetch('http://seinfeldtrivia.net:3010/avatars')
   const avatarsData = await avatarsResult.json()
 
   return {

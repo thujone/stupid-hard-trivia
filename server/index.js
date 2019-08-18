@@ -73,9 +73,9 @@ nextApp.prepare().then(() => {
     }
   })
 
-  app.listen(PORT, err => {
+  app.listen(PORT, HOST, err => {
     if (err) throw err;
-    console.log(`ready at http://localhost:${PORT}`)
+    console.log(`ready at ${HOST}:${PORT}`)
   })
 
   app.get('*', (req, res) => {

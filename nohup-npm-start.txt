@@ -1,0 +1,6 @@
+nohup: ignoring input
+
+> stupid-hard-trivia@1.0.0 start /home/rich/stupid-hard-trivia
+> NODE_ENV=production node server.js
+
+> Ready on http://localhost:80

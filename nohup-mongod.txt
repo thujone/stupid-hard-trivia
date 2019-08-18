@@ -1,0 +1,59 @@
+nohup: ignoring input
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten] MongoDB starting : pid=15026 port=27017 dbpath=/data/db 64-bit host=seinfeld-app-1
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten] db version v3.6.3
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten] git version: 9586e557d54ef70f9ca4b43c26892cd55257e1a5
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten] modules: none
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten] build environment:
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-08-12T06:17:15.518+0000 I CONTROL  [initandlisten] options: {}
+2019-08-12T06:17:15.518+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-08-12T06:17:15.518+0000 I STORAGE  [initandlisten] 
+2019-08-12T06:17:15.518+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2019-08-12T06:17:15.518+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2019-08-12T06:17:15.518+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3476M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-08-12T06:17:16.525+0000 I STORAGE  [initandlisten] WiredTiger message [1565590636:524988][15026:0x7fe4726910c0], txn-recover: Main recovery loop: starting at 1/13312
+2019-08-12T06:17:16.631+0000 I STORAGE  [initandlisten] WiredTiger message [1565590636:631271][15026:0x7fe4726910c0], txn-recover: Recovering log 1 through 2
+2019-08-12T06:17:16.694+0000 I STORAGE  [initandlisten] WiredTiger message [1565590636:694266][15026:0x7fe4726910c0], txn-recover: Recovering log 2 through 2
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] 
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] 
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2019-08-12T06:17:16.757+0000 I CONTROL  [initandlisten] 
+2019-08-12T06:17:16.764+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2019-08-12T06:17:16.765+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-08-12T06:18:38.811+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:53554 #1 (1 connection now open)
+2019-08-12T06:18:38.811+0000 I NETWORK  [conn1] received client metadata from 127.0.0.1:53554 conn: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.6.3" }, os: { type: "Linux", name: "Ubuntu", architecture: "x86_64", version: "18.04" } }
+2019-08-12T06:20:12.349+0000 I STORAGE  [conn1] createCollection: Seinfeld.dummyCollection with generated UUID: 36e894b3-0f3a-42b8-bdf2-0f6030d47db8
+2019-08-12T06:20:36.347+0000 I NETWORK  [conn1] end connection 127.0.0.1:53554 (0 connections now open)
+2019-08-12T06:22:05.505+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:53564 #2 (1 connection now open)
+2019-08-12T06:22:05.510+0000 I NETWORK  [conn2] received client metadata from 127.0.0.1:53564 conn: { driver: { name: "nodejs", version: "3.2.7" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.15.0-52-generic" }, platform: "Node.js v10.16.0, LE, mongodb-core: 3.2.7" }
+2019-08-12T06:22:16.765+0000 I STORAGE  [thread3] createCollection: config.system.sessions with generated UUID: f98c5d1a-1467-42fb-959c-4fc96a2a8981
+2019-08-12T06:22:16.777+0000 I INDEX    [thread3] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", ns: "config.system.sessions", expireAfterSeconds: 1800 }
+2019-08-12T06:22:16.777+0000 I INDEX    [thread3] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-08-12T06:22:16.778+0000 I INDEX    [thread3] build index done.  scanned 0 total records. 0 secs
+2019-08-12T06:23:40.774+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:53574 #3 (2 connections now open)
+2019-08-12T06:23:40.779+0000 I NETWORK  [conn3] received client metadata from 127.0.0.1:53574 conn: { driver: { name: "nodejs", version: "3.2.7" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.15.0-52-generic" }, platform: "Node.js v10.16.0, LE, mongodb-core: 3.2.7" }
+2019-08-12T06:23:42.969+0000 I NETWORK  [conn3] end connection 127.0.0.1:53574 (1 connection now open)
+2019-08-12T06:25:38.672+0000 I NETWORK  [conn2] end connection 127.0.0.1:53564 (0 connections now open)
+2019-08-12T06:26:02.020+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:53580 #4 (1 connection now open)
+2019-08-12T06:26:02.024+0000 I NETWORK  [conn4] received client metadata from 127.0.0.1:53580 conn: { driver: { name: "nodejs", version: "3.2.7" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.15.0-52-generic" }, platform: "Node.js v10.16.0, LE, mongodb-core: 3.2.7" }
+2019-08-12T06:30:53.612+0000 I STORAGE  [conn4] createCollection: Seinfeld.quizresults with generated UUID: f94585b4-5097-4a2a-a625-9448d1148a08
+2019-08-12T06:37:10.191+0000 I NETWORK  [conn4] end connection 127.0.0.1:53580 (0 connections now open)
+2019-08-12T06:41:28.979+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:53642 #5 (1 connection now open)
+2019-08-12T06:41:28.985+0000 I NETWORK  [conn5] received client metadata from 127.0.0.1:53642 conn: { driver: { name: "nodejs", version: "3.2.7" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.15.0-52-generic" }, platform: "Node.js v10.16.0, LE, mongodb-core: 3.2.7" }
+2019-08-12T06:41:49.323+0000 I NETWORK  [conn5] end connection 127.0.0.1:53642 (0 connections now open)
+2019-08-12T06:43:26.161+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:53656 #6 (1 connection now open)
+2019-08-12T06:43:26.169+0000 I NETWORK  [conn6] received client metadata from 127.0.0.1:53656 conn: { driver: { name: "nodejs", version: "3.2.7" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.15.0-52-generic" }, platform: "Node.js v10.16.0, LE, mongodb-core: 3.2.7" }
+2019-08-12T06:46:55.038+0000 I NETWORK  [listener] connection accepted from 127.0.0.1:53670 #7 (2 connections now open)
+2019-08-12T06:46:55.039+0000 I NETWORK  [conn7] received client metadata from 127.0.0.1:53670 conn: { driver: { name: "nodejs", version: "3.2.7" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.15.0-52-generic" }, platform: "Node.js v10.16.0, LE, mongodb-core: 3.2.7" }
+2019-08-12T07:04:04.821+0000 I NETWORK  [conn7] end connection 127.0.0.1:53670 (1 connection now open)
+2019-08-12T07:04:04.827+0000 I NETWORK  [conn6] end connection 127.0.0.1:53656 (0 connections now open)

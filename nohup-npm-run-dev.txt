@@ -1,0 +1,6 @@
+nohup: ignoring input
+
+> stupid-hard-trivia@1.0.0 dev /home/rich/stupid-hard-trivia
+> node server/index.js
+
+ready at http://localhost:3000

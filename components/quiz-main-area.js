@@ -534,7 +534,7 @@ class QuizMainArea extends Component {
 
   postQuizResults = async () => {
     try {
-      const response = await axios.post('/api/quiz-results', {
+      const response = await axios.post('http://seinfeldtrivia.net/api/quiz-results', {
         name: this.state.name,
         level: this.state.level,
         avatar: this.state.avatar,
@@ -553,7 +553,7 @@ class QuizMainArea extends Component {
 
   getLeaderboard = async () => {
     try {
-      const response = await axios.get('/api/leaderboard')
+      const response = await axios.get('http://seinfeldtrivia.net/api/leaderboard')
       console.log('got leaderboard successfully', response.data)
       this.setState({highScores: response.data})
       console.log('this.state.highScores', this.state.highScores)

@@ -21,10 +21,10 @@ const Quiz = (props) => {
 }
 
 Quiz.getInitialProps = async function() {
-  const questionsResult = await fetch('http://localhost:3010/questions')
-  const questionsData = await questionsResult.json()
-  const episodesResult = await fetch('http://localhost:3010/episodes')
-  const episodesData = await episodesResult.json()
+  const questionsResult = await fetch('http://seinfeldtrivia.net:3010/questions');
+  const questionsData = await questionsResult.json();
+  const episodesResult = await fetch('http://seinfeldtrivia.net:3010/episodes');
+  const episodesData = await episodesResult.json();
 
   return {
     questions: questionsData.map(question => question),
