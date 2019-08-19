@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React, { Component } from 'react'
 
 const QuizHeader = styled.header`
+  grid-area: header;
   display: flex;
   justify-content: center;
 `

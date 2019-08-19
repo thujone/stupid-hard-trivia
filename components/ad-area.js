@@ -14,8 +14,6 @@ class AdArea extends Component {
   render() {
     return (
       <Ad role="contentinfo" id="ad-section">
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d5a12a287ecab9a"></script>
-        <div className="addthis_inline_share_toolbox"></div>
       </Ad>
     )
   }

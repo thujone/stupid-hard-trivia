@@ -612,6 +612,11 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--dark-blue);
     outline: 1px solid var(--dark-gray);
   }
+
+  // AddThis
+  .at-share-btn-elements {
+    text-align: center;
+  }
 `
 
 export default GlobalStyle
