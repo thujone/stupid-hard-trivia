@@ -4,6 +4,12 @@ import styled from 'styled-components'
 
 const Ad = styled.section`
   grid-area: ad;
+  justify-content: center;
+`
+
+const AddThisToolbox = styled.div`
+  margin: auto;
+  text-align: center;
 `
 
 class AdArea extends Component {
@@ -15,7 +21,7 @@ class AdArea extends Component {
     return (
       <Ad role="contentinfo" id="ad-section">
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d5a12a287ecab9a"></script>
-        <div className="addthis_inline_share_toolbox"></div>
+        <AddThisToolbox className="addthis_inline_share_toolbox"></AddThisToolbox>
       </Ad>
     )
   }
