@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React, { Component } from 'react'
 
 const QuizScoreboardWrapper = styled.div`
+  grid-area: scoreboard;
   padding: 0 10px;
   width: 100%;
 `

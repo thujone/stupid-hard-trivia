@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import ParticleEffectButton from 'react-particle-effect-button'
 
 const Main = styled.main`
+  grid-area: main;
   padding: 0 1em;
 `
 

@@ -6,6 +6,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import QuizHeaderArea from './quiz-header-area'
 import QuizScoreboardArea from './quiz-scoreboard-area'
 import QuizMainArea from '../components/quiz-main-area'
+import QuizFooterArea from '../components/quiz-footer-area'
+import AdArea from '../components/ad-area'
 
 
 const Grid = styled.div`
@@ -13,10 +15,9 @@ const Grid = styled.div`
   grid-gap: 10px;
   grid-template-areas:
     "header"
+    "scoreboard"
     "main"
-    "nav"
-    "footer"
-    "ad";
+    "quiz-footer";
 `
 
 class QuizLayout extends Component {
@@ -76,6 +77,7 @@ class QuizLayout extends Component {
           score={this.state.score}
           episode={this.state.episode}
         />
+        <QuizFooterArea touch={true} q={this.state.q} />
         <ToastContainer 
           position="top-center"
           autoClose={1900}

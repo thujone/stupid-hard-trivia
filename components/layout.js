@@ -12,9 +12,7 @@ const Grid = styled.div`
   grid-template-areas:
     "header"
     "main"
-    "nav"
-    "footer"
-    "ad";
+    "footer";
 `
 
 const Layout = props => (
@@ -22,9 +20,7 @@ const Layout = props => (
     <GlobalStyle />
     <HeaderArea />
     <MainArea avatars={props.avatars} questions={props.questions} episodes={props.episodes} />
-    <NavArea />
-    <FooterArea />
-    <AdArea />
+    <FooterArea touch={1} />
   </Grid>
 )
  
