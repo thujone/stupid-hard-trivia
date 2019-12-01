@@ -1032,7 +1032,7 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "sees this woman who reminds him of his schoolteacher",
+      "option5": "sees a neighbor who reminds him of his schoolteacher",
       "answer": "hears Mary Hart's voice on TV",
       "difficulty": 
     },
@@ -1042,12 +1042,12 @@
       "e": 21,
       "q": 1,
       "text": "Elaine gets kicked out of the New York Yankees owner box for",
-      "option1": "",
+      "option1": "making funny faces behind the dugout",
       "option2": "",
       "option3": "",
       "option4": "",
       "option5": "",
-      "answer": "refusing to remove her Baltimore Orioles cap",
+      "answer": "refusing to remove her baseball cap",
       "difficulty": 
     },
     {
@@ -1391,7 +1391,7 @@
       "s": 4,
       "e": 23,
       "q": 1,
-      "text": "when Elaine is turned down for a waitressing job at Monk's, presumably because she's not \"buxom\", she",
+      "text": "when Elaine is turned down for a waitressing job at Monk's, presumably because she's not \"large-breasted\", she",
       "option1": "",
       "option2": "",
       "option3": "",
@@ -1913,7 +1913,7 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "stole away a woman who disliked George's baldness",
+      "option4": "stole away a woman who disliked George for being bald",
       "option5": "bragged about his hair being shinier than Jerry's",
       "answer": "lied about having cancer",
       "difficulty": 
