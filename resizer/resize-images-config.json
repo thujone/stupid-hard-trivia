@@ -1,0 +1,13 @@
+{
+	"original-images" : "/Users/rich/Documents/stupid-hard-trivia/static/screenshots/large",
+	"resize-directories" : [
+		{
+			"dir" : "small",
+			"width" : 320
+		},
+		{
+			"dir" : "medium",
+			"width" : 640
+		}
+	]
+}

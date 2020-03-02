@@ -1994,13 +1994,13 @@
       "e": 21,
       "q": 1,
       "text": "Kramer gets a new license plate from the Department of Motor Vehicles that reads",
-      "option1": "",
-      "option2": "",
-      "option3": "",
-      "option4": "",
+      "option1": "\"POBOY\"",
+      "option2": "\"LATKE\"",
+      "option3": "\"FATBOY\"",
+      "option4": "\"DR BONES\"",
       "option5": "\"BABKA\"",
       "answer": "\"ASSMAN\"",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 149,

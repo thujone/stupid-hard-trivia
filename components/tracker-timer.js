@@ -145,12 +145,12 @@ const TimerFiller = styled.div`
   width: 100%;
   height: 10px;
   background-color: var(--medium-green);
-  transition: width 15s;
+  transition: width 20s;
   transition-timing-function: linear;
 
   &.is-running {
     width: 1px !important;
-    transition: width 15s;
+    transition: width 20s;
     transition-timing-function: linear;
   }
 `
@@ -191,7 +191,7 @@ class TrackerTimer extends Component {
     if (this.secondsLeft <= 0) {
       clearInterval(this.intervalHandle)
       this.props.checkResponse(null, null, this.secondsLeft)
-      this.secondsLeft = 15
+      this.secondsLeft = 20
     }
   }
 
@@ -220,7 +220,7 @@ class TrackerTimer extends Component {
           this.startCountdown()
         }, 50);
       }
-      this.secondsLeft = 15
+      this.secondsLeft = 20
     }
   }
 

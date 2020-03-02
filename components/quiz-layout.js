@@ -24,7 +24,7 @@ class QuizLayout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      backgroundUrl: '/static/screenshots/large/s2e1q1.png',
+      backgroundUrl: '/static/screenshots/medium/s1e1q1.png',
       q: 1,
       results: [],
       options: [],

@@ -73,7 +73,7 @@ const QuestionImage = styled.div`
   border: 3px solid var(--dark-gray);
   border-radius: 3px;
   transition: all .5s;
-  cursor: pointer;
+  cursor: zoom-in;
   z-index: 5;
 
   @media (min-width: 600px) {
@@ -325,7 +325,6 @@ const LeaderboardCorrectAnswers = styled(LeaderboardField)`
 const LeaderboardScore = styled(LeaderboardField)`
 `
 
-
 const Button = styled.button`
   flex: 0 1 auto;
   height: 70px;
@@ -359,7 +358,7 @@ const CorrectToast = ({ CorrectToast }) => (
     <h1>Correct!</h1>
     +25 points
     <br />
-    +{Math.ceil(parseInt(document.getElementById('seconds').innerText) * 1.67) + ''} timer bonus
+    +{Math.ceil(parseInt(document.getElementById('seconds').innerText) * 1.25) + ''} timer bonus
     <br />
     <br />
   </div>
@@ -396,7 +395,7 @@ class QuizMainArea extends Component {
       highScores: [],
       score: props.score,
       stopTimer: false,
-      secs: 15,
+      secs: 20,
       allDone: false,
       buttonHidden: false,
       correctAnswers: 0,
@@ -413,14 +412,14 @@ class QuizMainArea extends Component {
     const options = this.shuffle([question.option1, question.option2, question.option3, question.option4, question.option5, question.answer])
 
     this.props.setStateHandler({
-      backgroundUrl: `/static/screenshots/large/s${question.s}e${question.e}q${question.q}.png`,
+      backgroundUrl: `/static/screenshots/medium/s${question.s}e${question.e}q${question.q}.png`,
       options,
       question,
       quiz,
       episode: this.state.episodes.find(item => item.episode === question.e && item.season === question.s)
     })
     this.setState({
-      backgroundUrl: `/static/screenshots/large/s${question.s}e${question.e}q${question.q}.png`,
+      backgroundUrl: `/static/screenshots/medium/s${question.s}e${question.e}q${question.q}.png`,
       options,
       question,
       quiz,
@@ -493,7 +492,7 @@ class QuizMainArea extends Component {
     }
     const results = this.state.results
     results.push(result)
-    const bonusPoints = Math.ceil(parseInt(document.getElementById('seconds').innerText) * 1.67)
+    const bonusPoints = Math.ceil(parseInt(document.getElementById('seconds').innerText) * 1.25)
 
     if (isCorrect) {
       toast.success(<CorrectToast />)
@@ -577,7 +576,7 @@ class QuizMainArea extends Component {
 
     const question = this.state.quiz[q - 1]
     const options = this.shuffle([question.option1, question.option2, question.option3, question.option4, question.option5, question.answer])
-    const backgroundUrl = `/static/screenshots/large/s${question.s}e${question.e}q${question.q}.png`
+    const backgroundUrl = `/static/screenshots/medium/s${question.s}e${question.e}q${question.q}.png`
     const oldOptions = document.querySelectorAll('.is-correct, .is-incorrect', '#answers')
 
     oldOptions.forEach(oldOptions => {
