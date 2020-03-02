@@ -166,7 +166,7 @@ const QuizScoreboardArea = (props) => {
   return (
     <QuizScoreboardWrapper>
       <QuizScoreboard>
-        <Avatar src={`/static/avatars/${props.avatar}.jpg`} alt={props.avatar} />
+        <Avatar src={`/static/avatars/medium/${props.avatar}.jpg`} alt={props.avatar} />
         <UserTable>
           <tbody>
             <tr>

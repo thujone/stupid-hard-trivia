@@ -196,7 +196,7 @@ class AvatarSelector extends Component {
                 onClick={() => this.activateParticleButton(`${item.id}`)}
               >
                 <AvatarGraphic
-                  src={'/static/avatars/' + item.id + (item.isPng ? '.png' : '.jpg')}
+                  src={'/static/avatars/medium/' + item.id + (item.isPng ? '.png' : '.jpg')}
                   alt={`${item.name}`}
                 />
               </AvatarButton>

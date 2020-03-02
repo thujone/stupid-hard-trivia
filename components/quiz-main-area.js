@@ -745,7 +745,7 @@ class QuizMainArea extends Component {
                         <LeaderboardRank>{i + 1}</LeaderboardRank>
                         <LeaderboardPlayer>
                           <TinyAvatar
-                            src={`/static/avatars/${highScore.avatar}.jpg`}
+                            src={`/static/avatars/medium/${highScore.avatar}.jpg`}
                             alt={`${highScore.name}`}
                           />
                           {highScore.name}
