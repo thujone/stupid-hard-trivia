@@ -54,7 +54,7 @@
       "option4": "Kristol",
       "option5": "Kissle",
       "answer": "Kessler",
-      "difficulty": 5
+      "difficulty": 3
     },
     {
       "id": 2,
@@ -82,7 +82,7 @@
       "option4": "to make her ex-boyfriend jealous",
       "option5": "to ruffle his feathers",
       "answer": "to be polite",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 4,
@@ -96,7 +96,7 @@
       "option4": "a journeyman handyman",
       "option5": "an architect",
       "answer": "an importer / exporter",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 5,
@@ -110,7 +110,7 @@
       "option4": "Y&Z Personal Injury",
       "option5": "Abernathy & Abernathy",
       "answer": "Simon, Bennett, Robbins, Oppenheimer, Taft",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 6,
@@ -124,7 +124,7 @@
       "option4": "the buzzer was broken",
       "option5": "Elaine trusted the super",
       "answer": "Kramer left the door open",
-      "difficulty": 4
+      "difficulty": 2
     },
     {
       "id": 7,
@@ -138,7 +138,7 @@
       "option4": "a game of chess",
       "option5": "drawing straws",
       "answer": "1-2-3 shoot",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 8,
@@ -152,7 +152,7 @@
       "option4": "a pizza place for motorcyclists",
       "option5": "a fine French pizzeria",
       "answer": "a pizza place where you make your own pie",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "id": 9,
@@ -180,7 +180,7 @@
       "option4": "is ruined by the B&B owner",
       "option5": "is passionate until the final day",
       "answer": "is ruined by rain",
-      "difficulty": 4
+      "difficulty": 3
     },
     {
       "id": 11,
@@ -194,7 +194,7 @@
       "option4": "a chicken with twelve wings",
       "option5": "wooden computer chips",
       "answer": "a robot butcher",
-      "difficulty": 5
+      "difficulty": 3
     },
     {
       "id": 12,
@@ -208,7 +208,7 @@
       "option4": "strawberries",
       "option5": "pickled herring",
       "answer": "canteloupe",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "id": 13,
@@ -222,7 +222,7 @@
       "option4": "she hates his clothes",
       "option5": "of Kramer hanging around",
       "answer": "she hates his stand-up act",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 14,
@@ -236,7 +236,7 @@
       "option4": "deviant",
       "option5": "dysfunctional",
       "answer": "psychosexual",
-      "difficulty": 5
+      "difficulty": 3
     },
     {
       "id": 15,
@@ -250,7 +250,7 @@
       "option4": "too pretty to consume, even during wartime",
       "option5": "graceful and swift",
       "answer": "the pride of Krakow",
-      "difficulty": 4
+      "difficulty": 1
     },
     {
       "id": 16,
@@ -264,7 +264,7 @@
       "option4": "replace the regular doors with automatic doors",
       "option5": "build a trash chute down the side of the building",
       "answer": "build multi-level flooring covered in carpet",
-      "difficulty": 4
+      "difficulty": 3
     },
     {
       "id": 17,
@@ -278,7 +278,7 @@
       "option4": "an oil man",
       "option5": "a real estate mogul",
       "answer": "a novelist",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 18,
@@ -292,7 +292,7 @@
       "option4": "a slightly uneven collar",
       "option5": "a removable fur hood",
       "answer": "a candystriped lining",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "id": 19,
@@ -306,7 +306,7 @@
       "option4": "she deleted them by accident",
       "option5": "Jerry swaps out the answering machine tape",
       "answer": "she thought the messages were a funny joke",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 20,
@@ -320,7 +320,7 @@
       "option4": "cleaning up after pets",
       "option5": "talking about world peace",
       "answer": "Docker pants ads",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 21,
@@ -334,7 +334,7 @@
       "option4": "his backup eyeglasses",
       "option5": "a bad hairpiece",
       "answer": "a wedding band",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "id": 22,
@@ -348,7 +348,7 @@
       "option4": "get the day off from work",
       "option5": "take baths instead of showers",
       "answer": "pay the building managers $5,000",
-      "difficulty": 4
+      "difficulty": 2
     },
     {
       "id": 23,
@@ -362,7 +362,7 @@
       "option4": "bribing the pawn shop owner",
       "option5": "hiding the statue in his hat",
       "answer": "impersonating a police detective",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "id": 24,
@@ -376,7 +376,7 @@
       "option4": "he knows a buyer who would pay well for it",
       "option5": "he thinks it will impress his date",
       "answer": "his parents had had the same statue",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 25,
@@ -390,7 +390,7 @@
       "option4": "putting a tack on his chair",
       "option5": "having his Porsche towed",
       "answer": "slipping him a mickey",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 26,
@@ -418,7 +418,7 @@
       "option4": "an appendectomy",
       "option5": "a vasectomy",
       "answer": "a tonsilectomy",
-      "difficulty": 4
+      "difficulty": 3
     },
     {
       "id": 28,
@@ -432,7 +432,7 @@
       "option4": "goes to a Chinese herbal market",
       "option5": "consults a psychic",
       "answer": "drinks tea from a holistic healer",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 29,
@@ -446,7 +446,7 @@
       "option4": "a staircase",
       "option5": "a gift card",
       "answer": "a bench",
-      "difficulty": 4
+      "difficulty": 3
     },
     {
       "id": 30,
@@ -460,7 +460,7 @@
       "option4": "tickets to the opera",
       "option5": "house slippers",
       "answer": "cash",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 31,
@@ -474,7 +474,7 @@
       "option4": "no breakfast the day after",
       "option5": "no talking about other dates",
       "answer": "no calls the next day",
-      "difficulty": 4
+      "difficulty": 2
     },
     {
       "id": 32,
@@ -488,7 +488,7 @@
       "option4": "ordered lobster thermidor",
       "option5": "pretended she was celibate",
       "answer": "poured chocolate sauce on his shirt",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 33,
@@ -502,7 +502,7 @@
       "option4": "throw his antenna off the roof",
       "option5": "offer a 50% discount",
       "answer": "break his TV",
-      "difficulty": 4
+      "difficulty": 2
     },
     {
       "id": 34,
@@ -516,7 +516,7 @@
       "option4": "ask to sit with another group",
       "option5": "pretend to be a server",
       "answer": "eat an egg roll off another party's table",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 35,
@@ -544,7 +544,7 @@
       "option4": "get the busboy evicted",
       "option5": "break the busboy's coffee table",
       "answer": "lose the busboy's cat",
-      "difficulty": 4
+      "difficulty": 2
     },
     {
       "id": 37,
@@ -558,7 +558,7 @@
       "option4": "Eddie can't find his wallet",
       "option5": "Eddie moves very slowly",
       "answer": "the alarm clock doesn't go off",
-      "difficulty": 5
+      "difficulty": 2
     },
     {
       "id": 38,
@@ -572,7 +572,7 @@
       "option4": "Andy Warhol",
       "option5": "David Bowie",
       "answer": "Joe DiMaggio",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 39,
@@ -586,7 +586,7 @@
       "option4": "is a kleptomaniac",
       "option5": "is a hypochondriac",
       "answer": "wants to kidnap her son",
-      "difficulty": 4
+      "difficulty": 2
     },
     {
       "id": 40,
@@ -600,7 +600,7 @@
       "option4": "bad-mouths him to her acting group",
       "option5": "throws Jerry's tax documents in the East River",
       "answer": "checks herself into a mental institution",
-      "difficulty": ""
+      "difficulty": 3
     },
     {
       "id": 41,
@@ -614,7 +614,7 @@
       "option4": "Kramer dances around her apartment naked",
       "option5": "Kramer hangs his dirty socks in her bathroom",
       "answer": "Kramer sees her naked",
-      "difficulty": ""
+      "difficulty": 1
     },
     {
       "id": 42,
@@ -628,7 +628,7 @@
       "option4": "is also a flashlight and a compass",
       "option5": "",
       "answer": "is used by astronauts in space",
-      "difficulty": ""
+      "difficulty": 1
     },
     {
       "id": 43,
@@ -642,7 +642,7 @@
       "option4": "",
       "option5": "",
       "answer": "her back hurts from the sofa sleeper",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 44,
@@ -656,7 +656,7 @@
       "option4": "Gavin broke his leg skiing",
       "option5": "Jerry owed Gavin a favor",
       "answer": "Gavin had to be rushed to the hospital",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 45,
@@ -670,7 +670,7 @@
       "option4": "",
       "option5": "Jerry shows up with Gavin and Farfel",
       "answer": "they start making fun of Jerry",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 46,
@@ -684,7 +684,7 @@
       "option4": "Newman",
       "option5": "Sherry Becker",
       "answer": "Lieutenant Bookman",
-      "difficulty": ""
+      "difficulty": 1
     },
     {
       "id": 47,
@@ -698,7 +698,7 @@
       "option4": "Fear of Flying",
       "option5": "Catcher in the Rye",
       "answer": "The Tropic of Cancer",
-      "difficulty": ""
+      "difficulty": 3
     },
     {
       "id": 48,
@@ -712,7 +712,7 @@
       "option4": "",
       "option5": "",
       "answer": "public urination",
-      "difficulty": ""
+      "difficulty": 1
     },
     {
       "id": 49,
@@ -726,7 +726,7 @@
       "option4": "",
       "option5": "",
       "answer": "Kramer forgot where he put the air conditioner",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 50,
@@ -740,7 +740,7 @@
       "option4": "diner food",
       "option5": "Indian",
       "answer": "Pakistani",
-      "difficulty": ""
+      "difficulty": 1
     },
     {
       "id": 51,
@@ -752,9 +752,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "calling up a MENSA group",
       "answer": "getting Elaine to take it for him",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 52,
@@ -768,7 +768,7 @@
       "option4": "",
       "option5": "",
       "answer": "cures baldness",
-      "difficulty": ""
+      "difficulty": 3
     },
     {
       "id": 53,
@@ -782,7 +782,7 @@
       "option4": "",
       "option5": "spills the beans to Jerry",
       "answer": "becomes attracted to her",
-      "difficulty": ""
+      "difficulty": 1
     },
     {
       "id": 54,
@@ -796,7 +796,7 @@
       "option4": "",
       "option5": "",
       "answer": "dates Kramer",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 55,
@@ -810,7 +810,7 @@
       "option4": "a little bit of ying and a whole lot of yang",
       "option5": "a scorching-hot mess",
       "answer": "a chess match between his penis and his brain",
-      "difficulty": ""
+      "difficulty": 3
     },
     {
       "id": 56,
@@ -824,7 +824,7 @@
       "option4": "",
       "option5": "",
       "answer": "pick up Elaine and Jerry",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 57,
@@ -838,7 +838,7 @@
       "option4": "",
       "option5": "",
       "answer": "paying a prostitute to leave his apartment",
-      "difficulty": 4
+      "difficulty": 2
     },
     {
       "id": 58,
@@ -865,8 +865,8 @@
       "option3": "",
       "option4": "",
       "option5": "",
-      "answer": "These pretzels are making me thirsty!",
-      "difficulty": 2
+      "answer": "\"These pretzels are making me thirsty!\"",
+      "difficulty": 1
     },
     {
       "id": 60,
@@ -880,7 +880,7 @@
       "option4": "",
       "option5": "",
       "answer": "a stained cashmere sweater",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "id": 61,
@@ -888,13 +888,13 @@
       "e": 12,
       "q": 2,
       "text": "Kramer passes out on Jerry's couch after drinking too much",
-      "option1": "",
-      "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option1": "clown juice",
+      "option2": "Absolut and cranberry",
+      "option3": "Maker's Mark",
+      "option4": "Johnnie Walker Black",
+      "option5": "Dewars and ginger",
       "answer": "Hennigan's Scotch",
-      "difficulty": 5
+      "difficulty": 3
     },
     {
       "id": 62,
@@ -908,7 +908,7 @@
       "option4": "",
       "option5": "",
       "answer": "a grifter handcuffs him to her hotel bed",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 63,
@@ -922,7 +922,7 @@
       "option4": "",
       "option5": "",
       "answer": "her lesbian friends' wedding",
-      "difficulty": ""
+      "difficulty": 2
     },
     {
       "id": 64,
@@ -936,7 +936,7 @@
       "option4": "",
       "option5": "",
       "answer": "laugh uncontrollably",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "id": 65,
@@ -950,7 +950,7 @@
       "option4": "a leather glove",
       "option5": "a new car",
       "answer": "the beach",
-      "difficulty": 4
+      "difficulty": 2
     },
     {
       "id": 66,
@@ -958,13 +958,13 @@
       "e": 15,
       "q": 1,
       "text": "George visits a psychic named Rula, who warns him",
-      "option1": "",
+      "option1": "to lose 25 pounds immediately",
       "option2": "",
       "option3": "",
       "option4": "",
       "option5": "",
       "answer": "to cancel his trip to the Cayman Islands",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 67,
@@ -978,7 +978,7 @@
       "option4": "he calls his parents",
       "option5": "he is suspicious it's not his",
       "answer": "he is overjoyed",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 68,
@@ -989,10 +989,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
-      "option5": "",
+      "option4": "meets Keith at the comedy club",
+      "option5": "is crestfallen",
       "answer": "presents his \"second-spitter theory\"",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 69,
@@ -1006,7 +1006,7 @@
       "option4": "",
       "option5": "",
       "answer": "go on a date with Elaine",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 70,
@@ -1018,9 +1018,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "a convicted pedophile",
       "answer": "a neo-Nazi speaker",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 71,
@@ -1031,10 +1031,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "smells chicken roasters",
       "option5": "sees a neighbor who reminds him of his schoolteacher",
       "answer": "hears Mary Hart's voice on TV",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 72,
@@ -1046,9 +1046,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "flirting with Derek Jeter",
       "answer": "refusing to remove her baseball cap",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 73,
@@ -1062,7 +1062,7 @@
       "option4": "backing in without using your blinker is dangerous",
       "option5": "they should flip a coin for the spot",
       "answer": "entering front-first is illegtimate",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 74,
@@ -1073,10 +1073,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
-      "option5": "",
+      "option4": "makes ten copies of the key",
+      "option5": "goes on a hunger strike",
       "answer": "moves to California to pursue acting",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 75,
@@ -1088,9 +1088,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "George used the napkin to wipe his mouth",
       "answer": "the hotel maid threw it away",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 76,
@@ -1101,10 +1101,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "sex trafficking",
       "option5": "shoplifting",
-      "answer": "being \"The Smog Stranger\"",
-      "difficulty": 3
+      "answer": "being \"The Smog Strangler\"",
+      "difficulty": 2
     },
     {
       "id": 77,
@@ -1118,7 +1118,7 @@
       "option4": "",
       "option5": "adds photos of Kramer and Jerry to his corkboard",
       "answer": "kicks Kramer in the head",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 78,
@@ -1132,7 +1132,7 @@
       "option4": "Jack Klompus",
       "option5": "Kramer",
       "answer": "Uncle Leo",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 79,
@@ -1146,7 +1146,7 @@
       "option4": "",
       "option5": "",
       "answer": "is stolen",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 80,
@@ -1160,7 +1160,7 @@
       "option4": "",
       "option5": "",
       "answer": "pretend to be her boyfriend",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 89,
@@ -1174,7 +1174,7 @@
       "option4": "Yahtzee",
       "option5": "checkers",
       "answer": "Trivial Pursuit",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 90,
@@ -1188,7 +1188,7 @@
       "option4": "Estelle Costanza",
       "option5": "Kramer's mother",
       "answer": "Susan's father",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 91,
@@ -1202,7 +1202,7 @@
       "option4": "<i>Tosca</i>",
       "option5": "<i>Rigoletto</i>",
       "answer": "<i>Pagliacci</i>",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 92,
@@ -1230,7 +1230,7 @@
       "option4": "Elaine",
       "option5": "George",
       "answer": "Kramer",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 94,
@@ -1258,7 +1258,7 @@
       "option4": "",
       "option5": "",
       "answer": "exposes her nipple",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 96,
@@ -1286,7 +1286,7 @@
       "option4": "was never delivered by Newman",
       "option5": "was sent to the address of his closed restaurant",
       "answer": "was lost in Jerry's pile of unopened mail",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 98,
@@ -1298,9 +1298,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "biting skin off his big toe",
       "answer": "staring at his daughter's cleavage",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 99,
@@ -1314,7 +1314,7 @@
       "option4": "",
       "option5": "is retiring from comedy",
       "answer": "is in a gay relationship",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 100,
@@ -1342,7 +1342,7 @@
       "option4": "dynamite",
       "option5": "jaw-dropping",
       "answer": "spectacular",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 102,
@@ -1354,9 +1354,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "reminds Roy that he owes George $100",
       "answer": "buys up Roy's paintings",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 103,
@@ -1368,9 +1368,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "she's still in love with him",
       "answer": "he has driven her to lesbianism",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 104,
@@ -1384,7 +1384,7 @@
       "option4": "",
       "option5": "",
       "answer": "they want their big-screen television back",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 105,
@@ -1395,10 +1395,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "stuffs her bra and demands a second interview",
       "option5": "wears a shirt that shows more cleavage",
       "answer": "files a complaint with the Equal Employment Opportunity office",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 106,
@@ -1410,9 +1410,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "becomes a big-game hunter",
       "answer": "joins Greenpeace",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 107,
@@ -1426,7 +1426,7 @@
       "option4": "",
       "option5": "",
       "answer": "faked all her orgasms with him",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 108,
@@ -1440,7 +1440,7 @@
       "option4": "",
       "option5": "",
       "answer": "a hand model",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 109,
@@ -1454,7 +1454,7 @@
       "option4": "have looses screws",
       "option5": "have lenses that fall out easily",
       "answer": "are made for women",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 110,
@@ -1468,7 +1468,7 @@
       "option4": "",
       "option5": "an umbrella salesman",
       "answer": "a bra salesman",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 111,
@@ -1482,7 +1482,7 @@
       "option4": "",
       "option5": "drops the knife into Jerry's foot",
       "answer": "cuts off Jerry's finger",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 112,
@@ -1494,7 +1494,7 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "gets hit in the head by a serve",
       "answer": "runs into Monica Seles and injures her",
       "difficulty": 3
     },
@@ -1524,7 +1524,7 @@
       "option4": "",
       "option5": "",
       "answer": "terrible at cutting hair",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 115,
@@ -1533,12 +1533,12 @@
       "q": 1,
       "text": "Jerry becomes increasingly upset that his girlfriend Jodi",
       "option1": "",
-      "option2": "",
+      "option2": "complains about back pain",
       "option3": "gives deep-tissue massages to Kramer",
       "option4": "cracks her knuckles loudly during dinner",
       "option5": "gives deep-tissue massages to Newman",
       "answer": "refuses to give Jerry a massage",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 116,
@@ -1548,11 +1548,11 @@
       "text": "Kramer pitches his idea for a book to Mr. Lippman,",
       "option1": "",
       "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option3": "a book about taxi drivers keeping lost phones",
+      "option4": "a pro-bagel-union screed",
+      "option5": "a pizza cookbook",
       "answer": "a coffee table book about coffee tables",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 117,
@@ -1576,11 +1576,11 @@
       "text": "George, Kramer, and Elaine's boyfriend Tony go rock-climbing, but an accident occurs when",
       "option1": "",
       "option2": "",
-      "option3": "",
+      "option3": "Tony climbs drunk",
       "option4": "George panics and trips",
       "option5": "Kramer gets stung by a bee",
       "answer": "George and Kramer fail to secure Tony's rope",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 119,
@@ -1591,10 +1591,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
-      "option5": "",
+      "option4": "wasted time chit-chatting with Tim Whatley",
+      "option5": "stood in the bagel line",
       "answer": "forgot to take a number",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 120,
@@ -1606,9 +1606,9 @@
       "option2": "",
       "option3": "",
       "option4": "donate them to a homeless shelter",
-      "option5": "make a play-pen for children",
+      "option5": "make a play-pen for adults who love golf",
       "answer": "hit them all into the ocean",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 121,
@@ -1617,12 +1617,12 @@
       "q": 1,
       "text": "Jerry refuses to eat the pizza at Poppie's, because Poppie",
       "option1": "",
-      "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option2": "won't put out rat traps",
+      "option3": "put anchovies on it",
+      "option4": "picked his nose",
+      "option5": "keeps a dirty kitchen",
       "answer": "didn't wash his hands after using the bathroom",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 122,
@@ -1631,12 +1631,12 @@
       "q": 1,
       "text": "when Mickey Abbott is worried that he might lose his job as a stand-in for a child actor, Kramer suggests that Mickey",
       "option1": "",
-      "option2": "",
+      "option2": "wear distracting colors",
       "option3": "spike his hair",
       "option4": "wear puffy sweaters",
       "option5": "walk in stilts",
       "answer": "wear lifts",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 123,
@@ -1647,7 +1647,7 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "get the family deal at Monk's",
       "option5": "see what it's really like",
       "answer": "get a 25% discount on dry cleaning",
       "difficulty": 3
@@ -1658,13 +1658,13 @@
       "e": 18,
       "q": 1,
       "text": "Elaine brings her new boyfriend Aaron by the apartment, but people are put off because he is",
-      "option1": "",
-      "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option1": "\"screechy\"",
+      "option2": "\"slappy-go-lucky\"",
+      "option3": "a \"nudnik\"",
+      "option4": "a \"shnook\"",
+      "option5": "a \"high-talker\"",
       "answer": "a \"close-talker\"",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 125,
@@ -1674,11 +1674,11 @@
       "text": "Jerry and Rachel get in trouble at the movie theater for",
       "option1": "",
       "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option3": "letting a man in the back door",
+      "option4": "spilling popcorn in the building entrance",
+      "option5": "stealing a box of Whoppers",
       "answer": "making out during <i>Schindler's List</i>",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 126,
@@ -1689,10 +1689,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
-      "option5": "",
-      "answer": "escapes by shoving children and women out of his way",
-      "difficulty": 3
+      "option4": "screams and collapses",
+      "option5": "extinguishes it with his own urine",
+      "answer": "shoves women and children out of his way",
+      "difficulty": 2
     },
     {
       "id": 127,
@@ -1701,12 +1701,12 @@
       "q": 1 ,
       "text": "Elaine is smitten with Ben, the ugly baby's doctor, who describes Elaine as",
       "option1": "",
-      "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option2": "\"delightful\"",
+      "option3": "\"awe-inspiring\"",
+      "option4": "\"enchanting\"",
+      "option5": "\"impressive\"",
       "answer": "\"breathtaking\"",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 128,
@@ -1718,9 +1718,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "tell a convincing lie to his parents",
       "answer": "land a job with the New York Yankees",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 129,
@@ -1747,8 +1747,8 @@
       "option3": "Natalie Wood",
       "option4": "Lynda Carter",
       "option5": "Grace Kelly",
-      "answer": "Jackie Kennedy Onassis",
-      "difficulty": 3
+      "answer": "Jackie Onassis",
+      "difficulty": 2
     },
     {
       "id": 131,
@@ -1770,13 +1770,13 @@
       "e": 3,
       "q": 1,
       "text": "Elaine confuses Noreen with Noreen's boyfriend Dan because Dan",
-      "option1": "",
+      "option1": "is a \"shnook\"",
       "option2": "is an amazing method actor",
       "option3": "wears scarves",
       "option4": "has feminine features",
       "option5": "looks just like Noreen from behind",
       "answer": "is a \"high-talker\"",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 133,
@@ -1818,7 +1818,7 @@
       "option4": "",
       "option5": "drinking milk directly out of the container",
       "answer": "eating an eclair out of the trash",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 136,
@@ -1832,7 +1832,7 @@
       "option4": "",
       "option5": "",
       "answer": "treat him to a nice meal at Mendy's",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 137,
@@ -1846,7 +1846,7 @@
       "option4": "Dustin Hoffman",
       "option5": "Clint Eastwood",
       "answer": "Jon Voight",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 138,
@@ -1869,12 +1869,12 @@
       "q": 1,
       "text": "Jerry once again wins a foot race against his high school rival, Duncan Meyer, because Jerry",
       "option1": "",
-      "option2": "",
+      "option2": "paid off Coach Bevilaqua",
       "option3": "knows all the potholes in the road",
       "option4": "tricks Duncan into eating too much pasta",
       "option5": "wears special springy shoes",
       "answer": "mistakes Kramer's backfiring car for the starter's pistol",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 140,
@@ -1882,12 +1882,12 @@
       "e": 11,
       "q": 1,
       "text": "when Jerry suggests to his girlfriend Sandy (a \"non-laugher\") that they have a menage a trois with her roommate, Sandy",
-      "option1": "",
+      "option1": "thinks he's joking",
       "option2": "laughs hysterically",
       "option3": "throws his hat out of the cab window",
       "option4": "cries loudly",
       "option5": "slaps him with her glove",
-      "answer": "is very receptive to the idea",
+      "answer": "is turned on by the idea",
       "difficulty": 3
     },
     {
@@ -1902,7 +1902,7 @@
       "option4": "",
       "option5": "enjoy having Jerry's snacks nearby",
       "answer": "need a neutral territory to prevent cheating",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 142,
@@ -1942,9 +1942,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "won't help neighbors move furniture",
       "answer": "refuses to exchange kisses in the lobby",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 145,
@@ -1955,10 +1955,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "\"the Moobler\"",
       "option5": "\"the PushUps\"",
       "answer": "\"the Manssiere\"",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 146,
@@ -1972,7 +1972,7 @@
       "option4": "wears his special sneakers",
       "option5": "holds the door open for Elaine",
       "answer": "refers to himself in the third person",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 147,
@@ -2000,7 +2000,7 @@
       "option4": "\"DR BONES\"",
       "option5": "\"BABKA\"",
       "answer": "\"ASSMAN\"",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "id": 149,
@@ -2011,10 +2011,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "exchange roommate stories",
       "option5": "get plastered on Hennigan's Scotch",
       "answer": "bet money on airplane arrival times",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 150,
@@ -2026,7 +2026,7 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "paints just his eyes",
       "answer": "paints his chest instead",
       "difficulty": 3
     },
@@ -2056,7 +2056,7 @@
       "option4": "calls animal control",
       "option5": "tells the building super",
       "answer": "hires Newman to kidnap the dog",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 153,
@@ -2070,7 +2070,7 @@
       "option4": "gets something caught in his throat",
       "option5": "mumbles nervously and slips out",
       "answer": "breaks down in tears and begs",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 154,
@@ -2079,12 +2079,12 @@
       "q": 1 ,
       "text": "concerned for the security guard at Susan's uncle's store, George brings the guard",
       "option1": "",
-      "option2": "",
+      "option2": "a beanbag chair",
       "option3": "orthotic shoes",
       "option4": "mace",
       "option5": "a thermos of coffee",
       "answer": "a rocking chair",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 155,
@@ -2126,7 +2126,7 @@
       "option4": "mushroom barley",
       "option5": "french onion",
       "answer": "jambalaya",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 158,
@@ -2152,7 +2152,7 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "All the Best Shows",
       "answer": "Mr. Moviefone",
       "difficulty": 3
     },
@@ -2168,7 +2168,7 @@
       "option4": "",
       "option5": "",
       "answer": "refuses to wear an AIDS ribbon",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 161,
@@ -2179,9 +2179,9 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "she stares at him through the wrong prescription glasses",
-      "option5": "she overhandles a hot dog at the theater",
-      "answer": "a button on her blouse pops off",
+      "option4": "she stared at him through the wrong prescription glasses",
+      "option5": "she overhandled a hot dog at the theater",
+      "answer": "a button on her blouse popped off",
       "difficulty": 3
     },
     {
@@ -2192,11 +2192,11 @@
       "text": "the horse drawing Kramer's handsome cab becomes extremely gassy after eating",
       "option1": "Chef Boyardee",
       "option2": "Spaghettios",
-      "option3": "Dinty Moore Beef Stew",
+      "option3": "Pork-A-Roonie",
       "option4": "Chick-A-Roni",
-      "option5": "Beef Bolognese",
+      "option5": "Turkey Bolognese",
       "answer": "Beef-A-Reeno",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 163,
@@ -2210,7 +2210,7 @@
       "option4": "",
       "option5": "",
       "answer": "tells Frank and Estelle that George is dead",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 164,
@@ -2235,7 +2235,7 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "loves men who wear glasses",
       "option5": "just broke up with her fiance, a stocky man",
       "answer": "has a thing for quirky, bald men",
       "difficulty": 3
@@ -2248,11 +2248,11 @@
       "text": "accused of embezzling condo association funds to pay for his new Cadillac, Morty Seinfeld",
       "option1": "",
       "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option3": "writes a letter to the Del Boca Vista Phase II newspaper",
+      "option4": "voluntarily steps down from the board of trustees",
+      "option5": "hires Jackie Chiles to defend him",
       "answer": "is impeached from condo association president",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 167,
@@ -2263,7 +2263,7 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "a vicodin-laced cookie",
       "option5": "everything bagels",
       "answer": "poppy-seed muffins",
       "difficulty": 3
@@ -2276,11 +2276,11 @@
       "text": "Frank, Kramer, and the Maestro play billiards in George's old bedroom",
       "option1": "",
       "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option3": "while drinking hot cocoa",
+      "option4": "while smoking cigars",
+      "option5": "while shirtless",
       "answer": "without wearing pants",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 169,
@@ -2302,13 +2302,13 @@
       "e": 19,
       "q": 1,
       "text": "when Kramer goes down to the parking lot to pick up the pink Cadillac, the police assume he is",
-      "option1": "",
-      "option2": "",
-      "option3": "",
+      "option1": "a movie mogul",
+      "option2": "an importer/exporter",
+      "option3": "an underwear model",
       "option4": "a pop star",
       "option5": "an interior designer",
       "answer": "a pimp",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 171,
@@ -2320,7 +2320,7 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "buys the restaurant that makes them",
       "answer": "makes George fetch him a calzone for lunch every day",
       "difficulty": 3
     },
@@ -2329,14 +2329,14 @@
       "s": 7,
       "e": 21,
       "q": 1,
-      "text": "Peterman sends Elaine to an auction to bid for him on",
+      "text": "Peterman sends Elaine to an auction to bid on",
       "option1": "",
       "option2": "",
       "option3": "",
       "option4": "",
       "option5": "",
       "answer": "a set of golf clubs owned by John F. Kennedy",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 173,
@@ -2364,7 +2364,7 @@
       "option4": "",
       "option5": "",
       "answer": "so tight he can't sit down",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 175,
@@ -2378,7 +2378,7 @@
       "option4": "",
       "option5": "",
       "answer": "licking toxic glue on the wedding invitation envelopes",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 176,
@@ -2392,7 +2392,7 @@
       "option4": "a leather prayer shawl",
       "option5": "",
       "answer": "an urban sombrero",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 177,
@@ -2401,12 +2401,12 @@
       "q": 2,
       "text": "Kramer becomes a martial arts expert at",
       "option1": "a judo academy for the elderly",
-      "option2": "a kung fu academy for the infirm",
-      "option3": "a taekwon do academy for schoolgirls",
+      "option2": "a taichi academy for recovering addicts",
+      "option3": "a taekwon-do academy for Korean schoolgirls",
       "option4": "",
       "option5": "",
       "answer": "a karate academy for children",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 178,
@@ -2420,7 +2420,7 @@
       "option4": "",
       "option5": "",
       "answer": "he wants to record what they're saying about him",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 179,
@@ -2448,7 +2448,7 @@
       "option4": "chin",
       "option5": "feet",
       "answer": "hands",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 181,
@@ -2460,9 +2460,9 @@
       "option2": "a photo of himself at a young age",
       "option3": "a large wad of cash",
       "option4": "a photo of a ski house in Aspen",
-      "option5": "",
+      "option5": "a photo of the Lamborghini he pretends to own",
       "answer": "a photo of Jerry's beautiful girlfriend Gillian",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 182,
@@ -2476,7 +2476,7 @@
       "option4": "give up his seat at the movie theater",
       "option5": "hand over the popcorn",
       "answer": "make a bootleg video",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 183,
@@ -2490,7 +2490,7 @@
       "option4": "trips on the dance floor",
       "option5": "gets caught spiking the punch",
       "answer": "does a terrible dance",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 184,
@@ -2504,7 +2504,7 @@
       "option4": "go on a diet",
       "option5": "ask her out",
       "answer": "take sexy photos of himself",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 185,
@@ -2515,8 +2515,8 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
-      "option5": "",
+      "option4": "she refuses to disrobe while waiting",
+      "option5": "she asks too many questions",
       "answer": "she has a reputation for being difficult",
       "difficulty": 3
     },
@@ -2532,7 +2532,7 @@
       "option4": "",
       "option5": "",
       "answer": "the time he gave food poisoning to soldiers in the Korean War",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 187,
@@ -2544,9 +2544,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "can get a handicapped parking sticker",
       "answer": "can get books on tape",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 188,
@@ -2554,7 +2554,7 @@
       "e": 7,
       "q": 1,
       "text": "Kramer hosts Japanese businessmen by",
-      "option1": "",
+      "option1": "ordering an expensive platter of sushi",
       "option2": "making them party until morning",
       "option3": "building a makeshift bunk bed",
       "option4": "playing a rowdy game of poker",
@@ -2569,9 +2569,9 @@
       "q": 2,
       "text": "Jerry insists that he invented an umbrella sales technique called",
       "option1": "",
-      "option2": "",
-      "option3": "",
-      "option4": "",
+      "option2": "\"Swinging in the Rain\"",
+      "option3": "\"The Fred Astaire\"",
+      "option4": "\"The Drop Kicker\"",
       "option5": "\"The Spinney\"",
       "answer": "\"The Twirl\"",
       "difficulty": 3
@@ -2588,7 +2588,7 @@
       "option4": "a silver cuckoo clock from Tiffany",
       "option5": "an expensive urban sombrero",
       "answer": "a sable Russian hat",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 191,
@@ -2602,7 +2602,7 @@
       "option4": "Krispy Krunchy Chicken",
       "option5": "Kentucky Fried Chicken",
       "answer": "Kenny Rogers Roasters",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 192,
@@ -2615,7 +2615,7 @@
       "option3": "",
       "option4": "",
       "option5": "",
-      "answer": "turn his cigar lounge into an apartment",
+      "answer": "turn his into a cigar lounge",
       "difficulty": 3
     },
     {
@@ -2625,10 +2625,10 @@
       "q": 2,
       "text": "when George's girlfriend gets mononucleosis and can't have sex,",
       "option1": "George starts dating a girl with mumps",
-      "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option2": "George quits his job with the Yankees to write a book",
+      "option3": "George tells his parents off",
+      "option4": "George tells Steinbrenner off",
+      "option5": "George gives Mariano Rivera bad pitching advice",
       "answer": "George becomes smart and coaches Derek Jeter and Bernie Williams",
       "difficulty": 3
     },
@@ -2638,9 +2638,9 @@
       "e": 10,
       "q": 1,
       "text": "when Elaine breaks up with Alan, \"a bad breaker-upper\", he calls her",
-      "option1": "",
-      "option2": "",
-      "option3": "",
+      "option1": "\"a buck-toothed gremlin\"",
+      "option2": "\"a goofy-faced gremlin\"",
+      "option3": "\"a big fat dum-dum\"",
       "option4": "\"a fat mouth\"",
       "option5": "\"a fat face\"",
       "answer": "\"a big head\"",
@@ -2656,9 +2656,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "becomes addicted to Luden's lemon cough drops",
       "answer": "takes cough medicine for dogs",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 196,
@@ -2669,10 +2669,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
-      "option5": "",
+      "option4": "writes his number on a bathroom stall",
+      "option5": "leaves his wallet with the warden",
       "answer": "dates the librarian inmate",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 197,
@@ -2680,27 +2680,27 @@
       "e": 11,
       "q": 2,
       "text": "Kramer buys a rooster named \"Little Jerry\" and",
-      "option1": "",
-      "option2": "",
-      "option3": "",
+      "option1": "can't understand why it doesn't lay eggs",
+      "option2": "uses it as an alarm clock",
+      "option3": "sells it Kenny Rogers Roasters",
       "option4": "",
       "option5": "",
       "answer": "enters him into a cock fight",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 198,
       "s": 8,
       "e": 12,
       "q": 1,
-      "text": "thinking Jerry is in financial trouble, Morty and Helen Seinfeld sell their Cadillac for $6,000 to",
+      "text": "thinking Jerry is in financial trouble, Morty and Helen Seinfeld sell their Cadillac to",
       "option1": "",
       "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option3": "Susan Ross's parents",
+      "option4": "Estelle Costanza",
+      "option5": "Kenny Bania",
       "answer": "Jack Klompus",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 199,
@@ -2710,24 +2710,24 @@
       "text": "Kramer can't stand sleeping in the same bed as his girlfriend Emily, because she",
       "option1": "",
       "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
+      "option3": "gets night terrors",
+      "option4": "rolls over constantly",
+      "option5": "farts like a motorboat",
       "answer": "has \"the Jimmy legs\"",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 200,
       "s": 8,
       "e": 13,
       "q": 1,
-      "text": "Jerry agrees to throw a game against Milos, the tennis instructor, because Milos is",
-      "option1": "a very sensitive man",
-      "option2": "suffering from rheumatoid arthritis",
-      "option3": "overly competitive",
-      "option4": "a scholar, not an athlete",
-      "option5": "",
-      "answer": "a terrible tennis player",
+      "text": "Jerry throws a game against Milos, his tennis instructor, because Milos is",
+      "option1": "recovering from surgery",
+      "option2": "refuses to wear glasses",
+      "option3": "too old to play",
+      "option4": "a chef, not an athlete",
+      "option5": "distracted by the stock market",
+      "answer": "terrible at tennis",
       "difficulty": 3
     },
     {
@@ -2739,10 +2739,10 @@
       "option1": "a cardboard cutout of John Cusack",
       "option2": "a sullen albino",
       "option3": "the video store owner",
-      "option4": "",
+      "option4": "doesn't even work at the store",
       "option5": "",
       "answer": "fifteen years old",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 202,
@@ -2750,13 +2750,13 @@
       "e": 14,
       "q": 1,
       "text": "Peterman tries to spice up his autobiography by purchasing personal stories from",
-      "option1": "Elaine",
+      "option1": "Joe Davola",
       "option2": "Newman",
-      "option3": "Jerry",
+      "option3": "Tim Whatley",
       "option4": "Frank",
       "option5": "Puddy",
       "answer": "Kramer",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 203,
@@ -2767,10 +2767,10 @@
       "option1": "offers to do George's taxes",
       "option2": "",
       "option3": "is disarmingly handsome and charming",
-      "option4": "achieves great things so effortlessly",
+      "option4": "achieves great things effortlessly",
       "option5": "will pick up George's dry cleaning",
       "answer": "is a shmuck like George",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 204,
@@ -2784,7 +2784,7 @@
       "option4": "",
       "option5": "",
       "answer": "breaks Mike's thumbs",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 205,
@@ -2798,7 +2798,7 @@
       "option4": "",
       "option5": "",
       "answer": "takes Kramer instead",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 206,
@@ -2809,10 +2809,10 @@
       "option1": "putting her dirty finger in his peanut butter",
       "option2": "breathing on his floss",
       "option3": "wiping the sink with his hand-towel",
-      "option4": "",
-      "option5": "",
+      "option4": "putting his toothbrush in the toilet",
+      "option5": "putting his comb in the toilet",
       "answer": "putting his toilet brush in the toilet",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 207,
@@ -2822,11 +2822,11 @@
       "text": "Elaine tricks the Chinese restaurant into delivering out of their zone by pretending to be",
       "option1": "a cop",
       "option2": "",
-      "option3": "",
+      "option3": "a homeless woman",
       "option4": "a restaurant inspector",
       "option5": "an old woman across the street",
       "answer": "a janitor",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 208,
@@ -2834,11 +2834,11 @@
       "e": 17,
       "q": 1,
       "text": "Kramer finds work for Dominican cigar rollers at",
-      "option1": "an underground Cuban cigar sweatshop",
+      "option1": "an underground cigar sweatshop",
       "option2": "a boutique tobacco shop",
       "option3": "JD Reynolds tobacco factory",
-      "option4": "",
-      "option5": "",
+      "option4": "a Greek restaurant",
+      "option5": "a burrito joint",
       "answer": "the Magic Pan crepe restaurant",
       "difficulty": 3
     },
@@ -2854,7 +2854,7 @@
       "option4": "Banya",
       "option5": "Peterman",
       "answer": "Elaine",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 210,
@@ -2868,7 +2868,7 @@
       "option4": "in the trunk of his car",
       "option5": "on the roof of the stadium",
       "answer": "under his desk",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 211,
@@ -2879,10 +2879,10 @@
       "option1": "clamming before dawn",
       "option2": "diving off the Coney Island pier",
       "option3": "skinny-dipping in Oyster Bay",
-      "option4": "sunning nude in his hot tub",
+      "option4": "paddling nude in his hot tub",
       "option5": "swimming at the uptown YWCA",
       "answer": "swimming in the East River",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 212,
@@ -2894,9 +2894,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "to drum up business",
       "answer": "just for the jokes",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 213,
@@ -2924,7 +2924,7 @@
       "option4": "",
       "option5": "",
       "answer": "wears Babe Ruth's uniform and gets food stains on it",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 215,
@@ -2932,8 +2932,8 @@
       "e": 20,
       "q": 2,
       "text": "Elaine tries to troll a local ethnic clothing store because",
-      "option1": "the handbag she bought had holes in it",
-      "option2": "",
+      "option1": "the handbag she bought had a hole in it",
+      "option2": "the scarf she bought was made in New Jersey",
       "option3": "",
       "option4": "",
       "option5": "",
@@ -2946,13 +2946,13 @@
       "e": 21,
       "q": 1,
       "text": "Mr. Lippman steals Elaine's idea to open a shop that sells muffin tops and calls the shop",
-      "option1": "",
-      "option2": "",
-      "option3": "\"Manhattan Muffin Tops Unlimited\"",
+      "option1": "\"Ye Olde Muffin Toppe Shoppe\"",
+      "option2": "\"Manhattan Muffin Mystery\"",
+      "option3": "\"Muffin Tops Unlimited\"",
       "option4": "\"Muffin Tops or Bust!\"",
-      "option5": "\"Go Tell It on the Muffin Tops!\"",
+      "option5": "\"Go Tell It on the Muffin Top!\"",
       "answer": "\"Top of the Muffin to You!\"",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 217,
@@ -2966,7 +2966,7 @@
       "option4": "",
       "option5": "hires Jackie Chiles to sue Peterman",
       "answer": "conducts Peterman reality tours on a school bus",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 218,
@@ -2978,9 +2978,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "\"The Last Sunset\"",
       "answer": "\"Scarsdale Surprise\"",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 219,
@@ -2994,7 +2994,7 @@
       "option4": "",
       "option5": "",
       "answer": "trashes Elaine's office",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 220,
@@ -3005,7 +3005,7 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
+      "option4": "sniffs Kramer's hair",
       "option5": "buys a pizza parlor",
       "answer": "tries to eat Kramer",
       "difficulty": 3
@@ -3022,7 +3022,7 @@
       "option4": "",
       "option5": "",
       "answer": "have a disability",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 222,
@@ -3030,13 +3030,13 @@
       "e": 2,
       "q": 1,
       "text": "Jerry and George joke that Jerry's girlfriend Claire has a stomach that says:",
-      "option1": "",
-      "option2": "",
-      "option3": "",
-      "option4": "",
-      "option5": "",
-      "answer": "\"Helloooo! La la la!\"",
-      "difficulty": 3
+      "option1": "\"A-hoy, matey!\"",
+      "option2": "\"Yum-my!\"",
+      "option3": "\"How-dy!\"",
+      "option4": "\"Ooh yeah!\"",
+      "option5": "\"Yooohooo!\"",
+      "answer": "\"Hellooo!\"",
+      "difficulty": 1
     },
     {
       "id": 223,
@@ -3050,7 +3050,7 @@
       "option4": "",
       "option5": "",
       "answer": "sleep with her ex-boyfriend Puddy",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 224,
@@ -3060,11 +3060,11 @@
       "text": "Kramer installs Frank's old screen door on his own front door to help re-create",
       "option1": "a summer on Nantucket",
       "option2": "a Norman Rockwell painting",
-      "option3": "",
+      "option3": "Mayberry",
       "option4": "",
-      "option5": "",
+      "option5": "Main Street, America",
       "answer": "Anytown, USA",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 225,
@@ -3078,14 +3078,14 @@
       "option4": "",
       "option5": "",
       "answer": "who also hits on her",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 226,
       "s": 9,
       "e": 4,
       "q": 1,
-      "text": "when Jerry cuts himself with a kitchen knife and taken to the hospital, he is horrified to learn out",
+      "text": "when Jerry cuts himself with a kitchen knife and istaken to the hospital, he is horrified to learn that",
       "option1": "",
       "option2": "",
       "option3": "",
@@ -3106,7 +3106,7 @@
       "option4": "",
       "option5": "",
       "answer": "eats a pastrami sandwich during sex",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 228,
@@ -3116,11 +3116,11 @@
       "text": "Elaine experiences \"love at first sight\" with diner patron Jack, who is better known as",
       "option1": "",
       "option2": "",
-      "option3": "",
-      "option4": "",
+      "option3": "\"The Babymaker\"",
+      "option4": "\"The Clown\"",
       "option5": "\"The Count\"",
       "answer": "\"The Wiz\"",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 229,
@@ -3148,7 +3148,7 @@
       "option4": "",
       "option5": "",
       "answer": "play with her antique toy collection",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 231,
@@ -3176,7 +3176,7 @@
       "option4": "",
       "option5": "",
       "answer": "feed the neighbor's cat under the door",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 233,
@@ -3204,7 +3204,7 @@
       "option4": "",
       "option5": "",
       "answer": "once slept with Pinter, the groom",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 235,
@@ -3246,7 +3246,7 @@
       "option4": "",
       "option5": "",
       "answer": "was prepared in his shower",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 238,
@@ -3260,7 +3260,7 @@
       "option4": "",
       "option5": "\"The Orphan Fund\"",
       "answer": "\"The Human Fund \"",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 239,
@@ -3274,7 +3274,7 @@
       "option4": "the \"Festivus miracles\"",
       "option5": "the \"Feats of Strength\"",
       "answer": "the \"Airing of Grievances\"",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 240,
@@ -3288,7 +3288,7 @@
       "option4": "",
       "option5": "",
       "answer": "eaten George's candy bar",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 241,
@@ -3302,7 +3302,7 @@
       "option4": "corny jokes",
       "option5": "",
       "answer": "constant high-fives",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 242,
@@ -3316,7 +3316,7 @@
       "option4": "a jacket with a candy-striped lining",
       "option5": "a puffy shirt",
       "answer": "a fur coat and a \"European carry-all\"",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 243,
@@ -3344,7 +3344,7 @@
       "option4": "Calvin & Hobbes",
       "option5": "Garfield",
       "answer": "Ziggy",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 245,
@@ -3358,7 +3358,7 @@
       "option4": "",
       "option5": "",
       "answer": "\"Jerry Seinfeld, the Devil\"",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 246,
@@ -3370,9 +3370,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "a millionaire pretending to be jobless",
       "answer": "married and poor",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 247,
@@ -3386,7 +3386,7 @@
       "option4": "",
       "option5": "",
       "answer": "exhume the parrot's corpse at the pet cemetery",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 248,
@@ -3398,7 +3398,7 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "Elaine is Italian",
       "answer": "Elaine is Hispanic",
       "difficulty": 3
     },
@@ -3412,9 +3412,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
-      "answer": "closing on a house in the Hamptons",
-      "difficulty": 3
+      "option5": "sick with the flu",
+      "answer": "buying a house in the Hamptons",
+      "difficulty": 2
     },
     {
       "id": 250,
@@ -3439,10 +3439,10 @@
       "option1": "",
       "option2": "",
       "option3": "",
-      "option4": "",
-      "option5": "",
+      "option4": "they should break up immediately",
+      "option5": "they should make up and marry",
       "answer": "they're both going to hell",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 252,
@@ -3456,7 +3456,7 @@
       "option4": "",
       "option5": "",
       "answer": "shoplifting a book",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 253,
@@ -3468,9 +3468,9 @@
       "option2": "",
       "option3": "",
       "option4": "",
-      "option5": "",
+      "option5": "bicycle valet",
       "answer": "rickshaw puller",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 254,
@@ -3484,7 +3484,7 @@
       "option4": "",
       "option5": "",
       "answer": "buys the game from Mario",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 255,
@@ -3554,7 +3554,7 @@
       "option4": "",
       "option5": "lights a parade float on fire",
       "answer": "burns a Puerto Rican flag",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 183,
@@ -3568,7 +3568,7 @@
       "option4": "",
       "option5": "",
       "answer": "Kramer stumbles into the pilots in the cockpit",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "id": 184,
@@ -3582,7 +3582,7 @@
       "option4": "",
       "option5": "",
       "answer": "the Good Samaritan Law",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 185,
@@ -3624,7 +3624,7 @@
       "option4": "\"The Wordsworth\"",
       "option5": "\"The Byron\"",
       "answer": "\"The Shelley\"",
-      "difficulty": 3
+      "difficulty": 1
     },
     {
       "id": 188,
@@ -3635,10 +3635,10 @@
       "option1": "Mr. Waterman",
       "option2": "Mr. Caporale",
       "option3": "Mr. Goldwater",
-      "option4": "",
-      "option5": "",
-      "answer": "Mr. Bevilacqua",
-      "difficulty": 5
+      "option4": "Mr. Drinkwater",
+      "option5": "Mr. Goldman",
+      "answer": "Mr. Bevilaqua",
+      "difficulty": 3
     }
   ],
   "episodes": [
