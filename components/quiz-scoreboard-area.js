@@ -132,6 +132,7 @@ const BigScore = styled(Score)`
 const GroupShotWrapper = styled.div`
   flex: 1 1 6em;
   text-align: right;
+  position: relative;
 `
 
 const GroupShot = styled.img`
@@ -150,6 +151,12 @@ const GroupShot = styled.img`
   }
 `
 
+const RestartIcon = styled.img`
+  position: absolute;
+  right: 100px;
+  top: 14px;
+`
+
 const stringifyScore = (score) => {
   if (score === 0) {
     return '000'
@@ -163,6 +170,7 @@ const stringifyScore = (score) => {
 }
 
 const QuizScoreboardArea = (props) => {
+  console.log('QuizScoreboardArea::props', props)
   return (
     <QuizScoreboardWrapper>
       <QuizScoreboard>
@@ -182,6 +190,7 @@ const QuizScoreboardArea = (props) => {
           </tbody>
         </UserTable>
         <GroupShotWrapper>
+          <RestartIcon src='/static/graphics/restart-icon.png' alt="Restart Game" />
           <GroupShot src='/static/graphics/group-seated.png' alt="Group Seated" />
         </GroupShotWrapper>
       </QuizScoreboard>

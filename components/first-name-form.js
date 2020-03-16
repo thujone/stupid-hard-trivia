@@ -116,28 +116,32 @@ class FirstNameForm extends Component {
             type='text'
             onChange={this.onFirstNameFieldChange.bind(this)}
           />
-          <ParticleEffectButton
-              color='#fbd84a'
-              hidden={this.state.buttonHidden}
-              type='rectangle'
-              direction='top'
-              duration={700}
-          >
-            <Link
-              href={{
-                pathname: '/quiz',
-                query: {
-                  level: this.props.level,
-                  avatar: this.props.avatar,
-                  name: this.state.firstNameField
-                }
-              }}
+          { this.state.firstNameField !== '' &&
+            (
+            <ParticleEffectButton
+                color='#fbd84a'
+                hidden={this.state.buttonHidden}
+                type='rectangle'
+                direction='top'
+                duration={700}
             >
-              <Button> {/*onClick={(e) => this.activateParticleButton()}> */}
-                Serenity Now!
-              </Button>
-            </Link>
-          </ParticleEffectButton>
+              <Link
+                href={{
+                  pathname: '/quiz',
+                  query: {
+                    level: this.props.level,
+                    avatar: this.props.avatar,
+                    name: this.state.firstNameField
+                  }
+                }}
+              >
+                <Button>
+                  Serenity Now!
+                </Button>
+              </Link>
+            </ParticleEffectButton>
+            )
+          }
         </Form>
       </SelectorWrapper>
     )
