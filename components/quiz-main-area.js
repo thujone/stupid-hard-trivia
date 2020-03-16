@@ -353,6 +353,30 @@ const Button = styled.button`
   }
 `
 
+const MediumButton = styled.button`
+  flex: 0 1 auto;
+  height: 52px;
+  border: 3px solid var(--dark-gray);
+  border-radius: 15px;
+  margin: 20px 5px 0;
+  font-family: Lalezar;
+  font-size: 18px;
+  text-shadow: 0px 1px 1px var(--very-light-gray);
+  color: var(--dark-gray);
+  cursor: pointer;
+  padding: 6px 0 0;
+  background: var(--medium-gray);
+  padding: 15px;
+
+  &:hover {
+    border-color: var(--medium-red);
+    background-color: var(--medium-yellow);
+    color: var(--medium-red);
+    text-shadow: 0px 1px 1px var(--light-red);
+    transition: all .4s;
+  }
+`
+
 const CorrectToast = ({ CorrectToast }) => (
   <div>
     <h1>Correct!</h1>
@@ -381,7 +405,7 @@ class QuizMainArea extends Component {
       avatar: props.avatar,
       name: props.name,
       //q: props.q,
-      q: 19,
+      q: 20,
       quiz: props.quiz, 
       results: props.results,
       result: null,
@@ -397,7 +421,11 @@ class QuizMainArea extends Component {
       stopTimer: false,
       secs: 20,
       allDone: false,
-      buttonHidden: false,
+      muteButtonHidden: false,
+      restartButtonHidden: false,
+      playAgainButtonHidden: false,
+      chooseNewLevelButtonHidden: false,
+      shareScoreButtonHidden: false,
       correctAnswers: 0,
       leaderboard: [],
       quizResultsId: null,
@@ -410,6 +438,28 @@ class QuizMainArea extends Component {
     const quiz = this.assembleQuiz(quizArray)
     const question = quiz[this.state.q - 1]
     const options = this.shuffle([question.option1, question.option2, question.option3, question.option4, question.option5, question.answer])
+
+
+
+    const scriptToAppend = `
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '2380773312188622',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v4.0'
+          });
+        };
+      </script>
+      <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    `
+    const script = document.createRange().createContextualFragment(scriptToAppend)
+    setTimeout(() => {
+      document.body.appendChild(script)
+    }, 500)
+
+
 
     this.props.setStateHandler({
       backgroundUrl: `/static/screenshots/medium/s${question.s}e${question.e}q${question.q}.png`,
@@ -565,7 +615,6 @@ class QuizMainArea extends Component {
           const response = await axios.get('http://localhost:3000/api/leaderboard')
           console.log('got leaderboard successfully', response.data)
           this.setState({highScores: response.data})
-          console.log('this.state.highScores', this.state.highScores)
         } catch (error) {
           console.error('error', error)
         }
@@ -615,15 +664,44 @@ class QuizMainArea extends Component {
 
   smartQuote = (quote) => `\u201C${quote}\u201D`
 
-  activateParticleButton = () => {
-    this.setState({ buttonHidden: true })
+  activatePlayAgainParticleButton = () => {
+    this.setState({ playAgainButtonHidden: true })
   }
+
+  activateChooseNewLevelParticleButton = () => {
+    this.setState({ chooseNewLevelButtonHidden: true })
+  }
+
+  activateShareScoreParticleButton = () => {
+    this.setState({ shareScoreButtonHidden: true })
+  }
+
+  activateRestartParticleButton = () => {
+    this.setState({ restartButtonHidden: true })
+  }
+
+  activateMuteParticleButton = () => {
+    this.setState({ muteButtonHidden: true })
+  }
+
+  openShareScoreDialog = () => {
+    FB.ui({
+      method: 'share',
+      href: 'http://seinfeldtrivia.net',
+      quote: `I just scored ${this.state.score} out of 1000 playing The Stupid-Hard Seinfeld Trivia Challenge! Free to play! Over 300 questions in all!`,
+      redirect_uri: 'http://seinfeldtrivia.net',
+      title: 'The Stupid-Hard Seinfeld Trivia Challenge at http://seinfeldtrivia.net'
+    }, function(response){
+      console.log(response)
+    })
+  }
+
 
   printFinalMessage = (score) => {
     if (score < 100) {
       return 'Terrible job, shmoopy! I know, shmoopy!'
     } else if (score < 200) {
-      return 'You finished the quiz... yada yada yada'
+      return 'Adios, muchacho!'
     } else if (score < 300) {
       return 'Give yourself a schtickle of flouoride!'
     } else if (score < 400) {
@@ -645,7 +723,9 @@ class QuizMainArea extends Component {
 
   formatIsoDate = (isoDate) => {
     const date = new Date(isoDate)
-    return `${date.getMonth()}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
+    const formattedHours = date.getHours() <= 9 ? `0${date.getHours()}` : `${date.getHours()}`
+    const formattedMinutes = date.getMinutes() <= 9 ? `0${date.getMinutes()}` : `${date.getMinutes()}`
+    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ${formattedHours}:${formattedMinutes}`
   }
 
   setStateHandler = (data) => {
@@ -768,17 +848,49 @@ class QuizMainArea extends Component {
               <div>
                 <ParticleEffectButton
                   color='#fbd84a'
-                  hidden={this.state.buttonHidden}
+                  hidden={this.state.playAgainButtonHidden}
                   type='rectangle'
                   direction='top'
                   duration={700}
                 >
-                  <Link href={{ pathname: '/index' }}>
-                    <Button onClick={(e) => this.activateParticleButton()}>
-                      Play Again
-                    </Button>
+                  <MediumButton onClick={(e) => {
+                    this.activatePlayAgainParticleButton()
+                    location.reload()
+                  }}>
+                    Play Again
+                  </MediumButton>
+                </ParticleEffectButton>
+
+                <ParticleEffectButton
+                  color='#fbd84a'
+                  hidden={this.state.chooseNewLevelButtonHidden}
+                  type='rectangle'
+                  direction='top'
+                  duration={700}
+                >
+                  <Link href={{ pathname: '/' }}>
+                    <MediumButton onClick={(e) => this.activateChooseNewLevelParticleButton()}>
+                      Choose New Level
+                    </MediumButton>
                   </Link>
                 </ParticleEffectButton>
+
+
+                <ParticleEffectButton
+                  color='#fbd84a'
+                  hidden={this.state.shareScoreButtonHidden}
+                  type='rectangle'
+                  direction='top'
+                  duration={700}
+                >
+                  <MediumButton onClick={(e) => {
+                    this.activateShareScoreParticleButton()
+                    this.openShareScoreDialog()
+                  }}>
+                    Share Score
+                  </MediumButton>
+                </ParticleEffectButton>
+                
               </div>
             </FinalResults>
           }
