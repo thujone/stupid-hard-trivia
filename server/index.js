@@ -10,7 +10,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const HOST = process.env.HOST;
 
-mongoose.connect('mongodb://localhost:27017/Seinfeld', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://127.0.0.1:27017/Seinfeld', { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.set('debug', true)
 
 //process.on('unhandledRejection', (reason, p) => { throw reason });

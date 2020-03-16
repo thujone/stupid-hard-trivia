@@ -216,13 +216,13 @@ class LevelSelector extends Component {
         <SelectorHeader>Choose a level:</SelectorHeader>
         <LevelMessageWrapper>
           <LevelMessage id="easy-level-message">
-            Experiencing shrinkage? Measure the inadequacy of your knowledge with twenty of our easiest questions.
+            Experiencing shrinkage? Measure the inadequacy of your knowledge from a pool of our sixty easiest questions.
           </LevelMessage>
           <LevelMessage id="hard-level-message">
-            Channel your inner Frogger champion... Answer twenty random questions from our extensive database.
+            Channel your inner Frogger champion... Answer twenty random questions from over 200 Easy and Hard.
           </LevelMessage>
           <LevelMessage id="stupid-hard-level-message">
-            Master of this domain? <i>Get out!</i> Twenty sets of twenty questions... 400 questions in all!
+            Master of this domain? <i>Get out!</i> Try a random twenty from our entire database of 300 questions.
           </LevelMessage>
         </LevelMessageWrapper>
         
@@ -231,15 +231,15 @@ class LevelSelector extends Component {
           <tbody>
             <tr>
               <th>Easy</th>
-              <td>Experiencing shrinkage? Measure the inadequacy of your knowledge with twenty of our easiest questions.</td>
+              <td>Experiencing shrinkage? Measure the inadequacy of your knowledge from a pool of our sixty easiest questions.</td>
             </tr>
             <tr>
               <th>Hard</th>
-              <td>Channel your inner Frogger champion... Answer twenty random questions from our extensive database.</td>
+              <td>Channel your inner Frogger champion... Answer twenty random questions from over 200 Easy and Hard.</td>
             </tr>
             <tr>
               <th>Stupid-Hard</th>
-              <td>Master of this domain? <i>Get out!</i> Twenty sets of twenty questions... 400 questions in all!</td>
+              <td>Master of this domain? <i>Get out!</i> Try a random twenty from our entire database of 300 questions.</td>
             </tr>
           </tbody>
         </SmallMessageTable>

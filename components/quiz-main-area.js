@@ -380,8 +380,8 @@ class QuizMainArea extends Component {
       level: props.level,
       avatar: props.avatar,
       name: props.name,
-      q: props.q,
-      //q: 19,
+      //q: props.q,
+      q: 19,
       quiz: props.quiz, 
       results: props.results,
       result: null,
@@ -435,10 +435,16 @@ class QuizMainArea extends Component {
   }
 
   getRandomizedQuizArray = () => {
+    let levelNumber
+
+    if (this.state.level === 'easy') levelNumber = 1
+    else if (this.state.level === 'hard') levelNumber = 2
+    else levelNumber = 3
+
     const randomIndexes = [];
     while (randomIndexes.length < 20) {
       const randomNumber = this.getRandomNumber(0, this.state.questions.length - 1)
-      if (!randomIndexes.find(i => i === randomNumber)) {
+      if (!randomIndexes.find(i => i === randomNumber) && this.state.questions[randomNumber].difficulty <= levelNumber) {
         randomIndexes.push(randomNumber)
       }
     }
@@ -535,7 +541,7 @@ class QuizMainArea extends Component {
 
   postQuizResults = async () => {
     try {
-      const response = await axios.post('http://seinfeldtrivia.net/api/quiz-results', {
+      const response = await axios.post('http://localhost:3000/api/quiz-results', {
         name: this.state.name,
         level: this.state.level,
         avatar: this.state.avatar,
@@ -556,7 +562,7 @@ class QuizMainArea extends Component {
 
   getLeaderboard = async () => {
         try {
-          const response = await axios.get('http://seinfeldtrivia.net/api/leaderboard')
+          const response = await axios.get('http://localhost:3000/api/leaderboard')
           console.log('got leaderboard successfully', response.data)
           this.setState({highScores: response.data})
           console.log('this.state.highScores', this.state.highScores)
@@ -593,7 +599,7 @@ class QuizMainArea extends Component {
       question,
       options,
       backgroundUrl,
-      episode: this.state.episodes.find(item => item.episode === question.e),
+      episode: this.state.episodes.find(item => item.episode === question.e && item.season === question.s),
       result: null
     })
     this.setState({
@@ -601,7 +607,7 @@ class QuizMainArea extends Component {
       question,
       options,
       backgroundUrl,
-      episode: this.state.episodes.find(item => item.episode === question.e),
+      episode: this.state.episodes.find(item => item.episode === question.e && item.season === question.s),
       result: null,
       stopTimer: false
     })

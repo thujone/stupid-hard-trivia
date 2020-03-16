@@ -112,7 +112,7 @@ class FirstNameForm extends Component {
             id='first-name-input'
             placeholder='Babu Bhatt'
             ref={(input) => { this.firstNameInput = input }}
-            maxLength='16'
+            maxLength='12'
             type='text'
             onChange={this.onFirstNameFieldChange.bind(this)}
           />
