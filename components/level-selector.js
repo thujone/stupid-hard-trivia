@@ -255,6 +255,7 @@ class LevelSelector extends Component {
           >
             <EasyButton
               onMouseOver={(e) => this.showLevelMessage('easy')}
+              //onTouchStart={(e) => this.showLevelMessage('easy')}
               onMouseOut={(e) => this.hideLevelMessage('easy')}
               onClick={(e) => this.activateParticleButton('easy')}
             >
@@ -271,6 +272,7 @@ class LevelSelector extends Component {
           >
             <HardButton
               onMouseOver={(e) => this.showLevelMessage('hard')}
+              //onTouchStart={(e) => this.showLevelMessage('hard')}
               onMouseOut={(e) => this.hideLevelMessage('hard')}
               onClick={(e) => this.activateParticleButton('hard')}
             >
@@ -287,6 +289,7 @@ class LevelSelector extends Component {
           >
             <StupidHardButton
               onMouseOver={(e) => this.showLevelMessage('stupid-hard')}
+              //onTouchStart={(e) => this.showLevelMessage('stupid-hard')}
               onMouseOut={(e) => this.hideLevelMessage('stupid-hard')}
               onClick={(e) => this.activateParticleButton('stupidHard')}
             >

@@ -62,6 +62,10 @@ const TableHeader = styled.th`
   }
 `
 
+const LevelTableHeader = styled(TableHeader)`
+  vertical-align: top;
+`
+
 const TableHeaderName = styled(TableHeader)`
   width: 40px !important;
 
@@ -97,7 +101,7 @@ const TableHeaderScore = styled(TableHeader)`
 
 const TableCell = styled.td`
   color: var(--dark-gray);
-  font-size: 1em;
+  font-size: .7em;
   padding: 0;
   margin: 0;
   line-height: 1.2em;
@@ -153,8 +157,14 @@ const GroupShot = styled.img`
 
 const RestartIcon = styled.img`
   position: absolute;
-  right: 100px;
+  right: 0;
   top: 14px;
+  width: 30px;
+
+  @media (min-width: 600px) {
+    right: 100px;
+    width: 50px;
+  }
 `
 
 const stringifyScore = (score) => {
@@ -184,13 +194,13 @@ const QuizScoreboardArea = (props) => {
               <TableCellMultiRow rowspan="3"><BigScore>{(props.score || props.score === 0)  && stringifyScore(props.score)}</BigScore></TableCellMultiRow>
             </tr>
             <tr>
-              <TableHeader>Level:</TableHeader>
+              <LevelTableHeader>Level:</LevelTableHeader>
               <TableCell>{props.level && props.level.split('').map((char, i) => (i === 0 || char === 'h') ? char.toUpperCase() : char)}</TableCell>
             </tr>
           </tbody>
         </UserTable>
         <GroupShotWrapper>
-          <RestartIcon src='/static/graphics/restart-icon.png' alt="Restart Game" />
+          <RestartIcon src='/static/graphics/restart-icon.png' alt="Restart Game" onClick={() => window.location = '/'} />
           <GroupShot src='/static/graphics/group-seated.png' alt="Group Seated" />
         </GroupShotWrapper>
       </QuizScoreboard>

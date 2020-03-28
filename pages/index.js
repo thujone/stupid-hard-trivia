@@ -35,6 +35,8 @@ class Index extends Component {
     setTimeout(() => {
       document.head.appendChild(frag)
     }, 2500)
+
+    document.addEventListener('touchstart', function(e) {}, true)
   }
 
   componentDidUpdate() {

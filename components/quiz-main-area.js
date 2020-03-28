@@ -365,7 +365,7 @@ const MediumButton = styled.button`
   color: var(--dark-gray);
   cursor: pointer;
   padding: 6px 0 0;
-  background: var(--medium-gray);
+  background: var(--medium-gray); 
   padding: 15px;
 
   &:hover {
@@ -404,8 +404,8 @@ class QuizMainArea extends Component {
       level: props.level,
       avatar: props.avatar,
       name: props.name,
-      //q: props.q,
-      q: 20,
+      q: props.q,
+      //q: 20,
       quiz: props.quiz, 
       results: props.results,
       result: null,
