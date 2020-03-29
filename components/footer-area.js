@@ -16,7 +16,6 @@ class FooterArea extends Component {
 
   render() {
     return (
-
       <Footer role="footer">
         Email: <a href={'mailto:hello@seinfeldtrivia.net'} target='_new'>hello@seinfeldtrivia.net</a>
         &nbsp;&nbsp;|&nbsp;
@@ -25,10 +24,12 @@ class FooterArea extends Component {
         Twitter: <a href={'https://twitter.com/HardTrivia'} target='_new'>@HardTrivia</a>
         <br />
         Copyright &copy;2020 by Stupid Hard Trivia. All rights reserved.
+        &nbsp;&nbsp;
+        <a href={'/static/privacy_policy.html'}>Privacy Policy</a>
+        &nbsp;&nbsp;|&nbsp;
+        <a href={'/static/terms_and_conditions.html'}>Terms & Conditions</a>
         <br />
         <br />
-        
-
       </Footer>
     )
   }
