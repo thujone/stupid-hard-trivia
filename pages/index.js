@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
 import fetch from 'isomorphic-unfetch'
+import styled from 'styled-components'
 
 
 class Index extends Component {
@@ -30,6 +31,9 @@ class Index extends Component {
       <meta property="og:description" content="The ultimate Seinfeld trivia quiz! Free to play! Over 300 questions for three levels: Easy, Hard, and Stupid-Hard!" />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="http://seinfeldtrivia.net/static/graphics/game-logo.png" />
+      <script>
+        document.title = 'The Stupid-Hard Seinfeld Trivia Challenge'
+      </script>
     `
     const frag = document.createRange().createContextualFragment(scriptToAppend)
     setTimeout(() => {

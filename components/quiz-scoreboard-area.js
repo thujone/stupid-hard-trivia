@@ -156,6 +156,7 @@ const GroupShot = styled.img`
 `
 
 const RestartIcon = styled.img`
+  cursor: pointer;
   position: absolute;
   right: 0;
   top: 14px;

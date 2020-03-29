@@ -4,6 +4,24 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   ${normalize}
 
+  #screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #6189d9;
+  }
+
+  footer {
+    font-size: .8em;
+    text-align: center;
+
+    a {
+      color: #226;
+    }
+  }
+
   @font-face {
     font-family: 'Fenice';
     src: url('FeniceStd-Oblique.eot');

@@ -143,7 +143,7 @@ const StupidHardButton = styled(LevelButton)`
 
 const SmallMessageTable = styled.table`
   background: var(--light-blue);
-  display: block;
+display: block;
   clear: both;
 
   @media (min-width: 730px) {

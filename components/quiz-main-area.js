@@ -887,7 +887,7 @@ class QuizMainArea extends Component {
                     this.activateShareScoreParticleButton()
                     this.openShareScoreDialog()
                   }}>
-                    Share Score
+                    Share Score on Facebook
                   </MediumButton>
                 </ParticleEffectButton>
                 
