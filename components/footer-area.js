@@ -25,9 +25,9 @@ class FooterArea extends Component {
         <br />
         Copyright &copy;2020 by Stupid Hard Trivia. All rights reserved.
         &nbsp;&nbsp;
-        <a href={'/static/privacy_policy.html'}>Privacy Policy</a>
+        <a href={'/static/privacy_policy.html'} target='_new'>Privacy Policy</a>
         &nbsp;&nbsp;|&nbsp;
-        <a href={'/static/terms_and_conditions.html'}>Terms & Conditions</a>
+        <a href={'/static/terms_and_conditions.html'} target='_new'>Terms & Conditions</a>
         <br />
         <br />
       </Footer>
