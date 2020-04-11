@@ -49,9 +49,7 @@
           [
             "babel-plugin-styled-components",
             {
-              "ssr": true,
-              "displayName": true,
-              "fileName": true
+              "ssr": true
             }
           ]
         ]
@@ -64,9 +62,7 @@
           [
             "babel-plugin-styled-components",
             {
-              "ssr": true,
-              "displayName": true,
-              "fileName": true
+              "ssr": true
             }
           ]
         ]

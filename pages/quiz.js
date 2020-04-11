@@ -21,9 +21,9 @@ const Quiz = (props) => {
 }
 
 Quiz.getInitialProps = async function() {
-  const questionsResult = await fetch('http://localhost:3010/questions')
+  const questionsResult = await fetch('http://seinfeldtrivia.net:3010/questions')
   const questionsData = await questionsResult.json()
-  const episodesResult = await fetch('http://localhost:3010/episodes')
+  const episodesResult = await fetch('http://seinfeldtrivia.net:3010/episodes')
   const episodesData = await episodesResult.json()
   console.log('Quiz::questionsData', questionsData)
   return {

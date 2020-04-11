@@ -34,6 +34,7 @@ class Index extends Component {
       <script>
         document.title = 'The Stupid-Hard Seinfeld Trivia Challenge'
       </script>
+      <script data-ad-client="ca-pub-9696617814444089" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     `
     const frag = document.createRange().createContextualFragment(scriptToAppend)
     setTimeout(() => {
@@ -56,7 +57,7 @@ class Index extends Component {
 }
 
 Index.getInitialProps = async function() {
-  const avatarsResult = await fetch('http://localhost:3010/avatars')
+  const avatarsResult = await fetch('http://seinfeldtrivia.net:3010/avatars')
   const avatarsData = await avatarsResult.json()
 
   return {

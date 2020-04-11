@@ -1,7 +1,10 @@
 const express = require('express')
+const https = require('https')
+const http = require('http')
+const fs = require('fs')
 const next = require('next')
 const bodyParser = require('body-parser')
-const PORT = process.env.PORT || 3000
+const PORT = 80 || 3000
 const dev = process.env.NODE_DEV !== 'production'
 const nextApp = next({ dev })
 const handle = nextApp.getRequestHandler()
@@ -9,6 +12,11 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const HOST = process.env.HOST;
+
+const httpsOptions = {
+  key: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/fullchain.pem')
+}
 
 mongoose.connect('mongodb://127.0.0.1:27017/Seinfeld', { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.set('debug', true)
@@ -78,6 +86,8 @@ nextApp.prepare().then(() => {
     if (err) throw err;
     console.log(`ready at ${PORT}`)
   })
+
+  https.createServer(httpsOptions, app).listen(443)
 
   app.get('*', (req, res) => {
   return handle(req, res) 
