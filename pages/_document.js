@@ -33,7 +33,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <div className="addthis_inline_share_toolbox"></div>
           <script
 	    dangerouslySetInnerHTML={{
               __html: `
@@ -56,6 +55,7 @@ class MyDocument extends Document {
             }}
 	  >
           </script>
+          <div class="addthis_inline_share_toolbox"></div>
           <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
           <script className="add-this" type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d5a12a287ecab9a"></script>
         </body>
