@@ -24,7 +24,7 @@ class Index extends Component {
 }
 
 Index.getInitialProps = async function() {
-  const avatarsResult = await fetch('http://seinfeldtrivia.net:3010/avatars')
+  const avatarsResult = await fetch('https://seinfeldtrivia.net:3010/avatars')
   const avatarsData = await avatarsResult.json()
 
   return {

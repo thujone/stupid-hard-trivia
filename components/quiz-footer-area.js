@@ -41,9 +41,12 @@ class QuizFooterArea extends Component {
         <a href={'/static/terms_and_conditions.html'} target='_new'>Terms & Conditions</a>
         <br />
         <br />
-        <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=509570.10000269&subid=0&type=4"><img border="0"   alt="Stacy Adams" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=509570.10000269&subid=0&type=4&gridnum=15" /></a>
-        &nbsp;&nbsp;
         <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=590818.79&subid=0&type=4"><img border="0"   alt="Star Wars Authentics" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=590818.79&subid=0&type=4&gridnum=13" /></a>
+        &nbsp;&nbsp;
+	<a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=581986.36&subid=0&type=4"><img border="0" width="300" alt="Bugatchi 1080x1080" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=581986.36&subid=0&type=4&gridnum=0" /></a>
+        <br />
+        <br />
+        <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=509570.10000269&subid=0&type=4"><img border="0" width="300"   alt="Stacy Adams" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=509570.10000269&subid=0&type=4&gridnum=15" /></a>
         &nbsp;&nbsp;
         <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=189673.10000158&subid=0&type=4"><img border="0"   alt="Alibris: Books, Music, & Movies" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=189673.10000158&subid=0&type=4&gridnum=13"/></a>
         <br />

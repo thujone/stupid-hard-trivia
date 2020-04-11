@@ -2,6 +2,10 @@ const express = require('express')
 const https = require('https')
 const http = require('http')
 const fs = require('fs')
+const jsonServer = require('json-server')
+const server = jsonServer.create()
+const jsonRouter = jsonServer.router('static/data/seinfeld.json')
+const middlewares = jsonServer.defaults()
 const next = require('next')
 const bodyParser = require('body-parser')
 const PORT = 80 || 3000
@@ -17,6 +21,13 @@ const httpsOptions = {
   key: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/privkey.pem'),
   cert: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/fullchain.pem')
 }
+
+server.use(middlewares)
+server.use(jsonRouter)
+
+https.createServer(httpsOptions, server).listen(3010, function() {
+  console.log('json-server started on port 3010')
+})
 
 mongoose.connect('mongodb://127.0.0.1:27017/Seinfeld', { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.set('debug', true)
@@ -90,7 +101,14 @@ nextApp.prepare().then(() => {
   https.createServer(httpsOptions, app).listen(443)
 
   app.get('*', (req, res) => {
-  return handle(req, res) 
+    return handle(req, res) 
   })
+
+  app.use(function(request, response) {
+    if (!request.secure) {
+      response.redirect('https://' + request.headers.host + request.url);
+    }
+  })
+
 
 })

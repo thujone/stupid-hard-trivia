@@ -591,7 +591,7 @@ class QuizMainArea extends Component {
 
   postQuizResults = async () => {
     try {
-      const response = await axios.post('http://seinfeldtrivia.net/api/quiz-results', {
+      const response = await axios.post('https://seinfeldtrivia.net/api/quiz-results', {
         name: this.state.name,
         level: this.state.level,
         avatar: this.state.avatar,
@@ -612,7 +612,7 @@ class QuizMainArea extends Component {
 
   getLeaderboard = async () => {
         try {
-          const response = await axios.get('http://seinfeldtrivia.net/api/leaderboard')
+          const response = await axios.get('https://seinfeldtrivia.net/api/leaderboard')
           console.log('got leaderboard successfully', response.data)
           this.setState({highScores: response.data})
         } catch (error) {
@@ -687,10 +687,10 @@ class QuizMainArea extends Component {
   openShareScoreDialog = () => {
     FB.ui({
       method: 'share',
-      href: 'http://seinfeldtrivia.net',
+      href: 'https://seinfeldtrivia.net',
       quote: `I just scored ${this.state.score} out of 1000 playing The Stupid-Hard Seinfeld Trivia Challenge! Free to play! Over 300 questions in all!`,
-      redirect_uri: 'http://seinfeldtrivia.net',
-      title: 'The Stupid-Hard Seinfeld Trivia Challenge at http://seinfeldtrivia.net'
+      redirect_uri: 'https://seinfeldtrivia.net',
+      title: 'The Stupid-Hard Seinfeld Trivia Challenge at https://seinfeldtrivia.net'
     }, function(response){
       console.log(response)
     })

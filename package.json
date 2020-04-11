@@ -80,5 +80,5 @@
     "url": "https://github.com/thujone/stupid-hard-trivia/issues"
   },
   "homepage": "https://github.com/thujone/stupid-hard-trivia#readme",
-  "proxy": "http://localhost:3010"
+  "proxy": "https://localhost:3010"
 }
