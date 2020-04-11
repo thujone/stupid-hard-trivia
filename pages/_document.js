@@ -19,6 +19,19 @@ class MyDocument extends Document {
             gtag('js', new Date());
             gtag('config', 'UA-163408812-1');
           </script>
+          <script>
+            {/* if (location.protocol !== 'https:') {
+              location.replace(`https:${location.href.substring(location.protocol.length)}`)
+            } */}
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId            : '2380773312188622',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v4.0'
+              })
+            }
+          </script>
           <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
           <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
@@ -38,19 +51,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
           <div class="addthis_inline_share_toolbox"></div>
-          <script>
-            if (location.protocol !== 'https:') {
-              location.replace(`https:${location.href.substring(location.protocol.length)}`)
-            }
-            window.fbAsyncInit = function() {
-              FB.init({
-                appId            : '2380773312188622',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v4.0'
-              })
-            }
-          </script>
+
           <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
           <script class="add-this" type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d5a12a287ecab9a"></script>
         </body>
