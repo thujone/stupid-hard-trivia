@@ -34,10 +34,14 @@ class FooterArea extends Component {
         <a href={'/static/terms_and_conditions.html'} target='_new'>Terms & Conditions</a>
         <br />
         <br />
-		  {/*<a href="https://click.linksynergy.com/link?id=8TuoI7nE/dI&offerid=115554.42111&type=2&murl=https%3A%2F%2Fwww.lego.com%2Fen-us%2Fproduct%2Fdoms-dodge-charger-42111"><img border='0' src="https://www.lego.com/cdn/cs/set/assets/blta0e9b4577930de63/42111.jpg?format=jpg&fit=bounds&width=800&height=800&quality=80" /></a><img border='0' width='1' height='1' src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=115554.42111&type=2&subid=0" />*/}
-	  <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=115554.10001551&subid=0&type=4"><img border="0"   alt="LEGO Brand Retail" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=115554.10001551&subid=0&type=4&gridnum=0"/></a>
-		  &nbsp; &nbsp;
-<a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=486358.116&subid=0&type=4"><img border="0"   alt="Show your love of The Times. Shop Now!" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=486358.116&subid=0&type=4&gridnum=11" /></a>
+
+        <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=115554.10001551&subid=0&type=4"><img border="0"   alt="LEGO Brand Retail" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=115554.10001551&subid=0&type=4&gridnum=0"/></a>
+          &nbsp; &nbsp;
+        <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=486358.116&subid=0&type=4"><img border="0"   alt="Show your love of The Times. Shop Now!" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=486358.116&subid=0&type=4&gridnum=11" /></a>
+          &nbsp; &nbsp;
+        <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=701470.3&subid=0&type=4"><img border="0"   alt="SEGA Shop" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=701470.3&subid=0&type=4&gridnum=4" /></a>
+          &nbsp; &nbsp;
+        <a href="https://click.linksynergy.com/fs-bin/click?id=8TuoI7nE/dI&offerid=526182.210&type=4&subid=0"><img alt="The MET" border="0" src="https://s3-us-west-2.amazonaws.com/themet/iGive/opt1-125x125.jpg" /></a><img border="0" width="1" height="1" src="https://ad.linksynergy.com/fs-bin/show?id=8TuoI7nE/dI&bids=526182.210&type=4&subid=0" />
         <br />
         <br />
       </Footer>
