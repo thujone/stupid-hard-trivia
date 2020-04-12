@@ -23,8 +23,9 @@ console.log(config)
 server.use(middlewares)
 server.use(jsonRouter)
 
+let httpsOptions
 if (config.NODE_ENV === 'production') {
-  const httpsOptions = {
+  httpsOptions = {
     key: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/privkey.pem'),
     cert: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/fullchain.pem')
   }
@@ -32,7 +33,6 @@ if (config.NODE_ENV === 'production') {
   https.createServer(httpsOptions, server).listen(3010, function() {
     console.log(`json-server started on port ${config.REACT_APP_JSON_SERVER_URL}`)
   })
-  https.createServer(httpsOptions, app).listen(config.REACT_APP_HTTPS_PORT)
 }
 
 mongoose.connect('mongodb://127.0.0.1:27017/Seinfeld', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -65,11 +65,12 @@ nextApp.prepare().then(() => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   if (config.NODE_ENV === 'production') {
-    app.use((request, response) => {
-      if (!request.secure) {
-        response.redirect('https://' + request.headers.host + request.url);
-      }
-    })
+    https.createServer(httpsOptions, app).listen(config.REACT_APP_HTTPS_PORT)
+    //app.use((request, response) => {
+    //  if (!request.secure) {
+    //    response.redirect('https://' + request.headers.host + request.url);
+    //  }
+    //})
   }
 
   app.get('/api/leaderboard', (request, response, next) => {
