@@ -8,7 +8,7 @@ const jsonRouter = jsonServer.router('static/data/seinfeld.json')
 const middlewares = jsonServer.defaults()
 const next = require('next')
 const bodyParser = require('body-parser')
-const PORT = 3000
+const PORT = 80 || 3000
 const dev = process.env.NODE_DEV !== 'production'
 const nextApp = next({ dev })
 const handle = nextApp.getRequestHandler()
@@ -61,16 +61,13 @@ const QuizResultModel = mongoose.model('quizresult', QuizResultSchema)
 
 nextApp.prepare().then(() => {
   const app = express()
-  app.use(bodyParser.json())
+  app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
-
-  if (config.NODE_ENV === 'production') {
-    app.use((request, response) => {
-      if (!request.secure) {
-        response.redirect('https://' + request.headers.host + request.url);
-      }
-    })
-  }
+  app.use(function(request, response) {
+    if (!request.secure) {
+      response.redirect('https://' + request.headers.host + request.url);
+    }
+  })
 
   app.get('/api/leaderboard', (request, response, next) => {
     QuizResultModel.find({}).select('name avatar level createdAt correctAnswers score').sort('-score').limit(200).exec(function (err, quizResults) {
@@ -110,7 +107,9 @@ nextApp.prepare().then(() => {
     console.log(`ready at ${config.REACT_APP_HTTP_PORT}`)
   })
 
+
   app.get('*', (req, res) => {
     return handle(req, res) 
   })
+
 })

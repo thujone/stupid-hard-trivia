@@ -20,23 +20,21 @@ class MyDocument extends Document {
           <link rel="manifest" href="/static/site.webmanifest" />
           <meta name="description" content="The ultimate Seinfeld trivia quiz! Free to play! Over 300 questions for three levels: Easy, Hard, and Stupid-Hard!" />
           <meta name="keywords" content="Seinfeld,trivia,game,quiz,challenge,fun" />
-          <meta name="author" content="Stupid-Hard Trivia(TM)" />
+          <meta name="author" content="Stupid-Hard Trivia" />
           <meta property="og:url" content="https://seinfeldtrivia.net" />
           <meta property="og:title" content="The Stupid-Hard Seinfeld Trivia Challenge" />
           <meta property="og:description" content="The ultimate Seinfeld trivia quiz! Free to play! Over 300 questions for three levels: Easy, Hard, and Stupid-Hard!" />
           <meta property="og:type" content="website" />
           <meta property="og:image" content="https://seinfeldtrivia.net/static/graphics/game-logo.png" />
-	  <script>
-	    document.title = 'The Stupid-Hard Seinfeld Trivia Challenge'
-	  </script>
         </Head>
         <body>
           <Main />
           <NextScript />
           <script
-	    dangerouslySetInnerHTML={{
+            dangerouslySetInnerHTML={{
               __html: `
-                if (location.protocol !== 'https:') {
+                document.title = 'The Stupid-Hard Seinfeld Trivia Challenge'
+                if (location.protocol !== 'https:' && location.href.indexOf('localhost') === -1) {
                   location.replace('https:' + location.href.substring(location.protocol.length))
                 }
                 window.fbAsyncInit = function() {
@@ -47,13 +45,13 @@ class MyDocument extends Document {
                     version          : 'v4.0'
                   })
                 }
-	        window.dataLayer = window.dataLayer || [];
+                window.dataLayer = window.dataLayer || [];
                 function gtag(){ window.dataLayer.push(arguments); }
                 gtag('js', new Date());
                 gtag('config', 'UA-163408812-1');
               `
             }}
-	  >
+          >
           </script>
           <div class="addthis_inline_share_toolbox"></div>
           <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>

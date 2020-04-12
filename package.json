@@ -13,7 +13,7 @@
     "http": "0.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "json-server": "^0.15.1",
-    "mongoose": "^5.9.6",
+    "mongoose": "^5.9.7",
     "next": "^8.1.0",
     "node-sass": "^4.13.1",
     "path": "^0.12.7",
@@ -79,6 +79,5 @@
   "bugs": {
     "url": "https://github.com/thujone/stupid-hard-trivia/issues"
   },
-  "homepage": "https://github.com/thujone/stupid-hard-trivia#readme",
-  "proxy": "https://localhost:3010"
+  "homepage": "https://github.com/thujone/stupid-hard-trivia#readme"
 }
