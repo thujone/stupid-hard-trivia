@@ -17,6 +17,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const HOST = process.env.HOST;
 const config = require('dotenv').config().parsed
+const app = express()
 
 console.log(config)
 
@@ -30,8 +31,12 @@ if (config.NODE_ENV === 'production') {
     cert: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/fullchain.pem')
   }
   
-  https.createServer(httpsOptions, server).listen(3010, function() {
+  https.createServer(httpsOptions, server).listen(config.REACT_APP_JSON_PORT, function() {
     console.log(`json-server started on port ${config.REACT_APP_JSON_SERVER_URL}`)
+  })
+
+  https.createServer(httpsOptions, app).listen(config.REACT_APP_HTTPS_PORT, function() {
+    console.log(`https started on port ${config.REACT_APP_HTTPS_PORT}`)
   })
 }
 
@@ -60,18 +65,10 @@ const QuizResultSchema = new Schema({
 const QuizResultModel = mongoose.model('quizresult', QuizResultSchema)
 
 nextApp.prepare().then(() => {
-  const app = express()
+  const httpServer = http.createServer(app)
+
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }));
-
-  if (config.NODE_ENV === 'production') {
-    https.createServer(httpsOptions, app).listen(config.REACT_APP_HTTPS_PORT)
-    //app.use((request, response) => {
-    //  if (!request.secure) {
-    //    response.redirect('https://' + request.headers.host + request.url);
-    //  }
-    //})
-  }
 
   app.get('/api/leaderboard', (request, response, next) => {
     QuizResultModel.find({}).select('name avatar level createdAt correctAnswers score').sort('-score').limit(200).exec(function (err, quizResults) {
@@ -106,10 +103,12 @@ nextApp.prepare().then(() => {
     }
   })
 
-  app.listen(PORT, HOST, err => {
+  /*app.listen(PORT, HOST, err => {
     if (err) throw err;
     console.log(`ready at ${config.REACT_APP_HTTP_PORT}`)
   })
+  */
+  httpServer.listen(`${config.REACT_APP_HTTP_PORT}`)
 
   app.get('*', (req, res) => {
     return handle(req, res) 
