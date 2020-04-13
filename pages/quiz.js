@@ -15,6 +15,7 @@ const Quiz = (props) => {
       level={router.query.level}
       avatar={router.query.avatar}
       name={router.query.name}
+      isAudioEnabled={router.query.audio === 'true'}
     >
     </QuizLayout>
   )
@@ -25,7 +26,6 @@ Quiz.getInitialProps = async function() {
   const questionsData = await questionsResult.json()
   const episodesResult = await fetch(`${process.env.REACT_APP_JSON_SERVER_URL}/episodes`)
   const episodesData = await episodesResult.json()
-  console.log('Quiz::questionsData', questionsData)
   return {
     questions: questionsData.map(question => question),
     episodes: episodesData.map(episode => episode)

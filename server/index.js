@@ -74,12 +74,23 @@ nextApp.prepare().then(() => {
   }
 
   app.get('/api/leaderboard', (request, response, next) => {
-    QuizResultModel.find({}).select('name avatar level createdAt correctAnswers score').sort('-score').limit(200).exec(function (err, quizResults) {
+    QuizResultModel.find({}).select('name avatar level createdAt correctAnswers score').sort('-score').limit(250).exec(function (err, quizResults) {
       if (err) {
         console.error(err)
         return response.status(500).send(err)
       }
-      console.log(quizResults);
+      //console.log(quizResults);
+      response.send(quizResults)
+    })
+  })
+
+  app.get('/api/leaderboard/:level', (request, response, next) => {
+    QuizResultModel.find({ level: request.params.level }).select('name avatar level createdAt correctAnswers score').sort('-score').limit(250).exec(function (err, quizResults) {
+      if (err) {
+        console.error(err)
+        return response.status(500).send(err)
+      }
+      //console.log(quizResults);
       response.send(quizResults)
     })
   })
