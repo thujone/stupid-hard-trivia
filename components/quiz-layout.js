@@ -25,14 +25,15 @@ class QuizLayout extends Component {
     super(props)
     this.state = {
       backgroundUrl: '/static/screenshots/medium/s1e1q1.png',
-      q: 1,
+      q: 1, 
       results: [],
       options: [],
       quiz: [],
       question: [],
       episodes: [],
       episode: {},
-      score: 0
+      score: 0,
+      isAudioEnabled: props.isAudioEnabled
     }
   }
 
@@ -42,6 +43,10 @@ class QuizLayout extends Component {
 
   setStateHandler = (data) => {
     this.setState(data)
+  }
+
+  setIsAudioEnabled = (isAudioEnabled) => {
+    this.setState({ isAudioEnabled })
   }
 
 
@@ -60,6 +65,9 @@ class QuizLayout extends Component {
           q={this.state.q}
           results={this.state.results}
           score={this.state.score}
+          isAudioEnabled={this.state.isAudioEnabled}
+          setStateHandler={this.setStateHandler}
+          setIsAudioEnabled={this.setIsAudioEnabled}
         />
         <QuizMainArea
           questions={this.props.questions}
@@ -76,6 +84,7 @@ class QuizLayout extends Component {
           quiz={this.state.quiz}
           score={this.state.score}
           episode={this.state.episode}
+          isAudioEnabled={this.state.isAudioEnabled}
         />
         <QuizFooterArea touch={true} q={this.state.q} />
         <ToastContainer 

@@ -87,6 +87,7 @@ class FirstNameForm extends Component {
       level: props.level,
       avatar: props.avatar,
       firstNameField: '',
+      isAudioEnabled: props.isAudioEnabled,
       buttonHidden: false
     }
   }
@@ -131,7 +132,8 @@ class FirstNameForm extends Component {
                   query: {
                     level: this.props.level,
                     avatar: this.props.avatar,
-                    name: this.state.firstNameField
+                    name: this.state.firstNameField,
+                    audio: this.props.isAudioEnabled
                   }
                 }}
               >

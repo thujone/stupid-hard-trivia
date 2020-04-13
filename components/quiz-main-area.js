@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Beforeunload, useBeforeunload } from 'react-beforeunload'
+import Sound from 'react-sound'
 import styled from 'styled-components'
 import Link from 'next/link'
 import axios from 'axios'
@@ -247,7 +248,7 @@ const FinalLabel = styled(FinalValue)`
 `
 
 const LeaderboardContainer = styled.div`
-  height: 150px;
+  height: 200px;
   overflow-y: scroll;
   margin: 20px 0 0;
   
@@ -348,7 +349,7 @@ const Button = styled.button`
     border-color: var(--medium-red);
     background-color: var(--medium-yellow);
     color: var(--medium-red);
-    text-shadow: 0px 1px 1px var(--light-red);
+    text-shadow: 0px 1pxpa 1px var(--light-red);
     transition: all .4s;
   }
 `
@@ -405,7 +406,7 @@ class QuizMainArea extends Component {
       avatar: props.avatar,
       name: props.name,
       q: props.q,
-      //q: 20,
+      //q: 17,
       quiz: props.quiz, 
       results: props.results,
       result: null,
@@ -429,7 +430,10 @@ class QuizMainArea extends Component {
       correctAnswers: 0,
       leaderboard: [],
       quizResultsId: null,
-      areResultsPosted: false
+      areResultsPosted: false,
+      easy: [],
+      hard: [],
+      'stupid-hard': []
     }
   }
 
@@ -438,8 +442,6 @@ class QuizMainArea extends Component {
     const quiz = this.assembleQuiz(quizArray)
     const question = quiz[this.state.q - 1]
     const options = this.shuffle([question.option1, question.option2, question.option3, question.option4, question.option5, question.answer])
-
-
 
     const scriptToAppend = `
       <script>
@@ -458,8 +460,6 @@ class QuizMainArea extends Component {
     setTimeout(() => {
       document.body.appendChild(script)
     }, 500)
-
-
 
     this.props.setStateHandler({
       backgroundUrl: `/static/screenshots/medium/s${question.s}e${question.e}q${question.q}.png`,
@@ -572,7 +572,12 @@ class QuizMainArea extends Component {
 
     setTimeout(() => {
       this.nextQuestionLink.style.display = 'block'
-    }, 2700);
+    }, 2700)
+
+    if (document.getElementById('audio-icon'))
+      document.getElementById('audio-icon').style.display = 'block'
+    else if (document.getElementById('disable-audio-icon'))
+      document.getElementById('disable-audio-icon').style.display = 'block'
 
     if (response === this.state.question.answer) {
       document.querySelector(`#answers a:nth-of-type(${nthOption})`).classList.add('is-correct')
@@ -601,23 +606,27 @@ class QuizMainArea extends Component {
         wasCompleted: this.state.allDone,
         answers: this.state.results
       })
-      console.log('score posted successfully', response)
       this.setState({ quizResultsId: response.data._id, areResultsPosted: true })
-      this.getLeaderboard()
+      this.getLeaderboards()
     } catch (error) {
       console.error('error', error)
       this.setState({ areResultsPosted: true })
     }
   }
 
-  getLeaderboard = async () => {
-        try {
-          const response = await axios.get(`${process.env.REACT_APP_API_URL}/leaderboard`)
-          console.log('got leaderboard successfully', response.data)
-          this.setState({highScores: response.data})
-        } catch (error) {
-          console.error('error', error)
-        }
+  getLeaderboards = () => {
+    ['easy', 'hard', 'stupid-hard'].forEach((item, i) => {
+      this.getLeaderboard(item)
+    })
+  }
+
+  getLeaderboard = async (level) => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/leaderboard/${level}`)
+      this.setState({[level]: response.data})
+    } catch (error) {
+      console.error('error', error)
+    }
   }
 
   moveForward = () => {
@@ -642,6 +651,10 @@ class QuizMainArea extends Component {
     })
 
     this.nextQuestionLink.style.display = 'none'
+    if (document.getElementById('audio-icon'))
+      document.getElementById('audio-icon').style.display = 'none'
+    else if (document.getElementById('disable-audio-icon'))
+      document.getElementById('disable-audio-icon').style.display = 'none'
 
     this.props.setStateHandler({
       q,
@@ -756,6 +769,13 @@ class QuizMainArea extends Component {
                 ref={(input) => { this.nextQuestionLink = input }}
                 onClick={ (e) => this.moveForward() }
               />
+              {this.props.isAudioEnabled && this.state.stopTimer && this.state.q <= 20 &&
+                <Sound
+                  url={`../static/audio/seinfeld-${Math.ceil(Math.random() * 8)}.mp3`}
+                  playStatus={Sound.status.PLAYING}
+                  playFromPosition={0}
+                />
+              }
             </QuestionText>
           )}
 
@@ -800,6 +820,13 @@ class QuizMainArea extends Component {
           {this.state.allDone &&
             <FinalResults>
               <h2>{this.printFinalMessage(this.state.score)}</h2>
+              {this.props.isAudioEnabled &&
+                <Sound
+                  url={`../static/audio/seinfeld-full.mp3`}
+                  playStatus={Sound.status.PLAYING}
+                  playFromPosition={0}
+                />
+              }
               <FinalTable>
                 <tbody>
                   <FinalRow>
@@ -812,39 +839,7 @@ class QuizMainArea extends Component {
                   </FinalRow>
                 </tbody>
               </FinalTable>
-              <h2>Leaderboard (Top 100)</h2>
-              <LeaderboardContainer>
-                <Leaderboard>
-                  <thead>
-                    <tr>
-                      <td></td>
-                      <LeaderboardPlayerHeader>Player</LeaderboardPlayerHeader>
-                      <LeaderboardLevelHeader>Level</LeaderboardLevelHeader>
-                      <LeaderboardDateHeader>Date</LeaderboardDateHeader>
-                      <LeaderboardCorrectAnswersHeader># Correct</LeaderboardCorrectAnswersHeader>
-                      <LeaderboardScoreHeader>Score</LeaderboardScoreHeader>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.state.highScores.map((highScore, i) => (
-                      <tr key={i} className={this.state.quizResultsId === highScore._id ? 'highlight' : ''}>
-                        <LeaderboardRank>{i + 1}</LeaderboardRank>
-                        <LeaderboardPlayer>
-                          <TinyAvatar
-                            src={`/static/avatars/medium/${highScore.avatar}.jpg`}
-                            alt={`${highScore.name}`}
-                          />
-                          {highScore.name}
-                        </LeaderboardPlayer>
-                        <LeaderboardLevel>{highScore.level}</LeaderboardLevel>
-                        <LeaderboardDate>{this.formatIsoDate(highScore.createdAt)}</LeaderboardDate>
-                        <LeaderboardCorrectAnswers>{highScore.correctAnswers}</LeaderboardCorrectAnswers>
-                        <LeaderboardScore>{highScore.score}</LeaderboardScore>
-                      </tr>
-                    ))}
-                  </tbody>
-                </Leaderboard>
-              </LeaderboardContainer>
+
               <div>
                 <ParticleEffectButton
                   color='#fbd84a'
@@ -892,6 +887,114 @@ class QuizMainArea extends Component {
                 </ParticleEffectButton>
                 
               </div>
+
+              <h3>Stupid-Hard Leaderboard (Top 250)</h3>
+              {this.state['stupid-hard'] && this.state['stupid-hard'].length > 0 &&
+                <LeaderboardContainer>
+                  <Leaderboard>
+                    <thead>
+                      <tr>
+                        <td></td>
+                        <LeaderboardPlayerHeader>Player</LeaderboardPlayerHeader>
+                        <LeaderboardLevelHeader>Level</LeaderboardLevelHeader>
+                        <LeaderboardDateHeader>Date</LeaderboardDateHeader>
+                        <LeaderboardCorrectAnswersHeader># Correct</LeaderboardCorrectAnswersHeader>
+                        <LeaderboardScoreHeader>Score</LeaderboardScoreHeader>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.state['stupid-hard'].map((highScore, i) => (
+                        <tr key={i} className={this.state.quizResultsId === highScore._id ? 'highlight' : ''}>
+                          <LeaderboardRank>{i + 1}</LeaderboardRank>
+                          <LeaderboardPlayer>
+                            <TinyAvatar
+                              src={`/static/avatars/medium/${highScore.avatar}.jpg`}
+                              alt={`${highScore.name}`}
+                            />
+                            {highScore.name}
+                          </LeaderboardPlayer>
+                          <LeaderboardLevel>{highScore.level}</LeaderboardLevel>
+                          <LeaderboardDate>{this.formatIsoDate(highScore.createdAt)}</LeaderboardDate>
+                          <LeaderboardCorrectAnswers>{highScore.correctAnswers}</LeaderboardCorrectAnswers>
+                          <LeaderboardScore>{highScore.score}</LeaderboardScore>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Leaderboard>
+                </LeaderboardContainer>
+              }
+
+              <h3>Hard Leaderboard (Top 250)</h3>
+              {this.state['hard'] && this.state['hard'].length > 0 &&
+                <LeaderboardContainer>
+                  <Leaderboard>
+                    <thead>
+                      <tr>
+                        <td></td>
+                        <LeaderboardPlayerHeader>Player</LeaderboardPlayerHeader>
+                        <LeaderboardLevelHeader>Level</LeaderboardLevelHeader>
+                        <LeaderboardDateHeader>Date</LeaderboardDateHeader>
+                        <LeaderboardCorrectAnswersHeader># Correct</LeaderboardCorrectAnswersHeader>
+                        <LeaderboardScoreHeader>Score</LeaderboardScoreHeader>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.state['hard'].map((highScore, i) => (
+                        <tr key={i} className={this.state.quizResultsId === highScore._id ? 'highlight' : ''}>
+                          <LeaderboardRank>{i + 1}</LeaderboardRank>
+                          <LeaderboardPlayer>
+                            <TinyAvatar
+                              src={`/static/avatars/medium/${highScore.avatar}.jpg`}
+                              alt={`${highScore.name}`}
+                            />
+                            {highScore.name}
+                          </LeaderboardPlayer>
+                          <LeaderboardLevel>{highScore.level}</LeaderboardLevel>
+                          <LeaderboardDate>{this.formatIsoDate(highScore.createdAt)}</LeaderboardDate>
+                          <LeaderboardCorrectAnswers>{highScore.correctAnswers}</LeaderboardCorrectAnswers>
+                          <LeaderboardScore>{highScore.score}</LeaderboardScore>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Leaderboard>
+                </LeaderboardContainer>
+              }
+
+              <h3>Easy Leaderboard (Top 250)</h3>
+              {this.state['easy'] && this.state['easy'].length > 0 &&
+                <LeaderboardContainer>
+                  <Leaderboard>
+                    <thead>
+                      <tr>
+                        <td></td>
+                        <LeaderboardPlayerHeader>Player</LeaderboardPlayerHeader>
+                        <LeaderboardLevelHeader>Level</LeaderboardLevelHeader>
+                        <LeaderboardDateHeader>Date</LeaderboardDateHeader>
+                        <LeaderboardCorrectAnswersHeader># Correct</LeaderboardCorrectAnswersHeader>
+                        <LeaderboardScoreHeader>Score</LeaderboardScoreHeader>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {this.state['easy'].map((highScore, i) => (
+                        <tr key={i} className={this.state.quizResultsId === highScore._id ? 'highlight' : ''}>
+                          <LeaderboardRank>{i + 1}</LeaderboardRank>
+                          <LeaderboardPlayer>
+                            <TinyAvatar
+                              src={`/static/avatars/medium/${highScore.avatar}.jpg`}
+                              alt={`${highScore.name}`}
+                            />
+                            {highScore.name}
+                          </LeaderboardPlayer>
+                          <LeaderboardLevel>{highScore.level}</LeaderboardLevel>
+                          <LeaderboardDate>{this.formatIsoDate(highScore.createdAt)}</LeaderboardDate>
+                          <LeaderboardCorrectAnswers>{highScore.correctAnswers}</LeaderboardCorrectAnswers>
+                          <LeaderboardScore>{highScore.score}</LeaderboardScore>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </Leaderboard>
+                </LeaderboardContainer>
+              }
             </FinalResults>
           }
         </Main>

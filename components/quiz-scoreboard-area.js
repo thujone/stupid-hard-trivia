@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons'
 
 const QuizScoreboardWrapper = styled.div`
   grid-area: scoreboard;
@@ -155,6 +157,44 @@ const GroupShot = styled.img`
   }
 `
 
+const AudioIcon = styled(FontAwesomeIcon)`
+  cursor: pointer;
+  position: absolute;
+  right: 1.35em;
+  top: 15px;
+  font-size: 30px;
+  color: var(--dark-blue);
+  display: none;
+
+  &:hover {
+    color: var(--medium-gray);
+  }
+
+  @media (min-width: 600px) {
+    top: 18px;
+    font-size: 44px;
+  }
+`
+
+const DisableAudioIcon = styled(FontAwesomeIcon)`
+  cursor: pointer;
+  position: absolute;
+  right: 1.35em;
+  top: 15px;
+  font-size: 30px;
+  color: var(--dark-blue);
+  display: none;
+
+  &:hover {
+    color: var(--medium-gray);
+  }
+
+  @media (min-width: 600px) {
+    top: 18px;
+    font-size: 44px;
+  }
+`
+
 const RestartIcon = styled.img`
   cursor: pointer;
   position: absolute;
@@ -163,7 +203,6 @@ const RestartIcon = styled.img`
   width: 30px;
 
   @media (min-width: 600px) {
-    right: 100px;
     width: 50px;
   }
 `
@@ -181,7 +220,7 @@ const stringifyScore = (score) => {
 }
 
 const QuizScoreboardArea = (props) => {
-  console.log('QuizScoreboardArea::props', props)
+
   return (
     <QuizScoreboardWrapper>
       <QuizScoreboard>
@@ -201,8 +240,24 @@ const QuizScoreboardArea = (props) => {
           </tbody>
         </UserTable>
         <GroupShotWrapper>
+          {props.isAudioEnabled &&
+            <AudioIcon id='audio-icon' icon={faVolumeUp} onClick={() => {
+              props.setIsAudioEnabled(false)
+              setTimeout(() => {
+                document.getElementById('disable-audio-icon').style.display = 'block'
+              }, 10)
+            }}/>
+          }
+          {!props.isAudioEnabled &&
+            <DisableAudioIcon id='disable-audio-icon' icon={faVolumeMute} onClick={() => {
+              props.setIsAudioEnabled(true)
+              setTimeout(() => {
+                document.getElementById('audio-icon').style.display = 'block'
+              }, 10)
+            }}/>
+          }
           <RestartIcon src='/static/graphics/restart-icon.png' alt="Restart Game" onClick={() => window.location = '/'} />
-          <GroupShot src='/static/graphics/group-seated.png' alt="Group Seated" />
+          {/* <GroupShot src='/static/graphics/group-seated.png' alt="Group Seated" /> */}
         </GroupShotWrapper>
       </QuizScoreboard>
     </QuizScoreboardWrapper>

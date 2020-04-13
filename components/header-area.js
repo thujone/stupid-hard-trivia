@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-
+ 
 const HeaderWrapper = styled.header`
 `
 
@@ -155,6 +155,48 @@ const TinySeinfeldLogo = styled.img`
     top: 13px;
   }
 `
+
+const LeaderboardsLink = styled.div`
+  text-align: center;
+`
+
+const AvatarButton = styled.button`
+  flex: 0 1 33%;
+  height: 2.5em;
+  width: 2.5em;
+  border: 3px solid var(--dark-gray);
+  border-radius: 10px;
+  font-family: Lalezar;
+  font-size: 2em;
+  text-shadow: 0px 1px 1px var(--medium-gray);
+  color: var(--dark-gray);
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: .7em;
+  transition: all .4s;
+
+  @media (min-width: 600px) {
+    border: 6px solid var(--dark-gray);
+    width: 3em;
+    height: 3em;
+  }
+  
+  @media (min-width: 730px) {
+    width: 4em;
+    height: 4em;
+  }
+
+  @media (min-width: 900px) {
+    width: 4.8em;
+    height: 4.8em;
+  }
+
+  &:hover {
+    border-color: var(--medium-red);
+    color: var(--dark-red);
+  }
+`
+
 
 
 const HeaderArea = () => (
