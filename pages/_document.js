@@ -13,11 +13,11 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163408812-1"></script>
-          <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
-          <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
-          <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
-          <link rel="manifest" href="/static/site.webmanifest" />
+          <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="manifest" href="/site.webmanifest" />
           <meta name="description" content="The ultimate Seinfeld trivia quiz! Free to play! Over 300 questions for three levels: Easy, Hard, and Stupid-Hard!" />
           <meta name="keywords" content="Seinfeld,trivia,game,quiz,challenge,fun" />
           <meta name="author" content="Stupid-Hard Trivia" />
