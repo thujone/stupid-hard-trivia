@@ -38,7 +38,7 @@
   "scripts": {
     "dev": "node server/index.js",
     "build": "next build",
-    "start": "node server/index.js"
+    "start": "next start"
   },
   "repository": {
     "type": "git",
