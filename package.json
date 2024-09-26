@@ -19,7 +19,6 @@
     "json-server": "^0.15.1",
     "mongoose": "^5.9.7",
     "next": "^9.3.5",
-    "node-sass": "^4.13.1",
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-beforeunload": "^2.1.0",
@@ -36,7 +35,10 @@
     "eslint": "^6.8.0"
   },
   "scripts": {
-    "dev": "node server/index.js",
+    "dev-json": "json-server --ro -p 3010 -H localhost ./public/static/data/seinfeld.json &",
+    "prod-json": "json-server --ro -p 3010 -H seinfeldtrivia.com ./public/static/data/seinfeld.json &",
+    "dev": "yarn dev-json && node server/index.js",
+    "prod": "yarn prod-json && node server/index.js",
     "build": "next build",
     "start": "next start"
   },

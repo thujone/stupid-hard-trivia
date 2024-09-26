@@ -24,8 +24,9 @@ class Index extends Component {
 }
 
 Index.getInitialProps = async function() {
-  console.log('process.env', process.env)
+  console.log('()())))()())()()())()()()()()()()(process.env.NODE_ENV', process.env.NODE_ENV)
   const avatarsResult = await fetch(`${process.env.REACT_APP_JSON_SERVER_URL}/avatars`)
+  //const avatarsResult = await fetch('http://localhost:3010/avatars')
   const avatarsData = await avatarsResult.json()
 
   return {

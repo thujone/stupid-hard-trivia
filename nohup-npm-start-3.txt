@@ -1,0 +1,29 @@
+nohup: ignoring input
+Sorry, try again.
+Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+{ REACT_APP_DOC_TITLE: 'The Stupid-Hard Seinfeld Trivia Challenge',
+  REACT_APP_HTTPS_PORT: '443',
+  REACT_APP_HTTP_PORT: '80',
+  REACT_APP_JSON_PORT: '3010',
+  REACT_APP_API_URL: 'https://seinfeldtrivia.com/api',
+  REACT_APP_JSON_SERVER_URL: 'https://seinfeldtrivia.com:3010',
+  NODE_ENV: 'production' }
+json-server started on port https://seinfeldtrivia.com:3010
+https started on port 443
+Browserslist: caniuse-lite is outdated. Please run the following command: `npm update`
+[ ready ] compiled successfully
+(node:1513) UnhandledPromiseRejectionWarning: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+    at new MongooseServerSelectionError (/home/rich/stupid-hard-trivia/node_modules/mongoose/lib/error/serverSelection.js:22:11)
+    at NativeConnection.Connection.openUri (/home/rich/stupid-hard-trivia/node_modules/mongoose/lib/connection.js:823:32)
+    at Mongoose.connect (/home/rich/stupid-hard-trivia/node_modules/mongoose/lib/index.js:333:15)
+    at Object.<anonymous> (/home/rich/stupid-hard-trivia/server/index.js:43:10)
+    at Module._compile (internal/modules/cjs/loader.js:776:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:829:12)
+    at startup (internal/bootstrap/node.js:283:19)
+    at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+(node:1513) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:1513) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.

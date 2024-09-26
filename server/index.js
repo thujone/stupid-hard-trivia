@@ -9,6 +9,18 @@ const middlewares = jsonServer.defaults()
 const next = require('next')
 const bodyParser = require('body-parser')
 const PORT = 3000
+
+
+
+// THIS IS THE BIG SETTING
+process.env.NODE_ENV = 'development';
+
+
+
+
+
+process.env.HOST = process.env.NODE_ENV === 'production' ? 'seinfeldtrivia.com' : 'localhost';
+
 const dev = process.env.NODE_DEV !== 'production'
 const nextApp = next({ dev })
 const handle = nextApp.getRequestHandler()
@@ -16,19 +28,55 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const HOST = process.env.HOST;
-const config = require('dotenv').config().parsed
+
+// Load the correct config based on NODE_ENV
+let config;
+if (process.env.NODE_ENV === 'production') {
+  config = {
+    REACT_APP_HTTPS_PORT: '443',
+    REACT_APP_HTTP_PORT: '3000',
+    REACT_APP_JSON_PORT: '3010',
+    REACT_APP_API_URL: 'https://seinfeldtrivia.com/api',
+    REACT_APP_JSON_SERVER_URL: 'https://seinfeldtrivia.com:3010'
+  }
+
+} else {
+  config = {
+    REACT_APP_HTTPS_PORT: '443',
+    REACT_APP_HTTP_PORT: '3000',
+    REACT_APP_JSON_PORT: '3010',
+    REACT_APP_API_URL: 'http://localhost:3000/api',
+    REACT_APP_JSON_SERVER_URL: 'http://localhost:3010'
+  }
+}
+
+process.env = {
+  ...process.env,
+  REACT_APP_HTTPS_PORT: config.REACT_APP_HTTPS_PORT,
+  REACT_APP_HTTP_PORT: config.REACT_APP_HTTP_PORT,
+  REACT_APP_JSON_PORT: config.REACT_APP_JSON_PORT,
+  REACT_APP_API_URL: config.REACT_APP_API_URL,
+  REACT_APP_JSON_SERVER_URL: config.REACT_APP_JSON_SERVER_URL
+}
+
+
+
+
+
+
 const app = express()
 
-console.log(config)
+console.log('**********************');
+console.log('process.env', process.env);
 
 server.use(middlewares)
 server.use(jsonRouter)
 
 let httpsOptions
-if (config.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   httpsOptions = {
-    key: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/fullchain.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.com/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.com/fullchain.pem')
   }
   
   https.createServer(httpsOptions, server).listen(config.REACT_APP_JSON_PORT, function() {

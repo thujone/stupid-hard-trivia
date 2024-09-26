@@ -700,10 +700,10 @@ class QuizMainArea extends Component {
   openShareScoreDialog = () => {
     FB.ui({
       method: 'share',
-      href: 'https://seinfeldtrivia.net',
+      href: 'https://seinfeldtrivia.com',
       quote: `I just scored ${this.state.score} out of 1000 playing The Stupid-Hard Seinfeld Trivia Challenge! Free to play! Over 300 questions in all!`,
-      redirect_uri: 'https://seinfeldtrivia.net',
-      title: 'The Stupid-Hard Seinfeld Trivia Challenge at https://seinfeldtrivia.net'
+      redirect_uri: 'https://seinfeldtrivia.com',
+      title: 'The Stupid-Hard Seinfeld Trivia Challenge at https://seinfeldtrivia.com'
     }, function(response){
       console.log(response)
     })

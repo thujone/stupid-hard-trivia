@@ -13,6 +13,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163408812-1"></script>
+	  <script data-ad-client="ca-pub-9696617814444089" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -21,11 +22,11 @@ class MyDocument extends Document {
           <meta name="description" content="The ultimate Seinfeld trivia quiz! Free to play! Over 300 questions for three levels: Easy, Hard, and Stupid-Hard!" />
           <meta name="keywords" content="Seinfeld,trivia,game,quiz,challenge,fun" />
           <meta name="author" content="Stupid-Hard Trivia" />
-          <meta property="og:url" content="https://seinfeldtrivia.net" />
+          <meta property="og:url" content="https://seinfeldtrivia.com" />
           <meta property="og:title" content="The Stupid-Hard Seinfeld Trivia Challenge" />
           <meta property="og:description" content="The ultimate Seinfeld trivia quiz! Free to play! Over 300 questions for three levels: Easy, Hard, and Stupid-Hard!" />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="https://seinfeldtrivia.net/static/graphics/game-logo.png" />
+          <meta property="og:image" content="https://seinfeldtrivia.com/static/graphics/game-logo.png" />
         </Head>
         <body>
           <Main />

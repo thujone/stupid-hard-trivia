@@ -65,7 +65,7 @@ class MainArea extends Component {
       avatars: props.avatars,
       firstName: null,
       questionNumber: null,
-      isAudioEnabled: false
+      isAudioEnabled: true
     }
   }
 

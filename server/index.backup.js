@@ -25,8 +25,8 @@ server.use(jsonRouter)
 
 if (config.NODE_ENV === 'production') {
   const httpsOptions = {
-    key: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.net/fullchain.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.com/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/seinfeldtrivia.com/fullchain.pem')
   }
   
   https.createServer(httpsOptions, server).listen(3010, function() {
